@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/manga#"
+     xml:base="http://example.org/manga"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Ontology rdf:about="http://example.org/manga"/>
+
+  <owl:Class rdf:about="#Manga"/>
+  <owl:Class rdf:about="#Seinen"/>
+  <owl:Class rdf:about="#AwardWinning"/>
+
+  <owl:ObjectProperty rdf:about="#hasGenre"/>
+  <owl:ObjectProperty rdf:about="#hasAward"/>
+
+  <owl:NamedIndividual rdf:about="#Berserk">
+    <rdf:type rdf:resource="#Manga"/>
+    <hasGenre rdf:resource="#Seinen"/>
+    <hasAward rdf:resource="#AwardWinning"/>
+  </owl:NamedIndividual>
+
+</rdf:RDF>
