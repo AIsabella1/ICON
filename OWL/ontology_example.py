@@ -4,7 +4,7 @@ os.environ["OWLREADY_HERMIT_JAVA_MEMORY"] = "256M"
 from owlready2 import *
 
 # Carica l'ontologia
-onto = get_ontology("ontology/manga.owl").load()
+onto = get_ontology("OWL/manga.owl").load()
 
 # Motore di ragionamento con memoria ridotta
 with onto:
