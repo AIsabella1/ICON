@@ -1,13 +1,14 @@
-
+# --- Librerie per visualizzazione ---
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 from sklearn.metrics import confusion_matrix
 
-# Crea la cartella PNG se non esiste
+# Crea la cartella di output se non esiste
 OUTPUT_DIR = "PNG"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+# --- Plot accuracies su training e test per ogni configurazione di parametri ---
 def plot_accuracy(labels, train_acc, test_acc, model_name):
     plt.figure(figsize=(10, 5))
     plt.plot(labels, train_acc, marker='o', label='Train Accuracy')
@@ -20,6 +21,7 @@ def plot_accuracy(labels, train_acc, test_acc, model_name):
     plt.savefig(os.path.join(OUTPUT_DIR, f"{model_name.lower().replace(' ', '_')}_accuracy_plot.png"))
     plt.close()
 
+# --- Plot matrice di confusione per un modello ---
 def plot_confusion_matrix(y_true, y_pred, model_name="Model"):
     cm = confusion_matrix(y_true, y_pred)
     plt.figure(figsize=(6, 4))
@@ -30,6 +32,7 @@ def plot_confusion_matrix(y_true, y_pred, model_name="Model"):
     plt.savefig(os.path.join(OUTPUT_DIR, f"{model_name.lower().replace(' ', '_')}_confusion_matrix.png"))
     plt.close()
 
+# --- Bar chart per metriche del Naive Bayes ---
 def plot_bar_chart_naive_bayes(metrics, values):
     plt.figure(figsize=(8, 5))
     plt.bar(metrics, values, color='skyblue')
@@ -40,7 +43,7 @@ def plot_bar_chart_naive_bayes(metrics, values):
     plt.savefig(os.path.join(OUTPUT_DIR, "naive_bayes_bar_chart.png"))
     plt.close()
 
-
+# --- Radar plot per confronto tra modelli supervisionati ---
 def plot_radar_all_models(model_names, metric_labels, data, output_dir="PNG"):
     import numpy as np
     import matplotlib.pyplot as plt
@@ -48,12 +51,12 @@ def plot_radar_all_models(model_names, metric_labels, data, output_dir="PNG"):
 
     os.makedirs(output_dir, exist_ok=True)
     angles = np.linspace(0, 2 * np.pi, len(metric_labels), endpoint=False).tolist()
-    angles += angles[:1]
+    angles += angles[:1]    # chiude il cerchio
 
     fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
     for i, model in enumerate(model_names):
         values = data[i]
-        values += values[:1]
+        values += values[:1]    # chiude il cerchio
         ax.plot(angles, values, label=model)
         ax.fill(angles, values, alpha=0.1)
 
