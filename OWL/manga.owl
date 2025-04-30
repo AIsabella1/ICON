@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- Definizione dell'ontologia RDF/OWL con relativi namespace -->
 <rdf:RDF xmlns="http://example.org/manga#"
      xml:base="http://example.org/manga"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -6,19 +7,23 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
+  <!-- Identificatore dell'ontologia -->
   <owl:Ontology rdf:about="http://example.org/manga"/>
 
-  <owl:Class rdf:about="#Manga"/>
-  <owl:Class rdf:about="#Seinen"/>
-  <owl:Class rdf:about="#AwardWinning"/>
+  <!-- Definizione delle classi OWL: entità concettuali -->
+  <owl:Class rdf:about="#Manga"/> <!-- Classe principale per i manga -->
+  <owl:Class rdf:about="#Seinen"/> <!-- Genere specifico (es. Seinen) -->
+  <owl:Class rdf:about="#AwardWinning"/> <!-- Categoria per manga premiati -->
 
-  <owl:ObjectProperty rdf:about="#hasGenre"/>
-  <owl:ObjectProperty rdf:about="#hasAward"/>
+  <!-- Proprietà oggetto: relazioni tra individui -->
+  <owl:ObjectProperty rdf:about="#hasGenre"/> <!-- Associa un manga a un genere -->
+  <owl:ObjectProperty rdf:about="#hasAward"/> <!-- Associa un manga a un premio -->
 
+  <!-- Istanza (individuo) della classe Manga -->
   <owl:NamedIndividual rdf:about="#Berserk">
-    <rdf:type rdf:resource="#Manga"/>
-    <hasGenre rdf:resource="#Seinen"/>
-    <hasAward rdf:resource="#AwardWinning"/>
+    <rdf:type rdf:resource="#Manga"/> <!-- Berserk è un manga -->
+    <hasGenre rdf:resource="#Seinen"/> <!-- Genere: Seinen -->
+    <hasAward rdf:resource="#AwardWinning"/> <!-- Ha vinto un premio -->
   </owl:NamedIndividual>
 
 </rdf:RDF>

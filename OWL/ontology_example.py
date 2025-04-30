@@ -1,24 +1,25 @@
 import os
-os.environ["OWLREADY_HERMIT_JAVA_MEMORY"] = "256M"
+os.environ["OWLREADY_HERMIT_JAVA_MEMORY"] = "256M"  # Limita la memoria per il reasoner HermiT
 
-from owlready2 import *
+from owlready2 import * # Importa tutte le funzioni per lavorare con OWL in Python
 
-# Carica l'ontologia
-onto = get_ontology("OWL/manga.owl").load()
+# --- Caricamento dell'ontologia ---
+onto = get_ontology("OWL/manga.owl").load() # Carica l'ontologia OWL dal file specificato
 
-# Motore di ragionamento con memoria ridotta
+# --- Esecuzione del motore di ragionamento (reasoner HermiT) ---
 with onto:
-    sync_reasoner_hermit()
+    sync_reasoner_hermit()  # Avvia il reasoner per inferenze logiche (es. AwardWinning)
 
-# Stampa classi e manga premiati
+# --- Stampa delle classi presenti nell'ontologia ---
 print("\n=== Classi disponibili ===")
 for cls in onto.classes():
-    print(cls)
+    print(cls)  # Stampa ogni classe definita (es. Manga, AwardWinning, ecc.)
 
+# --- Stampa dei manga che hanno ricevuto un premio ---
 print("\n=== Manga premiati ===")
-for manga in onto.Manga.instances():
-    if onto.hasAward in manga.get_properties():
+for manga in onto.Manga.instances():    # Cicla tutte le istanze della classe Manga
+    if onto.hasAward in manga.get_properties(): # Controlla se hanno la proprietà hasAward
         for prop in manga.get_properties():
-            for value in prop[manga]:
-                if "AwardWinning" in str(value):
-                    print(manga.name)
+            for value in prop[manga]:   # Per ogni valore della proprietà
+                if "AwardWinning" in str(value):    # Se la stringa contiene AwardWinning
+                    print(manga.name)   # Stampa il nome del manga premiato
