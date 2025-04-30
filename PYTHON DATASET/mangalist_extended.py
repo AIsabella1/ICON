@@ -10,8 +10,8 @@ import time                    # Per rispettare i rate limits
 import csv                     # Per salvare i dati in formato CSV
 
 # --- CREDENZIALI DELL'APPLICAZIONE ---
-CLIENT_ID = 'e1f82bb395676d475f041f0b3f45f5a1'  # ID applicazione registrata su MAL
-CLIENT_SECRET = '96fa9688773b98442ef86cf8a3c114840fec60fd7e7926419b9183849f142737'  # Chiave segreta
+CLIENT_ID = '823135212a297d25238a81ee65b9e53b'  # ID applicazione registrata su MAL
+CLIENT_SECRET = '5ce0b51e70b4df89c3bc9d9e7102755e46cb679150fc99cb4a0a95a6dd1cdbd1'  # Chiave segreta
 REDIRECT_URI = 'http://localhost:8080'  # URI di redirect registrato su MAL
 
 # --- GENERA CODE VERIFIER per PKCE ---
