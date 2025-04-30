@@ -147,7 +147,7 @@ manga(94376, 'yuru_camp△', ['cgdct', '_iyashikei', '_slice_of_life'], 8.39, 22
 manga(99314, 'kimi_no_na_wa.', ['drama', '_seinen'], 8.39, 227, 168, finished, ['makoto_shinkai', '_ranmaru_kotone']).
 manga(768, 'gunnm', ['action', '_sci-fi', '_seinen'], 8.38, 228, 185, finished, ['yukito_kishiro']).
 manga(2921, 'kaichou_wa_maid-sama!', ['comedy', '_romance', '_school', '_shoujo'], 8.38, 229, 68, finished, ['hiro_fujiwara']).
-manga(3082, 'nichijou', ['comedy', '_gag_humor', '_school', '_shounen'], 8.38, 230, 443, currently_publishing, ['keiichi_arawi']).
+manga(3082, 'nichijou', ['comedy', '_gag_humor', '_school', '_shounen'], 8.38, 230, 442, currently_publishing, ['keiichi_arawi']).
 manga(6164, 'my_girl', ['childcare', '_drama', '_seinen', '_slice_of_life'], 8.38, 231, 540, finished, ['sumomo_yumeka']).
 manga(33031, 'imawa_no_kuni_no_alice', ['action', '_gore', '_high_stakes_game', '_horror', '_psychological', '_shounen', '_supernatural', '_survival'], 8.38, 234, 182, finished, ['haro_aso']).
 manga(110160, 'mata,_onaji_yume_wo_miteita', ['drama'], 8.38, 236, 803, finished, ['idumi_kirihara', '_yoru_sumino']).
@@ -177,17 +177,17 @@ manga(104241, 'mairimashita!_iruma-kun', ['comedy', '_fantasy', '_shounen'], 8.3
 manga(923, 'kanata_kara', ['adventure', '_award_winning', '_fantasy', '_isekai', '_mythology', '_romance', '_shoujo'], 8.34, 273, 1202, finished, ['kyouko_hikawa']).
 manga(936, 'homunculus', ['drama', '_horror', '_mystery', '_psychological', '_seinen', '_supernatural'], 8.34, 274, 79, finished, ['hideo_yamamoto']).
 manga(3281, 'hadashi_no_gen', ['drama', '_historical', '_shounen'], 8.34, 275, 1685, finished, ['keiji_nakazawa']).
-manga(3571, 'ten:_tenhou-doori_no_kaidanji', ['adult_cast', '_drama', '_strategy_game'], 8.34, 276, 3254, finished, ['nobuyuki_fukumoto']).
+manga(3571, 'ten:_tenhou-doori_no_kaidanji', ['adult_cast', '_drama', '_strategy_game'], 8.34, 276, 3249, finished, ['nobuyuki_fukumoto']).
 manga(49835, 'gochuumon_wa_usagi_desu_ka?', ['cgdct', '_comedy', '_iyashikei', '_workplace'], 8.34, 278, 2902, currently_publishing, ['_koi']).
 manga(25096, 'gin_no_saji', ['award_winning', '_comedy', '_drama', '_school', '_shounen'], 8.33, 279, 420, finished, ['hiromu_arakawa']).
 manga(61189, 'mahoutsukai_no_yome', ['drama', '_fantasy', '_mythology', '_romance', '_shounen', '_urban_fantasy'], 8.33, 280, 166, currently_publishing, ['kore_yamazaki']).
 manga(147585, 'sensou_kyoushitsu', ['action', '_fantasy', '_military', '_shounen'], 8.33, 281, 2379, currently_publishing, ['higoro_toumori', '_mozuku_sora']).
-manga(2895, 'piano_no_mori', ['award_winning', '_drama', '_music', '_seinen'], 8.33, 285, 1231, finished, ['makoto_isshiki']).
+manga(2895, 'piano_no_mori', ['award_winning', '_drama', '_music', '_seinen'], 8.32, 285, 1231, finished, ['makoto_isshiki']).
 manga(31, 'lovely★complex', ['award_winning', '_comedy', '_drama', '_romance', '_school', '_shoujo'], 8.32, 286, 258, finished, ['aya_nakahara']).
 manga(320, 'gakuen_alice', ['comedy', '_drama', '_love_polygon', '_romance', '_school', '_shoujo', '_super_power'], 8.32, 287, 418, finished, ['tachibana_higuchi']).
 manga(895, 'full_metal_panic!_sigma', ['action', '_mecha', '_military', '_romance', '_shounen'], 8.32, 288, 1671, finished, ['shouji_gatou', '_hiroshi_ueda']).
 manga(58141, 'machida-kun_no_sekai', ['award_winning', '_romance', '_school', '_shoujo'], 8.32, 289, 591, finished, ['yuki_andou']).
-manga(62023, 'mushishi_tokubetsu-hen:_hihamukage', ['fantasy', '_historical', '_iyashikei', '_mystery', '_seinen', '_supernatural'], 8.32, 290, 3489, finished, ['yuki_urushibara']).
+manga(62023, 'mushishi_tokubetsu-hen:_hihamukage', ['fantasy', '_historical', '_iyashikei', '_mystery', '_seinen', '_supernatural'], 8.32, 290, 3488, finished, ['yuki_urushibara']).
 manga(93972, 'totsukuni_no_shoujo', ['fantasy', '_shounen'], 8.32, 293, 196, finished, ['_nagabe']).
 manga(98436, 'youjo_senki', ['action', '_fantasy', '_isekai', '_military', '_reincarnation'], 8.32, 295, 632, currently_publishing, ['chika_toujou', '_carlo_zen']).
 manga(100922, 'blue_giant_supreme', ['music', '_seinen'], 8.32, 296, 4037, finished, ['shinichi_ishizuka']).
@@ -222,7 +222,7 @@ manga(16144, 'umineko_no_naku_koro_ni_-_episode_4:_alliance_of_the_golden_witch'
 manga(16922, 'gakuen_babysitters', ['childcare', '_comedy', '_iyashikei', '_school', '_shoujo', '_slice_of_life'], 8.29, 331, 760, currently_publishing, ['hari_tokeino']).
 manga(84983, 'chichi_to_hige-gorilla_to_watashi', ['childcare', '_comedy', '_slice_of_life'], 8.29, 332, 2464, finished, ['sadaji_koike']).
 manga(165876, 'houkago_kitaku_biyori', ['love_status_quo', '_romance', '_school', '_seinen'], 8.29, 333, 3227, currently_publishing, ['mai_matsuda']).
-manga(26704, 'shouwa_genroku_rakugo_shinjuu', ['adult_cast', '_award_winning', '_drama', '_josei', '_love_polygon', '_performing_arts'], 8.28, 335, 2085, finished, ['haruko_kumota']).
+manga(26704, 'shouwa_genroku_rakugo_shinjuu', ['adult_cast', '_award_winning', '_drama', '_josei', '_love_polygon', '_performing_arts'], 8.28, 335, 2084, finished, ['haruko_kumota']).
 manga(35573, 'orange', ['drama', '_love_polygon', '_romance', '_school', '_sci-fi', '_shoujo', '_time_travel'], 8.28, 337, 73, finished, ['ichigo_takano']).
 manga(148542, 'akuyaku_reijou_no_naka_no_hito:_danzai_sareta_tenseisha_no_tame_usotsuki_heroine_ni_fukushuu_itashimasu', ['drama', '_villainess'], 8.28, 338, 2557, currently_publishing, ['nazuna_shiraume', '__makiburo']).
 manga(24, 'd.gray-man', ['action', '_adventure', '_fantasy', '_shounen', '_urban_fantasy'], 8.28, 340, 72, currently_publishing, ['katsura_hoshino']).
@@ -266,7 +266,7 @@ manga(375, 'initial_d', ['action', '_drama', '_racing', '_seinen'], 8.24, 381, 5
 manga(481, 'planetes', ['adult_cast', '_award_winning', '_drama', '_psychological', '_sci-fi', '_seinen', '_slice_of_life', '_space', '_workplace'], 8.24, 382, 295, finished, ['makoto_yukimura']).
 manga(3009, 'jojo_no_kimyou_na_bouken_part_6:_stone_ocean', ['action', '_adventure', '_shounen'], 8.24, 383, 36, finished, ['hirohiko_araki']).
 manga(4625, 'kamigami_no_itadaki', ['adventure', '_award_winning', '_drama', '_mystery', '_seinen', '_sports'], 8.24, 384, 1191, finished, ['baku_yumemakura', '_jiro_taniguchi']).
-manga(162733, 'mairimashita!_iruma-kun:_if_episode_of_mafia', ['fantasy', '_organized_crime', '_shounen'], 8.24, 385, 8239, currently_publishing, ['_hiroja']).
+manga(162733, 'mairimashita!_iruma-kun:_if_episode_of_mafia', ['fantasy', '_organized_crime', '_shounen'], 8.24, 385, 8234, currently_publishing, ['_hiroja']).
 manga(39883, 'ansatsu_kyoushitsu', ['action', '_comedy', '_school', '_shounen'], 8.24, 386, 74, finished, ['yuusei_matsui']).
 manga(91514, 'kishuku_gakkou_no_juliet', ['action', '_comedy', '_romance', '_school', '_shounen'], 8.24, 387, 271, finished, ['yousuke_kaneda']).
 manga(96044, 'taishou_otome_otogibanashi', ['comedy', '_historical', '_romance', '_shounen', '_slice_of_life'], 8.24, 388, 741, finished, ['sana_kirioka']).
@@ -276,7 +276,7 @@ manga(103701, 'beastars', ['anthropomorphic', '_award_winning', '_drama', '_psyc
 manga(128, 'petshop_of_horrors', ['comedy', '_fantasy', '_horror', '_josei', '_mystery', '_supernatural'], 8.23, 392, 538, finished, ['matsuri_akino']).
 manga(445, 'shonan_junai_gumi!', ['action', '_comedy', '_delinquents', '_drama', '_romance', '_school', '_shounen'], 8.23, 393, 830, finished, ['tooru_fujisawa']).
 manga(915, 'rookies', ['comedy', '_delinquents', '_drama', '_school', '_shounen', '_slice_of_life', '_sports', '_team_sports'], 8.23, 394, 767, finished, ['masanori_morita']).
-manga(10884, 'diamond_no_ace', ['award_winning', '_school', '_shounen', '_sports', '_team_sports'], 8.23, 395, 783, finished, ['yuuji_terajima']).
+manga(10884, 'diamond_no_ace', ['award_winning', '_school', '_shounen', '_sports', '_team_sports'], 8.23, 395, 781, finished, ['yuuji_terajima']).
 manga(11593, 'yuru_yuri', ['cgdct', '_comedy', '_gag_humor', '_girls_love', '_school'], 8.23, 396, 1349, currently_publishing, ['_namori']).
 manga(112115, 'act-age', ['drama', '_performing_arts', '_shounen', '_showbiz'], 8.23, 397, 326, discontinued, ['tatsuya_matsuki', '_shiro_usazaki']).
 manga(24308, 'no.6', ['action', '_drama', '_mystery', '_sci-fi', '_shoujo'], 8.23, 400, 348, finished, ['atsuko_asano', '_hinoki_kino']).
@@ -289,9 +289,9 @@ manga(17552, 'non_non_biyori', ['cgdct', '_iyashikei', '_school', '_seinen', '_s
 manga(110031, 'summertime_render', ['mystery', '_shounen', '_supernatural', '_suspense', '_time_travel'], 8.22, 412, 317, finished, ['yasuki_tanaka']).
 manga(112318, 'jigokuraku', ['action', '_fantasy', '_historical', '_shounen'], 8.22, 413, 60, finished, ['yuuji_kaku']).
 manga(26144, 'danshi_koukousei_no_nichijou', ['comedy', '_gag_humor', '_school'], 8.22, 416, 729, finished, ['yasunobu_yamauchi']).
-manga(18074, 'getter_robo_saga', ['action', '_mecha', '_shounen'], 8.21, 417, 7473, finished, ['ken_ishikawa']).
+manga(18074, 'getter_robo_saga', ['action', '_mecha', '_shounen'], 8.21, 417, 7469, finished, ['ken_ishikawa']).
 manga(140409, 'yoake_no_uta', ['boys_love', '_fantasy'], 8.21, 418, 5192, currently_publishing, ['ichika_yuno']).
-manga(103063, 'tadaima,_okaeri', ['boys_love', '_childcare', '_slice_of_life'], 8.21, 419, 3241, currently_publishing, ['ichi_ichikawa']).
+manga(103063, 'tadaima,_okaeri', ['boys_love', '_childcare', '_slice_of_life'], 8.21, 419, 3237, currently_publishing, ['ichi_ichikawa']).
 manga(106204, 'majo_to_yajuu', ['action', '_adult_cast', '_fantasy', '_seinen'], 8.21, 420, 974, on_hiatus, ['kousuke_satake']).
 manga(107548, 'steins;gate_0', ['drama', '_mystery', '_sci-fi', '_seinen'], 8.21, 421, 3802, finished, ['taka_himeno']).
 manga(108566, 'machikado_mazoku', ['comedy', '_mahou_shoujo', '_slice_of_life'], 8.21, 423, 2159, currently_publishing, ['izumo_ito']).
@@ -357,7 +357,7 @@ manga(929, 'fushigi_yuugi:_genbu_kaiden', ['adventure', '_drama', '_fantasy', '_
 manga(1110, 'shiawase_kissa_3-choume', ['comedy', '_romance', '_shoujo', '_slice_of_life'], 8.15, 509, 1040, finished, ['kou_matsuzuki']).
 manga(8144, 'sora_no_otoshimono', ['comedy', '_drama', '_ecchi', '_romance', '_school', '_sci-fi', '_shounen'], 8.15, 510, 406, finished, ['suu_minazuki']).
 manga(8652, 'zankoku_na_kami_ga_shihai_suru', ['award_winning', '_boys_love', '_drama', '_psychological', '_shoujo'], 8.15, 511, 2063, finished, ['moto_hagio']).
-manga(35733, 'ano_hi_mita_hana_no_namae_wo_bokutachi_wa_mada_shiranai.', ['drama', '_shounen'], 8.15, 513, 1257, finished, ['mitsu_izumi']).
+manga(35733, 'ano_hi_mita_hana_no_namae_wo_bokutachi_wa_mada_shiranai.', ['drama', '_shounen'], 8.15, 513, 1255, finished, ['mitsu_izumi']).
 manga(111229, 'mystery_to_iu_nakare', ['award_winning', '_josei', '_mystery'], 8.15, 515, 1927, currently_publishing, ['yumi_tamura']).
 manga(117840, 'ase_to_sekken', ['comedy', '_romance', '_seinen', '_workplace'], 8.15, 517, 403, finished, ['kintetsu_yamada']).
 manga(118625, 'sasayaku_you_ni_koi_wo_utau', ['girls_love', '_school'], 8.15, 518, 496, currently_publishing, ['eku_takeshima']).
@@ -414,7 +414,7 @@ manga(3403, 'rosario_to_vampire:_season_ii', ['action', '_comedy', '_ecchi', '_f
 manga(4423, 'oooku', ['award_winning', '_drama', '_historical', '_samurai', '_shoujo'], 8.11, 585, 1800, finished, ['fumi_yoshinaga']).
 manga(4945, 'ginga_nagareboshi_gin', ['anthropomorphic', '_award_winning', '_shounen'], 8.11, 586, 4615, finished, ['yoshihiro_takahashi']).
 manga(8300, 'baby_steps', ['award_winning', '_school', '_shounen', '_sports'], 8.11, 587, 722, finished, ['hikaru_katsuki']).
-manga(11243, 'kono_sekai_no_katasumi_ni', ['award_winning', '_drama', '_historical', '_seinen'], 8.11, 588, 2477, finished, ['fumiyo_kouno']).
+manga(11243, 'kono_sekai_no_katasumi_ni', ['award_winning', '_drama', '_historical', '_seinen'], 8.11, 588, 2475, finished, ['fumiyo_kouno']).
 manga(47, 'katekyou_hitman_reborn!', ['action', '_comedy', '_organized_crime', '_school', '_shounen', '_super_power'], 8.1, 589, 106, finished, ['akira_amano']).
 manga(339, 'sakigake!!_cromartie_koukou', ['award_winning', '_comedy', '_delinquents', '_gag_humor', '_shounen'], 8.1, 590, 1441, finished, ['eiji_nonaka']).
 manga(908, 'soul_eater', ['action', '_comedy', '_fantasy', '_shounen'], 8.1, 591, 43, finished, ['atsushi_ookubo']).
@@ -469,7 +469,7 @@ manga(3102, 'girl_friends', ['girls_love', '_school', '_seinen'], 8.07, 654, 362
 manga(15547, 'kiichi_vs', ['drama', '_psychological', '_seinen'], 8.07, 655, 7322, finished, ['hideki_arai']).
 manga(1211, 'ore_to_akuma_no_blues', ['drama', '_historical', '_horror', '_psychological', '_seinen'], 8.06, 656, 856, currently_publishing, ['akira_hiramoto']).
 manga(3868, 'shigurui', ['action', '_drama', '_gore', '_historical', '_martial_arts', '_samurai', '_seinen'], 8.06, 657, 609, finished, ['takayuki_yamaguchi', '_norio_nanjou']).
-manga(12917, 'shaman_king_kanzenban', ['action', '_adventure', '_comedy', '_supernatural'], 8.06, 659, 1300, finished, ['hiroyuki_takei']).
+manga(12917, 'shaman_king_kanzenban', ['action', '_adventure', '_comedy', '_supernatural'], 8.06, 659, 1301, finished, ['hiroyuki_takei']).
 manga(151815, 'konjiki_no_gash!!_2', ['action', '_adventure', '_comedy', '_supernatural'], 8.06, 662, 5930, currently_publishing, ['makoto_raiku']).
 manga(114793, 'rojica_to_rakkasei', ['adventure', '_fantasy', '_psychological', '_slice_of_life'], 8.06, 663, 2971, finished, ['_kinome']).
 manga(38105, 'kase-san_series', ['girls_love', '_school'], 8.06, 666, 529, finished, ['hiromi_takashima']).
@@ -494,7 +494,7 @@ manga(59893, 'tanaka-kun_wa_itsumo_kedaruge', ['iyashikei', '_school', '_slice_o
 manga(117332, 'suki_na_ko_ga_megane_wo_wasureta', ['comedy', '_love_status_quo', '_romance', '_school', '_shounen'], 8.04, 688, 423, finished, ['koume_fujichika']).
 manga(136975, 'unmei_no_hito_ni_deau_hanashi', ['romance', '_shoujo'], 8.04, 689, 1409, currently_publishing, ['_anashin']).
 manga(22986, 'ran_to_haiiro_no_sekai', ['drama', '_fantasy', '_romance', '_seinen', '_supernatural'], 8.04, 691, 610, finished, ['aki_irie']).
-manga(25245, 'zoku_hoshi_mamoru_inu', ['pets', '_seinen', '_slice_of_life'], 8.04, 692, 3055, finished, ['takashi_murakami']).
+manga(25245, 'zoku_hoshi_mamoru_inu', ['pets', '_seinen', '_slice_of_life'], 8.04, 692, 3050, finished, ['takashi_murakami']).
 manga(152907, 'museru_kurai_no_ai_wo_ageru', ['adult_cast', '_romance', '_shoujo'], 8.04, 693, 1445, currently_publishing, ['keiko_iwashita']).
 manga(98374, 'cardcaptor_sakura:_clear_card-hen', ['adventure', '_comedy', '_fantasy', '_mahou_shoujo', '_romance', '_shoujo'], 8.04, 695, 1135, finished, ['_clamp']).
 manga(573, 'wild_adapter', ['action', '_boys_love', '_comedy', '_drama', '_mystery', '_organized_crime'], 8.04, 696, 2494, on_hiatus, ['kazuya_minekura']).
@@ -519,7 +519,7 @@ manga(128995, 'restart_wa_onaka_wo_sukasete', ['boys_love', '_slice_of_life'], 8
 manga(130661, 'josee_to_tora_to_sakana-tachi', ['drama', '_romance', '_visual_arts'], 8.03, 719, 3076, finished, ['nao_emoto', '_seiko_tanabe']).
 manga(132975, 'anemone_wa_netsu_wo_obiru', ['girls_love', '_school'], 8.03, 720, 2174, currently_publishing, ['ren_sakuragi']).
 manga(133081, 'wind_breaker', ['action', '_delinquents', '_school'], 8.03, 721, 798, currently_publishing, ['satoru_nii']).
-manga(163232, 'tower_dungeon', ['action', '_fantasy', '_shounen'], 8.02, 728, 1917, currently_publishing, ['tsutomu_nihei']).
+manga(163232, 'tower_dungeon', ['action', '_fantasy', '_shounen'], 8.02, 728, 1915, currently_publishing, ['tsutomu_nihei']).
 manga(62723, 'noragami:_shuuishuu', ['fantasy', '_mythology', '_shounen'], 8.02, 729, 1808, finished, ['_adachitoka']).
 manga(80385, 'kono_subarashii_sekai_ni_shukufuku_wo!', ['adventure', '_comedy', '_fantasy', '_isekai', '_parody', '_shounen'], 8.02, 730, 747, currently_publishing, ['masahito_watari', '_natsume_akatsuki']).
 manga(8, 'full_moon_wo_sagashite', ['comedy', '_drama', '_fantasy', '_music', '_romance', '_shoujo', '_showbiz', '_supernatural'], 8.02, 731, 477, finished, ['arina_tanemura']).
@@ -547,7 +547,7 @@ manga(122842, 'kakeochi_girl', ['drama', '_girls_love', '_josei', '_slice_of_lif
 manga(128463, 'uruwashi_no_yoi_no_tsuki', ['romance', '_school', '_shoujo'], 8.01, 762, 678, currently_publishing, ['mika_yamamori']).
 manga(136793, 'itou_junji_jisen_kessakushuu', ['horror', '_shoujo'], 8.01, 763, 2062, finished, ['junji_itou']).
 manga(25916, 'saint_seiya:_the_lost_canvas_-_meiou_shinwa_gaiden', ['adventure', '_drama', '_fantasy', '_shounen'], 8.01, 765, 4073, finished, ['masami_kurumada', '_shiori_teshirogi']).
-manga(52043, 'chichikogusa', ['childcare', '_shounen', '_slice_of_life'], 8.01, 767, 3115, finished, ['mi_tagawa']).
+manga(52043, 'chichikogusa', ['childcare', '_shounen', '_slice_of_life'], 8.01, 767, 3116, finished, ['mi_tagawa']).
 manga(104271, 'chi_no_wadachi', ['drama', '_psychological', '_seinen', '_suspense'], 8.01, 769, 115, finished, ['shuuzou_oshimi']).
 manga(89562, 'tsubaki-chou_lonely_planet', ['drama', '_romance', '_shoujo'], 8, 770, 372, finished, ['mika_yamamori']).
 manga(103942, 'ao_no_flag', ['romance', '_school', '_shounen'], 8, 772, 244, finished, ['_kaito']).
@@ -590,7 +590,7 @@ manga(155285, 'boku_no_papa_to_papa_no_hanashi', ['boys_love', '_childcare'], 7.
 manga(37565, '10_dance', ['boys_love', '_drama', '_performing_arts', '_seinen'], 7.97, 829, 2909, currently_publishing, ['satou_inoue']).
 manga(112268, 'sono_bisque_doll_wa_koi_wo_suru', ['otaku_culture', '_romance', '_school', '_seinen'], 7.97, 832, 63, finished, ['shinichi_fukuda']).
 manga(160, 'school_rumble', ['comedy', '_gag_humor', '_love_polygon', '_romance', '_school', '_shounen'], 7.97, 833, 623, finished, ['jin_kobayashi']).
-manga(407, 'life', ['award_winning', '_drama', '_psychological', '_school', '_shoujo', '_slice_of_life'], 7.97, 834, 1042, finished, ['keiko_suenobu']).
+manga(407, 'life', ['award_winning', '_drama', '_psychological', '_school', '_shoujo', '_slice_of_life'], 7.97, 834, 1041, finished, ['keiko_suenobu']).
 manga(907, 'mekakushi_no_kuni', ['drama', '_love_polygon', '_romance', '_shoujo', '_supernatural'], 7.97, 835, 2079, finished, ['sakura_tsukuba']).
 manga(5820, 'sumire♡16-sai!!', ['comedy', '_school', '_shounen'], 7.97, 836, 3167, finished, ['takeru_nagayoshi']).
 manga(11329, 'mudazumonaki_kaikaku', ['comedy', '_drama', '_strategy_game'], 7.97, 837, 2232, finished, ['hideki_oowada']).
@@ -635,7 +635,7 @@ manga(144695, 'blue_lock:_episode_nagi', ['shounen', '_sports', '_team_sports'],
 manga(150973, 'lycoris_recoil', ['action', '_seinen'], 7.94, 904, 4300, currently_publishing, ['yasunori_bizen']).
 manga(392, 'kimi_wa_pet', ['award_winning', '_comedy', '_drama', '_josei', '_romance'], 7.94, 907, 854, finished, ['yayoi_ogawa']).
 manga(1250, 'deep_love:_ayu_no_monogatari', ['drama', '_shoujo'], 7.94, 909, 1086, finished, ['_yoshi', '_yuu_yoshii']).
-manga(1496, 'tenshi_nanka_ja_nai', ['drama', '_romance', '_school', '_shoujo'], 7.94, 910, 3130, finished, ['ai_yazawa']).
+manga(1496, 'tenshi_nanka_ja_nai', ['drama', '_romance', '_school', '_shoujo'], 7.94, 910, 3128, finished, ['ai_yazawa']).
 manga(3438, 'psyren', ['action', '_adventure', '_high_stakes_game', '_psychological', '_romance', '_sci-fi', '_shounen', '_strategy_game', '_super_power', '_supernatural'], 7.94, 911, 160, finished, ['toshiaki_iwashiro']).
 manga(3633, 'beast_master', ['comedy', '_romance', '_shoujo'], 7.94, 912, 281, finished, ['kyousuke_motomi']).
 manga(3941, 'clannad:_tomoyo_after', ['drama', '_romance'], 7.94, 913, 2750, finished, ['_key', '_yukiko_sumiyoshi']).
@@ -652,7 +652,7 @@ manga(2435, 'crayon_shin-chan', ['comedy', '_school', '_seinen', '_slice_of_life
 manga(3713, 'bartender', ['adult_cast', '_gourmet', '_seinen', '_workplace'], 7.93, 930, 1077, finished, ['kenji_nagatomo', '_araki_jou']).
 manga(4584, 'sasameki_koto', ['comedy', '_drama', '_girls_love', '_school', '_seinen'], 7.93, 931, 832, finished, ['takashi_ikeda']).
 manga(17541, 'shinrei_tantei_yakumo', ['horror', '_mystery', '_romance', '_shoujo', '_supernatural'], 7.93, 934, 970, finished, ['manabu_kaminaga', '_suzuka_oda']).
-manga(163882, 'kimi_to_uchuu_wo_aruku_tame_ni', ['award_winning', '_josei', '_school', '_slice_of_life'], 7.92, 940, 8977, currently_publishing, ['inuhiko_doronoda']).
+manga(163882, 'kimi_to_uchuu_wo_aruku_tame_ni', ['award_winning', '_josei', '_school', '_slice_of_life'], 7.92, 940, 8969, currently_publishing, ['inuhiko_doronoda']).
 manga(98270, 'fire_punch', ['action', '_gore', '_mystery', '_shounen', '_supernatural'], 7.92, 941, 41, finished, ['tatsuki_fujimoto']).
 manga(21651, 'hitori-tachi', ['shoujo'], 7.92, 945, 4501, finished, ['aya_kanno']).
 manga(22044, 'iris_zero', ['drama', '_fantasy', '_mystery', '_psychological', '_romance', '_school', '_seinen', '_supernatural'], 7.92, 946, 460, currently_publishing, ['takana_hotaru', '_shiki_piro']).
@@ -702,7 +702,7 @@ manga(877, 'hana_yori_dango', ['award_winning', '_drama', '_romance', '_school',
 manga(1271, 'special_a', ['comedy', '_romance', '_school', '_shoujo'], 7.9, 1010, 432, finished, ['maki_minami']).
 manga(1349, '07-ghost', ['action', '_fantasy', '_josei', '_military', '_mythology'], 7.9, 1011, 547, finished, ['yuki_amemiya', '_yukino_ichihara']).
 manga(1721, 'nabari_no_ou', ['action', '_drama', '_fantasy', '_martial_arts', '_school', '_shounen', '_supernatural'], 7.9, 1012, 843, finished, ['yuuki_kamatani']).
-manga(5685, 'hakkenden:_touhou_hakken_ibun', ['action', '_drama', '_fantasy', '_mystery', '_shoujo', '_supernatural'], 7.9, 1013, 4829, finished, ['miyuki_abe']).
+manga(5685, 'hakkenden:_touhou_hakken_ibun', ['action', '_drama', '_fantasy', '_mystery', '_shoujo', '_supernatural'], 7.9, 1013, 4830, finished, ['miyuki_abe']).
 manga(7728, 'rozen_maiden_(2008)', ['drama', '_fantasy', '_psychological', '_seinen', '_supernatural'], 7.9, 1014, 2233, finished, ['_peach‐pit']).
 manga(14127, 'satougashi_no_dangan_wa_uchinukenai:_a_lollypop_or_a_bullet', ['drama', '_psychological', '_school', '_shounen'], 7.9, 1017, 1159, finished, ['kazuki_sakuraba', '_iqura_sugimoto']).
 manga(23419, 'byousoku_5_centimeter', ['drama', '_romance', '_seinen'], 7.9, 1018, 575, finished, ['makoto_shinkai', '_yukiko_seike']).
@@ -713,7 +713,7 @@ manga(103851, '5-toubun_no_hanayome', ['award_winning', '_comedy', '_harem', '_r
 manga(108032, 'my_home_hero', ['drama', '_seinen', '_suspense'], 7.9, 1024, 600, finished, ['masashi_asaki', '_naoki_yamakawa']).
 manga(109608, 'goblin_slayer_gaiden:_year_one', ['action', '_drama', '_fantasy', '_seinen'], 7.9, 1025, 714, currently_publishing, ['kumo_kagyuu', '_kento_sakaeda']).
 manga(122448, 'kubo-san_wa_mob_wo_yurusanai', ['comedy', '_love_status_quo', '_romance', '_school', '_seinen'], 7.9, 1026, 231, finished, ['nene_yukimori']).
-manga(122559, 'devil_may_cry_5:_visions_of_v', ['action', '_supernatural'], 7.9, 1027, 6332, finished, ['tomio_ogata']).
+manga(122559, 'devil_may_cry_5:_visions_of_v', ['action', '_supernatural'], 7.9, 1027, 6333, finished, ['tomio_ogata']).
 manga(122575, 'sayonara_rose_garden', ['drama', '_girls_love', '_historical'], 7.9, 1028, 1923, finished, ['pepako_dokuta']).
 manga(122615, 'cool_doji_danshi', ['iyashikei', '_slice_of_life'], 7.9, 1029, 2794, currently_publishing, ['kokone_nata']).
 manga(133988, 'seishun_buta_yarou_wa_logical_witch_no_yume_wo_minai', ['comedy', '_romance', '_school'], 7.9, 1030, 7187, finished, ['hajime_kamoshida', '_tsukako_akina']).
@@ -728,7 +728,7 @@ manga(92149, 'tomo-chan_wa_onnanoko!', ['comedy', '_romance', '_school'], 7.89, 
 manga(92182, 'seishun_buta_yarou_wa_bunny_girl_senpai_no_yume_wo_minai', ['comedy', '_romance', '_school'], 7.89, 1042, 731, finished, ['hajime_kamoshida', '_tsugumi_nanamiya']).
 manga(94676, 'namidaame_to_serenade', ['historical', '_josei', '_romance', '_time_travel'], 7.89, 1043, 3780, currently_publishing, ['haruka_kawachi']).
 manga(99386, 'sword_art_online:_project_alicization', ['action', '_fantasy', '_video_game'], 7.89, 1044, 2965, finished, ['koutarou_yamada', '_reki_kawahara']).
-manga(101554, 'city', ['comedy', '_gag_humor', '_seinen'], 7.89, 1045, 2562, finished, ['keiichi_arawi']).
+manga(101554, 'city', ['comedy', '_gag_humor', '_seinen'], 7.89, 1045, 2561, finished, ['keiichi_arawi']).
 manga(107570, 'sengoku_komachi_kuroutan:_noukou_giga', ['action', '_fantasy', '_historical', '_time_travel'], 7.89, 1046, 3180, currently_publishing, ['hajime_sawada', '__kyouchikutou']).
 manga(12, 'bleach', ['action', '_adventure', '_award_winning', '_shounen', '_supernatural'], 7.89, 1047, 15, finished, ['tite_kubo']).
 manga(55, 'aishiteruze_baby★★', ['childcare', '_comedy', '_drama', '_romance', '_school', '_shoujo'], 7.89, 1048, 862, finished, ['youko_maki']).
@@ -759,7 +759,7 @@ manga(773, 'saishuu_heiki_kanojo', ['drama', '_romance', '_sci-fi', '_seinen'], 
 manga(885, 'hakushaku_cain_series', ['historical', '_horror', '_mystery', '_shoujo'], 7.88, 1080, 2187, finished, ['kaori_yuki']).
 manga(1267, 'kagen_no_tsuki', ['drama', '_mystery', '_shoujo', '_supernatural'], 7.88, 1081, 1476, finished, ['ai_yazawa']).
 manga(1895, 'mademoiselle_butterfly', ['drama', '_historical', '_romance', '_shoujo'], 7.88, 1082, 2390, finished, ['akane_ogura']).
-manga(4031, 'shanaou_yoshitsune', ['award_winning', '_historical', '_shounen'], 7.88, 1083, 11309, finished, ['hirofumi_sawada']).
+manga(4031, 'shanaou_yoshitsune', ['award_winning', '_historical', '_shounen'], 7.88, 1083, 11256, finished, ['hirofumi_sawada']).
 manga(15205, 'zetsuen_no_tempest', ['action', '_drama', '_fantasy', '_mystery', '_psychological', '_shounen', '_urban_fantasy'], 7.88, 1086, 891, finished, ['kyou_shirodaira', '_ren_saizaki']).
 manga(60511, 'sousei_no_onmyouji', ['action', '_fantasy', '_mythology', '_shounen', '_urban_fantasy'], 7.88, 1087, 328, finished, ['yoshiaki_sukeno']).
 manga(69903, 'fairy_tail_zerø', ['action', '_fantasy'], 7.88, 1088, 322, finished, ['hiro_mashima']).
@@ -813,7 +813,7 @@ manga(48397, 'no_game_no_life', ['comedy', '_ecchi', '_fantasy', '_isekai', '_se
 manga(50217, 'kamisama_ga_uso_wo_tsuku.', ['drama', '_romance', '_school', '_seinen'], 7.86, 1150, 285, finished, ['kaori_ozaki']).
 manga(27327, 'all_around_type-moon', ['comedy', '_seinen', '_slice_of_life'], 7.85, 1152, 4614, on_hiatus, ['_b-suke']).
 manga(35035, 'kyou_no_kira-kun', ['drama', '_romance', '_school', '_shoujo'], 7.85, 1155, 644, finished, ['rin_mikimoto']).
-manga(37683, 'kidou_senshi_gundam_thunderbolt', ['action', '_drama', '_mecha', '_military', '_sci-fi', '_seinen', '_space'], 7.85, 1156, 6069, currently_publishing, ['yasuo_ootagaki']).
+manga(37683, 'kidou_senshi_gundam_thunderbolt', ['action', '_drama', '_mecha', '_military', '_sci-fi', '_seinen', '_space'], 7.85, 1156, 6055, currently_publishing, ['yasuo_ootagaki']).
 manga(142, 'battle_royale', ['action', '_gore', '_psychological', '_seinen', '_survival', '_suspense'], 7.85, 1157, 228, finished, ['masayuki_taguchi', '_koushun_takami']).
 manga(430, 'suzuka', ['comedy', '_drama', '_ecchi', '_romance', '_school', '_shounen', '_sports'], 7.85, 1158, 351, finished, ['kouji_seo']).
 manga(696, 'hayate_no_gotoku!', ['action', '_comedy', '_harem', '_parody', '_romance', '_shounen'], 7.85, 1159, 587, finished, ['kenjirou_hata']).
@@ -869,7 +869,7 @@ manga(1397, 'chi\'s_sweet_home', ['comedy', '_pets', '_seinen', '_slice_of_life'
 manga(4742, 'kamen_rider_spirits', ['action', '_adventure', '_horror', '_sci-fi', '_seinen'], 7.83, 1230, 7413, finished, ['shoutarou_ishinomori', '_kenichi_muraeda']).
 manga(6889, 'moon:_subaru_solitude_standing', ['drama', '_performing_arts', '_seinen'], 7.83, 1231, 9427, finished, ['masahito_soda']).
 manga(7747, 'ushio_to_tora', ['action', '_award_winning', '_comedy', '_mythology', '_shounen', '_supernatural'], 7.83, 1232, 2250, finished, ['kazuhiro_fujita']).
-manga(9705, 'ginga_tetsudou_999_(1996)', ['adventure', '_drama', '_fantasy', '_sci-fi', '_seinen', '_space'], 7.83, 1233, 7343, finished, ['leiji_matsumoto']).
+manga(9705, 'ginga_tetsudou_999_(1996)', ['adventure', '_drama', '_fantasy', '_sci-fi', '_seinen', '_space'], 7.83, 1233, 7344, finished, ['leiji_matsumoto']).
 manga(12064, 'sora_log', ['drama', '_romance', '_school', '_shoujo'], 7.83, 1234, 1668, finished, ['kako_mitsuki']).
 manga(14498, 'acid_town', ['action', '_boys_love', '_drama'], 7.83, 1235, 1321, currently_publishing, ['_kyuugou']).
 manga(14841, 'durarara!!', ['action', '_drama', '_supernatural'], 7.83, 1236, 763, finished, ['ryohgo_narita', '_akiyo_satorigi']).
@@ -889,7 +889,7 @@ manga(95347, 'kakegurui_twin', ['drama', '_mystery', '_psychological', '_school'
 manga(96812, 'emiya-san_chi_no_kyou_no_gohan', ['gourmet', '_iyashikei', '_slice_of_life'], 7.83, 1260, 5757, currently_publishing, ['_taa']).
 manga(99575, 'usotoki_rhetoric', ['historical', '_mystery', '_romance', '_shoujo'], 7.83, 1262, 3030, finished, ['ritsu_miyako']).
 manga(103244, 'gekijouban_sword_art_online:_ordinal_scale', ['action', '_adventure', '_mystery', '_video_game'], 7.83, 1263, 5760, finished, ['reki_kawahara', '__isii']).
-manga(107774, 'migi_to_dali', ['comedy', '_mystery', '_seinen', '_suspense'], 7.83, 1264, 4578, finished, ['nami_sano']).
+manga(107774, 'migi_to_dali', ['comedy', '_mystery', '_seinen', '_suspense'], 7.83, 1264, 4572, finished, ['nami_sano']).
 manga(93695, 'ganbare!_nakamura-kun!!', ['boys_love', '_school'], 7.82, 1265, 586, finished, ['_syundei']).
 manga(96194, 'honzuki_no_gekokujou:_shisho_ni_naru_tame_ni_wa_shudan_wo_erandeiraremasen_dai_1-bu_-_hon_ga_nai_nara_tsukureba_ii!', ['fantasy', '_isekai', '_reincarnation'], 7.82, 1266, 1466, finished, ['_suzuka', '_miya_kazuki']).
 manga(55301, 'les_misérables', ['drama', '_historical', '_shounen'], 7.82, 1270, 7804, finished, ['takahiro_arai', '_victor_hugo']).
@@ -898,7 +898,7 @@ manga(72439, 'setoutsumi', ['comedy', '_shounen', '_slice_of_life'], 7.82, 1274,
 manga(73451, 'k:_lost_small_world', ['josei', '_supernatural'], 7.82, 1275, 8445, finished, ['_gora', '_yoru_ookita']).
 manga(3993, 'is:_otoko_demo_onna_demo_nai_sei', ['award_winning', '_drama', '_josei', '_romance'], 7.82, 1279, 3291, finished, ['chiyo_rokuhana']).
 manga(5157, 'baki:_new_grappler_baki', ['action', '_combat_sports', '_gore', '_martial_arts', '_shounen'], 7.82, 1280, 724, finished, ['keisuke_itagaki']).
-manga(10309, 'junjou_mistake', ['boys_love', '_drama', '_romance'], 7.82, 1281, 3923, finished, ['shungiku_nakamura']).
+manga(10309, 'junjou_mistake', ['boys_love', '_drama', '_romance'], 7.82, 1281, 3921, finished, ['shungiku_nakamura']).
 manga(10386, 'yume-iro_pâtissière', ['award_winning', '_gourmet', '_romance', '_school', '_shoujo'], 7.82, 1282, 3181, finished, ['natsumi_matsumoto']).
 manga(12269, 'hammer_session!', ['action', '_comedy', '_ecchi', '_school', '_shounen'], 7.82, 1283, 3005, finished, ['namoshiro_tanahashi', '_yamato_koganemaru', '_hiroyuki_yatsu']).
 manga(14154, 'arakawa_under_the_bridge', ['comedy', '_romance', '_seinen'], 7.82, 1284, 1090, finished, ['hikaru_nakamura']).
@@ -916,7 +916,7 @@ manga(118858, 'dai_dark', ['comedy', '_horror', '_sci-fi', '_shounen'], 7.82, 12
 manga(120716, 'ichido_dake_demo,_koukai_shitemasu.', ['comedy', '_girls_love'], 7.82, 1299, 1194, finished, ['miyako_miyahara']).
 manga(122147, 'rebuild_world', ['action', '_sci-fi', '_seinen'], 7.82, 1300, 1177, currently_publishing, ['kirihito_ayamura', '__nahuse']).
 manga(148554, 'rinko-chan_to_himosugara', ['drama'], 7.82, 1304, 6026, finished, ['hachi_nanase']).
-manga(155312, 'futarijime_romantic', ['comedy', '_romance', '_school', '_shoujo'], 7.82, 1308, 4974, finished, ['chihiro_kanisawa']).
+manga(155312, 'futarijime_romantic', ['comedy', '_romance', '_school', '_shoujo'], 7.82, 1308, 4973, finished, ['chihiro_kanisawa']).
 manga(140333, 'ano_ko_no_kodomo', ['award_winning', '_drama', '_school', '_shoujo'], 7.81, 1309, 5942, finished, ['mamoru_aoi']).
 manga(143990, 'yamada_to_kase-san.', ['girls_love', '_school', '_shoujo'], 7.81, 1310, 4892, currently_publishing, ['hiromi_takashima']).
 manga(149674, 'shujinkou_nikki', ['romance', '_school', '_shoujo'], 7.81, 1314, 5153, currently_publishing, ['yuu_yoshinaga']).
@@ -931,7 +931,7 @@ manga(131924, 'tsue_to_tsurugi_no_wistoria', ['action', '_fantasy', '_school', '
 manga(766, 'akuma_de_sourou', ['comedy', '_drama', '_romance', '_school', '_shoujo'], 7.81, 1329, 1523, finished, ['mitsuba_takanashi']).
 manga(1261, 'higurashi_no_naku_koro_ni:_himatsubushi-hen', ['drama', '_horror', '_mystery', '_psychological', '_shounen'], 7.81, 1330, 1490, finished, ['yoshiki_tonogai', '__ryukishi07']).
 manga(1893, 'yumekui_kenbun', ['drama', '_fantasy', '_horror', '_mythology', '_shoujo', '_supernatural'], 7.81, 1331, 4580, finished, ['shin_mashiba']).
-manga(3636, 'rasetsu_no_hana', ['mystery', '_shoujo', '_supernatural'], 7.81, 1332, 5329, finished, ['chika_shiomi']).
+manga(3636, 'rasetsu_no_hana', ['mystery', '_shoujo', '_supernatural'], 7.81, 1332, 5323, finished, ['chika_shiomi']).
 manga(4018, 'top_secret', ['award_winning', '_drama', '_mystery', '_psychological', '_sci-fi', '_shoujo'], 7.81, 1333, 5103, finished, ['reiko_shimizu']).
 manga(4998, 'hime-chan_no_ribbon', ['fantasy', '_school', '_shoujo'], 7.81, 1334, 10481, finished, ['megumi_mizusawa']).
 manga(11438, 'kimi_ni_shika_kikoenai', ['drama', '_shounen', '_supernatural'], 7.81, 1336, 1683, finished, ['_otsuichi', '_hiro_kiyohara']).
@@ -951,11 +951,11 @@ manga(366, 'hoshi_no_koe', ['drama', '_mecha', '_romance', '_sci-fi', '_seinen']
 manga(556, 'trinity_blood', ['action', '_drama', '_fantasy', '_horror', '_sci-fi', '_shoujo', '_vampire'], 7.8, 1358, 1044, finished, ['yoshida_sunao', '_kiyo_kyuujou']).
 manga(1490, 'saiunkoku_monogatari', ['drama', '_fantasy', '_historical', '_romance', '_shoujo'], 7.8, 1360, 3764, finished, ['kairi_yura', '_sai_yukino']).
 manga(1804, 'magic_kaito', ['adventure', '_comedy', '_romance', '_shounen'], 7.8, 1361, 2572, currently_publishing, ['gosho_aoyama']).
-manga(2906, 'w-juliet_ii', ['adventure', '_comedy', '_crossdressing', '_romance', '_shoujo'], 7.8, 1362, 7533, currently_publishing, ['_emura']).
+manga(2906, 'w-juliet_ii', ['adventure', '_comedy', '_crossdressing', '_romance', '_shoujo'], 7.8, 1362, 7516, currently_publishing, ['_emura']).
 manga(3153, 'q.e.d.:_shoumei_shuuryou', ['award_winning', '_mystery', '_shounen'], 7.8, 1363, 4743, finished, ['motohiro_katou']).
 manga(8641, 'jinjuu_houretsuden', ['action', '_boys_love', '_fantasy', '_supernatural'], 7.8, 1364, 14226, finished, ['shuu_morimoto']).
 manga(8840, 'hanatsukihime', ['fantasy', '_historical', '_romance', '_shoujo', '_supernatural'], 7.8, 1365, 1348, finished, ['wataru_hibiki']).
-manga(16668, 'doubutsu_no_kuni', ['action', '_adventure', '_award_winning', '_comedy', '_fantasy', '_shounen'], 7.8, 1366, 3520, finished, ['makoto_raiku']).
+manga(16668, 'doubutsu_no_kuni', ['action', '_adventure', '_award_winning', '_comedy', '_fantasy', '_shounen'], 7.8, 1366, 3517, finished, ['makoto_raiku']).
 manga(103562, 'mairimashita,_senpai', ['romance', '_school', '_shoujo'], 7.8, 1370, 1036, finished, ['azusa_mase']).
 manga(109229, 'raise_wa_tanin_ga_ii', ['organized_crime', '_romance', '_seinen'], 7.8, 1371, 568, currently_publishing, ['asuka_konishi']).
 manga(109339, 'saihate_no_paladin', ['action', '_adventure', '_fantasy', '_isekai', '_reincarnation'], 7.8, 1372, 616, currently_publishing, ['mutsumi_okuhashi', '_kanata_yanagino']).
@@ -971,7 +971,7 @@ manga(57897, 'shin_mazinger_zero_vs_ankoku_daishougun', ['action', '_adventure',
 manga(86327, 'urara_meirochou', ['cgdct', '_comedy', '_fantasy', '_seinen', '_slice_of_life'], 7.79, 1389, 4425, finished, ['_harikamo']).
 manga(101851, 'akebi-chan_no_sailor-fuku', ['school', '_seinen', '_slice_of_life'], 7.79, 1391, 1688, currently_publishing, ['_hiro']).
 manga(102980, 'watashi_no_shounen', ['drama', '_seinen'], 7.79, 1392, 1739, finished, ['hitomi_takano']).
-manga(105912, 'toaru_kagaku_no_railgun_gaiden:_astral_buddy', ['school', '_sci-fi'], 7.79, 1393, 5230, finished, ['kazuma_kamachi', '_yasuhito_nogi']).
+manga(105912, 'toaru_kagaku_no_railgun_gaiden:_astral_buddy', ['school', '_sci-fi'], 7.79, 1393, 5224, finished, ['kazuma_kamachi', '_yasuhito_nogi']).
 manga(106615, 'shiro_seijo_to_kuro_bokushi', ['fantasy', '_love_status_quo', '_romance', '_shounen'], 7.79, 1394, 3511, currently_publishing, ['hazano_kazutake']).
 manga(582, 'kodomo_no_jikan', ['comedy', '_drama', '_ecchi', '_romance', '_school', '_seinen', '_slice_of_life'], 7.79, 1396, 899, finished, ['kaworu_watashiya']).
 manga(1051, 'kiniro_no_corda', ['comedy', '_drama', '_music', '_reverse_harem', '_romance', '_shoujo'], 7.79, 1397, 1881, finished, ['yuki_kure']).

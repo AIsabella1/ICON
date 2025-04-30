@@ -148,7 +148,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 99314,Kimi no Na wa.,"Drama, Seinen",8.39,227,168,finished,"Makoto Shinkai, Ranmaru Kotone"
 768,Gunnm,"Action, Sci-Fi, Seinen",8.38,228,185,finished,Yukito Kishiro
 2921,Kaichou wa Maid-sama!,"Comedy, Romance, School, Shoujo",8.38,229,68,finished,Hiro Fujiwara
-3082,Nichijou,"Comedy, Gag Humor, School, Shounen",8.38,230,443,currently_publishing,Keiichi Arawi
+3082,Nichijou,"Comedy, Gag Humor, School, Shounen",8.38,230,442,currently_publishing,Keiichi Arawi
 6164,My Girl,"Childcare, Drama, Seinen, Slice of Life",8.38,231,540,finished,Sumomo Yumeka
 33031,Imawa no Kuni no Alice,"Action, Gore, High Stakes Game, Horror, Psychological, Shounen, Supernatural, Survival",8.38,234,182,finished,Haro Aso
 110160,"Mata, Onaji Yume wo Miteita",Drama,8.38,236,803,finished,"Idumi Kirihara, Yoru Sumino"
@@ -178,17 +178,17 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 923,Kanata kara,"Adventure, Award Winning, Fantasy, Isekai, Mythology, Romance, Shoujo",8.34,273,1202,finished,Kyouko Hikawa
 936,Homunculus,"Drama, Horror, Mystery, Psychological, Seinen, Supernatural",8.34,274,79,finished,Hideo Yamamoto
 3281,Hadashi no Gen,"Drama, Historical, Shounen",8.34,275,1685,finished,Keiji Nakazawa
-3571,Ten: Tenhou-doori no Kaidanji,"Adult Cast, Drama, Strategy Game",8.34,276,3254,finished,Nobuyuki Fukumoto
+3571,Ten: Tenhou-doori no Kaidanji,"Adult Cast, Drama, Strategy Game",8.34,276,3249,finished,Nobuyuki Fukumoto
 49835,Gochuumon wa Usagi desu ka?,"CGDCT, Comedy, Iyashikei, Workplace",8.34,278,2902,currently_publishing, Koi
 25096,Gin no Saji,"Award Winning, Comedy, Drama, School, Shounen",8.33,279,420,finished,Hiromu Arakawa
 61189,Mahoutsukai no Yome,"Drama, Fantasy, Mythology, Romance, Shounen, Urban Fantasy",8.33,280,166,currently_publishing,Kore Yamazaki
 147585,Sensou Kyoushitsu,"Action, Fantasy, Military, Shounen",8.33,281,2379,currently_publishing,"Higoro Toumori, Mozuku Sora"
-2895,Piano no Mori,"Award Winning, Drama, Music, Seinen",8.33,285,1231,finished,Makoto Isshiki
+2895,Piano no Mori,"Award Winning, Drama, Music, Seinen",8.32,285,1231,finished,Makoto Isshiki
 31,Lovely★Complex,"Award Winning, Comedy, Drama, Romance, School, Shoujo",8.32,286,258,finished,Aya Nakahara
 320,Gakuen Alice,"Comedy, Drama, Love Polygon, Romance, School, Shoujo, Super Power",8.32,287,418,finished,Tachibana Higuchi
 895,Full Metal Panic! Sigma,"Action, Mecha, Military, Romance, Shounen",8.32,288,1671,finished,"Shouji Gatou, Hiroshi Ueda"
 58141,Machida-kun no Sekai,"Award Winning, Romance, School, Shoujo",8.32,289,591,finished,Yuki Andou
-62023,Mushishi Tokubetsu-hen: Hihamukage,"Fantasy, Historical, Iyashikei, Mystery, Seinen, Supernatural",8.32,290,3489,finished,Yuki Urushibara
+62023,Mushishi Tokubetsu-hen: Hihamukage,"Fantasy, Historical, Iyashikei, Mystery, Seinen, Supernatural",8.32,290,3488,finished,Yuki Urushibara
 93972,Totsukuni no Shoujo,"Fantasy, Shounen",8.32,293,196,finished, Nagabe
 98436,Youjo Senki,"Action, Fantasy, Isekai, Military, Reincarnation",8.32,295,632,currently_publishing,"Chika Toujou, Carlo Zen"
 100922,Blue Giant Supreme,"Music, Seinen",8.32,296,4037,finished,Shinichi Ishizuka
@@ -223,7 +223,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 16922,Gakuen Babysitters,"Childcare, Comedy, Iyashikei, School, Shoujo, Slice of Life",8.29,331,760,currently_publishing,Hari Tokeino
 84983,Chichi to Hige-Gorilla to Watashi,"Childcare, Comedy, Slice of Life",8.29,332,2464,finished,Sadaji Koike
 165876,Houkago Kitaku Biyori,"Love Status Quo, Romance, School, Seinen",8.29,333,3227,currently_publishing,Mai Matsuda
-26704,Shouwa Genroku Rakugo Shinjuu,"Adult Cast, Award Winning, Drama, Josei, Love Polygon, Performing Arts",8.28,335,2085,finished,Haruko Kumota
+26704,Shouwa Genroku Rakugo Shinjuu,"Adult Cast, Award Winning, Drama, Josei, Love Polygon, Performing Arts",8.28,335,2084,finished,Haruko Kumota
 35573,Orange,"Drama, Love Polygon, Romance, School, Sci-Fi, Shoujo, Time Travel",8.28,337,73,finished,Ichigo Takano
 148542,Akuyaku Reijou no Naka no Hito: Danzai sareta Tenseisha no Tame Usotsuki Heroine ni Fukushuu Itashimasu,"Drama, Villainess",8.28,338,2557,currently_publishing,"Nazuna Shiraume,  Makiburo"
 24,D.Gray-man,"Action, Adventure, Fantasy, Shounen, Urban Fantasy",8.28,340,72,currently_publishing,Katsura Hoshino
@@ -267,7 +267,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 481,Planetes,"Adult Cast, Award Winning, Drama, Psychological, Sci-Fi, Seinen, Slice of Life, Space, Workplace",8.24,382,295,finished,Makoto Yukimura
 3009,JoJo no Kimyou na Bouken Part 6: Stone Ocean,"Action, Adventure, Shounen",8.24,383,36,finished,Hirohiko Araki
 4625,Kamigami no Itadaki,"Adventure, Award Winning, Drama, Mystery, Seinen, Sports",8.24,384,1191,finished,"Baku Yumemakura, Jiro Taniguchi"
-162733,Mairimashita! Iruma-kun: If Episode of Mafia,"Fantasy, Organized Crime, Shounen",8.24,385,8239,currently_publishing, hiroja
+162733,Mairimashita! Iruma-kun: If Episode of Mafia,"Fantasy, Organized Crime, Shounen",8.24,385,8234,currently_publishing, hiroja
 39883,Ansatsu Kyoushitsu,"Action, Comedy, School, Shounen",8.24,386,74,finished,Yuusei Matsui
 91514,Kishuku Gakkou no Juliet,"Action, Comedy, Romance, School, Shounen",8.24,387,271,finished,Yousuke Kaneda
 96044,Taishou Otome Otogibanashi,"Comedy, Historical, Romance, Shounen, Slice of Life",8.24,388,741,finished,Sana Kirioka
@@ -277,7 +277,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 128,Petshop of Horrors,"Comedy, Fantasy, Horror, Josei, Mystery, Supernatural",8.23,392,538,finished,Matsuri Akino
 445,Shonan Junai Gumi!,"Action, Comedy, Delinquents, Drama, Romance, School, Shounen",8.23,393,830,finished,Tooru Fujisawa
 915,Rookies,"Comedy, Delinquents, Drama, School, Shounen, Slice of Life, Sports, Team Sports",8.23,394,767,finished,Masanori Morita
-10884,Diamond no Ace,"Award Winning, School, Shounen, Sports, Team Sports",8.23,395,783,finished,Yuuji Terajima
+10884,Diamond no Ace,"Award Winning, School, Shounen, Sports, Team Sports",8.23,395,781,finished,Yuuji Terajima
 11593,Yuru Yuri,"CGDCT, Comedy, Gag Humor, Girls Love, School",8.23,396,1349,currently_publishing, Namori
 112115,Act-age,"Drama, Performing Arts, Shounen, Showbiz",8.23,397,326,discontinued,"Tatsuya Matsuki, Shiro Usazaki"
 24308,No.6,"Action, Drama, Mystery, Sci-Fi, Shoujo",8.23,400,348,finished,"Atsuko Asano, Hinoki Kino"
@@ -290,9 +290,9 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 110031,Summertime Render,"Mystery, Shounen, Supernatural, Suspense, Time Travel",8.22,412,317,finished,Yasuki Tanaka
 112318,Jigokuraku,"Action, Fantasy, Historical, Shounen",8.22,413,60,finished,Yuuji Kaku
 26144,Danshi Koukousei no Nichijou,"Comedy, Gag Humor, School",8.22,416,729,finished,Yasunobu Yamauchi
-18074,Getter Robo Saga,"Action, Mecha, Shounen",8.21,417,7473,finished,Ken Ishikawa
+18074,Getter Robo Saga,"Action, Mecha, Shounen",8.21,417,7469,finished,Ken Ishikawa
 140409,Yoake no Uta,"Boys Love, Fantasy",8.21,418,5192,currently_publishing,Ichika Yuno
-103063,"Tadaima, Okaeri","Boys Love, Childcare, Slice of Life",8.21,419,3241,currently_publishing,Ichi Ichikawa
+103063,"Tadaima, Okaeri","Boys Love, Childcare, Slice of Life",8.21,419,3237,currently_publishing,Ichi Ichikawa
 106204,Majo to Yajuu,"Action, Adult Cast, Fantasy, Seinen",8.21,420,974,on_hiatus,Kousuke Satake
 107548,Steins;Gate 0,"Drama, Mystery, Sci-Fi, Seinen",8.21,421,3802,finished,Taka Himeno
 108566,Machikado Mazoku,"Comedy, Mahou Shoujo, Slice of Life",8.21,423,2159,currently_publishing,Izumo Ito
@@ -358,7 +358,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 1110,Shiawase Kissa 3-choume,"Comedy, Romance, Shoujo, Slice of Life",8.15,509,1040,finished,Kou Matsuzuki
 8144,Sora no Otoshimono,"Comedy, Drama, Ecchi, Romance, School, Sci-Fi, Shounen",8.15,510,406,finished,Suu Minazuki
 8652,Zankoku na Kami ga Shihai suru,"Award Winning, Boys Love, Drama, Psychological, Shoujo",8.15,511,2063,finished,Moto Hagio
-35733,Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.,"Drama, Shounen",8.15,513,1257,finished,Mitsu Izumi
+35733,Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.,"Drama, Shounen",8.15,513,1255,finished,Mitsu Izumi
 111229,Mystery to Iu nakare,"Award Winning, Josei, Mystery",8.15,515,1927,currently_publishing,Yumi Tamura
 117840,Ase to Sekken,"Comedy, Romance, Seinen, Workplace",8.15,517,403,finished,Kintetsu Yamada
 118625,Sasayaku You ni Koi wo Utau,"Girls Love, School",8.15,518,496,currently_publishing,Eku Takeshima
@@ -415,7 +415,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 4423,Oooku,"Award Winning, Drama, Historical, Samurai, Shoujo",8.11,585,1800,finished,Fumi Yoshinaga
 4945,Ginga Nagareboshi Gin,"Anthropomorphic, Award Winning, Shounen",8.11,586,4615,finished,Yoshihiro Takahashi
 8300,Baby Steps,"Award Winning, School, Shounen, Sports",8.11,587,722,finished,Hikaru Katsuki
-11243,Kono Sekai no Katasumi ni,"Award Winning, Drama, Historical, Seinen",8.11,588,2477,finished,Fumiyo Kouno
+11243,Kono Sekai no Katasumi ni,"Award Winning, Drama, Historical, Seinen",8.11,588,2475,finished,Fumiyo Kouno
 47,Katekyou Hitman Reborn!,"Action, Comedy, Organized Crime, School, Shounen, Super Power",8.1,589,106,finished,Akira Amano
 339,Sakigake!! Cromartie Koukou,"Award Winning, Comedy, Delinquents, Gag Humor, Shounen",8.1,590,1441,finished,Eiji Nonaka
 908,Soul Eater,"Action, Comedy, Fantasy, Shounen",8.1,591,43,finished,Atsushi Ookubo
@@ -470,7 +470,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 15547,Kiichi VS,"Drama, Psychological, Seinen",8.07,655,7322,finished,Hideki Arai
 1211,Ore to Akuma no Blues,"Drama, Historical, Horror, Psychological, Seinen",8.06,656,856,currently_publishing,Akira Hiramoto
 3868,Shigurui,"Action, Drama, Gore, Historical, Martial Arts, Samurai, Seinen",8.06,657,609,finished,"Takayuki Yamaguchi, Norio Nanjou"
-12917,Shaman King Kanzenban,"Action, Adventure, Comedy, Supernatural",8.06,659,1300,finished,Hiroyuki Takei
+12917,Shaman King Kanzenban,"Action, Adventure, Comedy, Supernatural",8.06,659,1301,finished,Hiroyuki Takei
 151815,Konjiki no Gash!! 2,"Action, Adventure, Comedy, Supernatural",8.06,662,5930,currently_publishing,Makoto Raiku
 114793,Rojica to Rakkasei,"Adventure, Fantasy, Psychological, Slice of Life",8.06,663,2971,finished, Kinome
 38105,Kase-san Series,"Girls Love, School",8.06,666,529,finished,Hiromi Takashima
@@ -495,7 +495,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 117332,Suki na Ko ga Megane wo Wasureta,"Comedy, Love Status Quo, Romance, School, Shounen",8.04,688,423,finished,Koume Fujichika
 136975,Unmei no Hito ni Deau Hanashi,"Romance, Shoujo",8.04,689,1409,currently_publishing, Anashin
 22986,Ran to Haiiro no Sekai,"Drama, Fantasy, Romance, Seinen, Supernatural",8.04,691,610,finished,Aki Irie
-25245,Zoku Hoshi Mamoru Inu,"Pets, Seinen, Slice of Life",8.04,692,3055,finished,Takashi Murakami
+25245,Zoku Hoshi Mamoru Inu,"Pets, Seinen, Slice of Life",8.04,692,3050,finished,Takashi Murakami
 152907,Museru kurai no Ai wo Ageru,"Adult Cast, Romance, Shoujo",8.04,693,1445,currently_publishing,Keiko Iwashita
 98374,Cardcaptor Sakura: Clear Card-hen,"Adventure, Comedy, Fantasy, Mahou Shoujo, Romance, Shoujo",8.04,695,1135,finished, CLAMP
 573,Wild Adapter,"Action, Boys Love, Comedy, Drama, Mystery, Organized Crime",8.04,696,2494,on_hiatus,Kazuya Minekura
@@ -520,7 +520,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 130661,Josee to Tora to Sakana-tachi,"Drama, Romance, Visual Arts",8.03,719,3076,finished,"Nao Emoto, Seiko Tanabe"
 132975,Anemone wa Netsu wo Obiru,"Girls Love, School",8.03,720,2174,currently_publishing,Ren Sakuragi
 133081,Wind Breaker,"Action, Delinquents, School",8.03,721,798,currently_publishing,Satoru Nii
-163232,Tower Dungeon,"Action, Fantasy, Shounen",8.02,728,1917,currently_publishing,Tsutomu Nihei
+163232,Tower Dungeon,"Action, Fantasy, Shounen",8.02,728,1915,currently_publishing,Tsutomu Nihei
 62723,Noragami: Shuuishuu,"Fantasy, Mythology, Shounen",8.02,729,1808,finished, Adachitoka
 80385,Kono Subarashii Sekai ni Shukufuku wo!,"Adventure, Comedy, Fantasy, Isekai, Parody, Shounen",8.02,730,747,currently_publishing,"Masahito Watari, Natsume Akatsuki"
 8,Full Moon wo Sagashite,"Comedy, Drama, Fantasy, Music, Romance, Shoujo, Showbiz, Supernatural",8.02,731,477,finished,Arina Tanemura
@@ -548,7 +548,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 128463,Uruwashi no Yoi no Tsuki,"Romance, School, Shoujo",8.01,762,678,currently_publishing,Mika Yamamori
 136793,Itou Junji Jisen Kessakushuu,"Horror, Shoujo",8.01,763,2062,finished,Junji Itou
 25916,Saint Seiya: The Lost Canvas - Meiou Shinwa Gaiden,"Adventure, Drama, Fantasy, Shounen",8.01,765,4073,finished,"Masami Kurumada, Shiori Teshirogi"
-52043,Chichikogusa,"Childcare, Shounen, Slice of Life",8.01,767,3115,finished,Mi Tagawa
+52043,Chichikogusa,"Childcare, Shounen, Slice of Life",8.01,767,3116,finished,Mi Tagawa
 104271,Chi no Wadachi,"Drama, Psychological, Seinen, Suspense",8.01,769,115,finished,Shuuzou Oshimi
 89562,Tsubaki-chou Lonely Planet,"Drama, Romance, Shoujo",8,770,372,finished,Mika Yamamori
 103942,Ao no Flag,"Romance, School, Shounen",8,772,244,finished, KAITO
@@ -591,7 +591,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 37565,10 Dance,"Boys Love, Drama, Performing Arts, Seinen",7.97,829,2909,currently_publishing,Satou Inoue
 112268,Sono Bisque Doll wa Koi wo Suru,"Otaku Culture, Romance, School, Seinen",7.97,832,63,finished,Shinichi Fukuda
 160,School Rumble,"Comedy, Gag Humor, Love Polygon, Romance, School, Shounen",7.97,833,623,finished,Jin Kobayashi
-407,Life,"Award Winning, Drama, Psychological, School, Shoujo, Slice of Life",7.97,834,1042,finished,Keiko Suenobu
+407,Life,"Award Winning, Drama, Psychological, School, Shoujo, Slice of Life",7.97,834,1041,finished,Keiko Suenobu
 907,Mekakushi no Kuni,"Drama, Love Polygon, Romance, Shoujo, Supernatural",7.97,835,2079,finished,Sakura Tsukuba
 5820,Sumire♡16-sai!!,"Comedy, School, Shounen",7.97,836,3167,finished,Takeru Nagayoshi
 11329,Mudazumonaki Kaikaku,"Comedy, Drama, Strategy Game",7.97,837,2232,finished,Hideki Oowada
@@ -636,7 +636,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 150973,Lycoris Recoil,"Action, Seinen",7.94,904,4300,currently_publishing,Yasunori Bizen
 392,Kimi wa Pet,"Award Winning, Comedy, Drama, Josei, Romance",7.94,907,854,finished,Yayoi Ogawa
 1250,Deep Love: Ayu no Monogatari,"Drama, Shoujo",7.94,909,1086,finished," Yoshi, Yuu Yoshii"
-1496,Tenshi Nanka ja Nai,"Drama, Romance, School, Shoujo",7.94,910,3130,finished,Ai Yazawa
+1496,Tenshi Nanka ja Nai,"Drama, Romance, School, Shoujo",7.94,910,3128,finished,Ai Yazawa
 3438,Psyren,"Action, Adventure, High Stakes Game, Psychological, Romance, Sci-Fi, Shounen, Strategy Game, Super Power, Supernatural",7.94,911,160,finished,Toshiaki Iwashiro
 3633,Beast Master,"Comedy, Romance, Shoujo",7.94,912,281,finished,Kyousuke Motomi
 3941,Clannad: Tomoyo After,"Drama, Romance",7.94,913,2750,finished," Key, Yukiko Sumiyoshi"
@@ -653,7 +653,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 3713,Bartender,"Adult Cast, Gourmet, Seinen, Workplace",7.93,930,1077,finished,"Kenji Nagatomo, Araki Jou"
 4584,Sasameki Koto,"Comedy, Drama, Girls Love, School, Seinen",7.93,931,832,finished,Takashi Ikeda
 17541,Shinrei Tantei Yakumo,"Horror, Mystery, Romance, Shoujo, Supernatural",7.93,934,970,finished,"Manabu Kaminaga, Suzuka Oda"
-163882,Kimi to Uchuu wo Aruku Tame ni,"Award Winning, Josei, School, Slice of Life",7.92,940,8977,currently_publishing,Inuhiko Doronoda
+163882,Kimi to Uchuu wo Aruku Tame ni,"Award Winning, Josei, School, Slice of Life",7.92,940,8969,currently_publishing,Inuhiko Doronoda
 98270,Fire Punch,"Action, Gore, Mystery, Shounen, Supernatural",7.92,941,41,finished,Tatsuki Fujimoto
 21651,Hitori-tachi,Shoujo,7.92,945,4501,finished,Aya Kanno
 22044,Iris Zero,"Drama, Fantasy, Mystery, Psychological, Romance, School, Seinen, Supernatural",7.92,946,460,currently_publishing,"Takana Hotaru, Shiki Piro"
@@ -703,7 +703,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 1271,Special A,"Comedy, Romance, School, Shoujo",7.9,1010,432,finished,Maki Minami
 1349,07-Ghost,"Action, Fantasy, Josei, Military, Mythology",7.9,1011,547,finished,"Yuki Amemiya, Yukino Ichihara"
 1721,Nabari no Ou,"Action, Drama, Fantasy, Martial Arts, School, Shounen, Supernatural",7.9,1012,843,finished,Yuuki Kamatani
-5685,Hakkenden: Touhou Hakken Ibun,"Action, Drama, Fantasy, Mystery, Shoujo, Supernatural",7.9,1013,4829,finished,Miyuki Abe
+5685,Hakkenden: Touhou Hakken Ibun,"Action, Drama, Fantasy, Mystery, Shoujo, Supernatural",7.9,1013,4830,finished,Miyuki Abe
 7728,Rozen Maiden (2008),"Drama, Fantasy, Psychological, Seinen, Supernatural",7.9,1014,2233,finished, PEACH‐PIT
 14127,Satougashi no Dangan wa Uchinukenai: A Lollypop or A Bullet,"Drama, Psychological, School, Shounen",7.9,1017,1159,finished,"Kazuki Sakuraba, Iqura Sugimoto"
 23419,Byousoku 5 Centimeter,"Drama, Romance, Seinen",7.9,1018,575,finished,"Makoto Shinkai, Yukiko Seike"
@@ -714,7 +714,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 108032,My Home Hero,"Drama, Seinen, Suspense",7.9,1024,600,finished,"Masashi Asaki, Naoki Yamakawa"
 109608,Goblin Slayer Gaiden: Year One,"Action, Drama, Fantasy, Seinen",7.9,1025,714,currently_publishing,"Kumo Kagyuu, Kento Sakaeda"
 122448,Kubo-san wa Mob wo Yurusanai,"Comedy, Love Status Quo, Romance, School, Seinen",7.9,1026,231,finished,Nene Yukimori
-122559,Devil May Cry 5: Visions of V,"Action, Supernatural",7.9,1027,6332,finished,Tomio Ogata
+122559,Devil May Cry 5: Visions of V,"Action, Supernatural",7.9,1027,6333,finished,Tomio Ogata
 122575,Sayonara Rose Garden,"Drama, Girls Love, Historical",7.9,1028,1923,finished,Pepako Dokuta
 122615,Cool Doji Danshi,"Iyashikei, Slice of Life",7.9,1029,2794,currently_publishing,Kokone Nata
 133988,Seishun Buta Yarou wa Logical Witch no Yume wo Minai,"Comedy, Romance, School",7.9,1030,7187,finished,"Hajime Kamoshida, Tsukako Akina"
@@ -729,7 +729,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 92182,Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai,"Comedy, Romance, School",7.89,1042,731,finished,"Hajime Kamoshida, Tsugumi Nanamiya"
 94676,Namidaame to Serenade,"Historical, Josei, Romance, Time Travel",7.89,1043,3780,currently_publishing,Haruka Kawachi
 99386,Sword Art Online: Project Alicization,"Action, Fantasy, Video Game",7.89,1044,2965,finished,"Koutarou Yamada, Reki Kawahara"
-101554,City,"Comedy, Gag Humor, Seinen",7.89,1045,2562,finished,Keiichi Arawi
+101554,City,"Comedy, Gag Humor, Seinen",7.89,1045,2561,finished,Keiichi Arawi
 107570,Sengoku Komachi Kuroutan: Noukou Giga,"Action, Fantasy, Historical, Time Travel",7.89,1046,3180,currently_publishing,"Hajime Sawada,  Kyouchikutou"
 12,Bleach,"Action, Adventure, Award Winning, Shounen, Supernatural",7.89,1047,15,finished,Tite Kubo
 55,Aishiteruze Baby★★,"Childcare, Comedy, Drama, Romance, School, Shoujo",7.89,1048,862,finished,Youko Maki
@@ -760,7 +760,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 885,Hakushaku Cain Series,"Historical, Horror, Mystery, Shoujo",7.88,1080,2187,finished,Kaori Yuki
 1267,Kagen no Tsuki,"Drama, Mystery, Shoujo, Supernatural",7.88,1081,1476,finished,Ai Yazawa
 1895,Mademoiselle Butterfly,"Drama, Historical, Romance, Shoujo",7.88,1082,2390,finished,Akane Ogura
-4031,Shanaou Yoshitsune,"Award Winning, Historical, Shounen",7.88,1083,11309,finished,Hirofumi Sawada
+4031,Shanaou Yoshitsune,"Award Winning, Historical, Shounen",7.88,1083,11256,finished,Hirofumi Sawada
 15205,Zetsuen no Tempest,"Action, Drama, Fantasy, Mystery, Psychological, Shounen, Urban Fantasy",7.88,1086,891,finished,"Kyou Shirodaira, Ren Saizaki"
 60511,Sousei no Onmyouji,"Action, Fantasy, Mythology, Shounen, Urban Fantasy",7.88,1087,328,finished,Yoshiaki Sukeno
 69903,Fairy Tail Zerø,"Action, Fantasy",7.88,1088,322,finished,Hiro Mashima
@@ -814,7 +814,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 50217,Kamisama ga Uso wo Tsuku.,"Drama, Romance, School, Seinen",7.86,1150,285,finished,Kaori Ozaki
 27327,All Around Type-Moon,"Comedy, Seinen, Slice of Life",7.85,1152,4614,on_hiatus, B-suke
 35035,Kyou no Kira-kun,"Drama, Romance, School, Shoujo",7.85,1155,644,finished,Rin Mikimoto
-37683,Kidou Senshi Gundam Thunderbolt,"Action, Drama, Mecha, Military, Sci-Fi, Seinen, Space",7.85,1156,6069,currently_publishing,Yasuo Ootagaki
+37683,Kidou Senshi Gundam Thunderbolt,"Action, Drama, Mecha, Military, Sci-Fi, Seinen, Space",7.85,1156,6055,currently_publishing,Yasuo Ootagaki
 142,Battle Royale,"Action, Gore, Psychological, Seinen, Survival, Suspense",7.85,1157,228,finished,"Masayuki Taguchi, Koushun Takami"
 430,Suzuka,"Comedy, Drama, Ecchi, Romance, School, Shounen, Sports",7.85,1158,351,finished,Kouji Seo
 696,Hayate no Gotoku!,"Action, Comedy, Harem, Parody, Romance, Shounen",7.85,1159,587,finished,Kenjirou Hata
@@ -870,7 +870,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 4742,Kamen Rider Spirits,"Action, Adventure, Horror, Sci-Fi, Seinen",7.83,1230,7413,finished,"Shoutarou Ishinomori, Kenichi Muraeda"
 6889,Moon: Subaru Solitude Standing,"Drama, Performing Arts, Seinen",7.83,1231,9427,finished,Masahito Soda
 7747,Ushio to Tora,"Action, Award Winning, Comedy, Mythology, Shounen, Supernatural",7.83,1232,2250,finished,Kazuhiro Fujita
-9705,Ginga Tetsudou 999 (1996),"Adventure, Drama, Fantasy, Sci-Fi, Seinen, Space",7.83,1233,7343,finished,Leiji Matsumoto
+9705,Ginga Tetsudou 999 (1996),"Adventure, Drama, Fantasy, Sci-Fi, Seinen, Space",7.83,1233,7344,finished,Leiji Matsumoto
 12064,Sora Log,"Drama, Romance, School, Shoujo",7.83,1234,1668,finished,Kako Mitsuki
 14498,Acid Town,"Action, Boys Love, Drama",7.83,1235,1321,currently_publishing, Kyuugou
 14841,Durarara!!,"Action, Drama, Supernatural",7.83,1236,763,finished,"Ryohgo Narita, Akiyo Satorigi"
@@ -890,7 +890,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 96812,Emiya-san Chi no Kyou no Gohan,"Gourmet, Iyashikei, Slice of Life",7.83,1260,5757,currently_publishing, TAa
 99575,Usotoki Rhetoric,"Historical, Mystery, Romance, Shoujo",7.83,1262,3030,finished,Ritsu Miyako
 103244,Gekijouban Sword Art Online: Ordinal Scale,"Action, Adventure, Mystery, Video Game",7.83,1263,5760,finished,"Reki Kawahara,  IsII"
-107774,Migi to Dali,"Comedy, Mystery, Seinen, Suspense",7.83,1264,4578,finished,Nami Sano
+107774,Migi to Dali,"Comedy, Mystery, Seinen, Suspense",7.83,1264,4572,finished,Nami Sano
 93695,Ganbare! Nakamura-kun!!,"Boys Love, School",7.82,1265,586,finished, Syundei
 96194,Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen Dai 1-bu - Hon ga Nai nara Tsukureba Ii!,"Fantasy, Isekai, Reincarnation",7.82,1266,1466,finished," Suzuka, Miya Kazuki"
 55301,Les Misérables,"Drama, Historical, Shounen",7.82,1270,7804,finished,"Takahiro Arai, Victor Hugo"
@@ -899,7 +899,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 73451,K: Lost Small World,"Josei, Supernatural",7.82,1275,8445,finished," GoRA, Yoru Ookita"
 3993,IS: Otoko demo Onna demo Nai Sei,"Award Winning, Drama, Josei, Romance",7.82,1279,3291,finished,Chiyo Rokuhana
 5157,Baki: New Grappler Baki,"Action, Combat Sports, Gore, Martial Arts, Shounen",7.82,1280,724,finished,Keisuke Itagaki
-10309,Junjou Mistake,"Boys Love, Drama, Romance",7.82,1281,3923,finished,Shungiku Nakamura
+10309,Junjou Mistake,"Boys Love, Drama, Romance",7.82,1281,3921,finished,Shungiku Nakamura
 10386,Yume-iro Pâtissière,"Award Winning, Gourmet, Romance, School, Shoujo",7.82,1282,3181,finished,Natsumi Matsumoto
 12269,Hammer Session!,"Action, Comedy, Ecchi, School, Shounen",7.82,1283,3005,finished,"Namoshiro Tanahashi, Yamato Koganemaru, Hiroyuki Yatsu"
 14154,Arakawa Under the Bridge,"Comedy, Romance, Seinen",7.82,1284,1090,finished,Hikaru Nakamura
@@ -917,7 +917,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 120716,"Ichido dake demo, Koukai Shitemasu.","Comedy, Girls Love",7.82,1299,1194,finished,Miyako Miyahara
 122147,Rebuild World,"Action, Sci-Fi, Seinen",7.82,1300,1177,currently_publishing,"Kirihito Ayamura,  Nahuse"
 148554,Rinko-chan to Himosugara,Drama,7.82,1304,6026,finished,Hachi Nanase
-155312,Futarijime Romantic,"Comedy, Romance, School, Shoujo",7.82,1308,4974,finished,Chihiro Kanisawa
+155312,Futarijime Romantic,"Comedy, Romance, School, Shoujo",7.82,1308,4973,finished,Chihiro Kanisawa
 140333,Ano Ko no Kodomo,"Award Winning, Drama, School, Shoujo",7.81,1309,5942,finished,Mamoru Aoi
 143990,Yamada to Kase-san.,"Girls Love, School, Shoujo",7.81,1310,4892,currently_publishing,Hiromi Takashima
 149674,Shujinkou Nikki,"Romance, School, Shoujo",7.81,1314,5153,currently_publishing,Yuu Yoshinaga
@@ -932,7 +932,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 766,Akuma de Sourou,"Comedy, Drama, Romance, School, Shoujo",7.81,1329,1523,finished,Mitsuba Takanashi
 1261,Higurashi no Naku Koro ni: Himatsubushi-hen,"Drama, Horror, Mystery, Psychological, Shounen",7.81,1330,1490,finished,"Yoshiki Tonogai,  Ryukishi07"
 1893,Yumekui Kenbun,"Drama, Fantasy, Horror, Mythology, Shoujo, Supernatural",7.81,1331,4580,finished,Shin Mashiba
-3636,Rasetsu no Hana,"Mystery, Shoujo, Supernatural",7.81,1332,5329,finished,Chika Shiomi
+3636,Rasetsu no Hana,"Mystery, Shoujo, Supernatural",7.81,1332,5323,finished,Chika Shiomi
 4018,Top Secret,"Award Winning, Drama, Mystery, Psychological, Sci-Fi, Shoujo",7.81,1333,5103,finished,Reiko Shimizu
 4998,Hime-chan no Ribbon,"Fantasy, School, Shoujo",7.81,1334,10481,finished,Megumi Mizusawa
 11438,Kimi ni shika Kikoenai,"Drama, Shounen, Supernatural",7.81,1336,1683,finished," Otsuichi, Hiro Kiyohara"
@@ -952,11 +952,11 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 556,Trinity Blood,"Action, Drama, Fantasy, Horror, Sci-Fi, Shoujo, Vampire",7.8,1358,1044,finished,"Yoshida Sunao, Kiyo Kyuujou"
 1490,Saiunkoku Monogatari,"Drama, Fantasy, Historical, Romance, Shoujo",7.8,1360,3764,finished,"Kairi Yura, Sai Yukino"
 1804,Magic Kaito,"Adventure, Comedy, Romance, Shounen",7.8,1361,2572,currently_publishing,Gosho Aoyama
-2906,W-Juliet II,"Adventure, Comedy, Crossdressing, Romance, Shoujo",7.8,1362,7533,currently_publishing, Emura
+2906,W-Juliet II,"Adventure, Comedy, Crossdressing, Romance, Shoujo",7.8,1362,7516,currently_publishing, Emura
 3153,Q.E.D.: Shoumei Shuuryou,"Award Winning, Mystery, Shounen",7.8,1363,4743,finished,Motohiro Katou
 8641,Jinjuu Houretsuden,"Action, Boys Love, Fantasy, Supernatural",7.8,1364,14226,finished,Shuu Morimoto
 8840,Hanatsukihime,"Fantasy, Historical, Romance, Shoujo, Supernatural",7.8,1365,1348,finished,Wataru Hibiki
-16668,Doubutsu no Kuni,"Action, Adventure, Award Winning, Comedy, Fantasy, Shounen",7.8,1366,3520,finished,Makoto Raiku
+16668,Doubutsu no Kuni,"Action, Adventure, Award Winning, Comedy, Fantasy, Shounen",7.8,1366,3517,finished,Makoto Raiku
 103562,"Mairimashita, Senpai","Romance, School, Shoujo",7.8,1370,1036,finished,Azusa Mase
 109229,Raise wa Tanin ga Ii,"Organized Crime, Romance, Seinen",7.8,1371,568,currently_publishing,Asuka Konishi
 109339,Saihate no Paladin,"Action, Adventure, Fantasy, Isekai, Reincarnation",7.8,1372,616,currently_publishing,"Mutsumi Okuhashi, Kanata Yanagino"
@@ -972,7 +972,7 @@ ID,Titolo,Generi,Punteggio Medio,Rank,Popolarità,Stato,Autori
 86327,Urara Meirochou,"CGDCT, Comedy, Fantasy, Seinen, Slice of Life",7.79,1389,4425,finished, Harikamo
 101851,Akebi-chan no Sailor-fuku,"School, Seinen, Slice of Life",7.79,1391,1688,currently_publishing, Hiro
 102980,Watashi no Shounen,"Drama, Seinen",7.79,1392,1739,finished,Hitomi Takano
-105912,Toaru Kagaku no Railgun Gaiden: Astral Buddy,"School, Sci-Fi",7.79,1393,5230,finished,"Kazuma Kamachi, Yasuhito Nogi"
+105912,Toaru Kagaku no Railgun Gaiden: Astral Buddy,"School, Sci-Fi",7.79,1393,5224,finished,"Kazuma Kamachi, Yasuhito Nogi"
 106615,Shiro Seijo to Kuro Bokushi,"Fantasy, Love Status Quo, Romance, Shounen",7.79,1394,3511,currently_publishing,Hazano Kazutake
 582,Kodomo no Jikan,"Comedy, Drama, Ecchi, Romance, School, Seinen, Slice of Life",7.79,1396,899,finished,Kaworu Watashiya
 1051,Kiniro no Corda,"Comedy, Drama, Music, Reverse Harem, Romance, Shoujo",7.79,1397,1881,finished,Yuki Kure
