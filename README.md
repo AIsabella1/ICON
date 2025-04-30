@@ -1,3 +1,5 @@
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+
 # ICON: Manga Intelligence Framework
 
 **ICON** è un progetto finalizzato alla costruzione di un sistema ibrido di raccomandazione e analisi nel dominio dei *manga*, che integra:
@@ -91,5 +93,5 @@ Progetto ICON sviluppato da:
 - Antonello Isabella 
 
   Matricola: 737827
-  
+
   Mail: a.isabella1@studenti.uniba.it
