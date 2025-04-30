@@ -1,5 +1,5 @@
-import csv
-import os
+import csv  # Per estrarre i dati in formato CSV
+import os   # Per operazioni su file/cartelle
 
 # --- Funzione per rendere sicure le stringhe per Prolog ---
 def safe_string(s):
