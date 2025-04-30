@@ -1,24 +1,25 @@
-import requests
-import secrets
-import string
-import webbrowser
-from http.server import HTTPServer, BaseHTTPRequestHandler
-import urllib.parse
-import os
-import time
-import csv
+# --- Librerie necessarie ---
+import requests                # Per effettuare chiamate HTTP alle API
+import secrets                 # Per generare stringhe sicure (PKCE)
+import string                  # Per creare caratteri per il code_verifier
+import webbrowser              # Per aprire l'URL di autorizzazione nel browser
+from http.server import HTTPServer, BaseHTTPRequestHandler  # Per ricevere l'OAuth code via server locale
+import urllib.parse            # Per analizzare e comporre URL
+import os                      # Per operazioni su file/cartelle
+import time                    # Per rispettare i rate limits
+import csv                     # Per salvare i dati in formato CSV
 
-# --- CREDENZIALI ---
-CLIENT_ID = '823135212a297d25238a81ee65b9e53b'
-CLIENT_SECRET = '5ce0b51e70b4df89c3bc9d9e7102755e46cb679150fc99cb4a0a95a6dd1cdbd1'
-REDIRECT_URI = 'http://localhost:8080'
+# --- CREDENZIALI DELL'APPLICAZIONE ---
+CLIENT_ID = 'e1f82bb395676d475f041f0b3f45f5a1'  # ID applicazione registrata su MAL
+CLIENT_SECRET = '96fa9688773b98442ef86cf8a3c114840fec60fd7e7926419b9183849f142737'  # Chiave segreta
+REDIRECT_URI = 'http://localhost:8080'  # URI di redirect registrato su MAL
 
-# --- GENERA CODE VERIFIER ---
+# --- GENERA CODE VERIFIER per PKCE ---
 def generate_code_verifier(length=64):
     chars = string.ascii_letters + string.digits + "-._~"
     return ''.join(secrets.choice(chars) for _ in range(length))
 
-# --- SERVER HTTP PER RICEVERE IL CODE ---
+# --- SERVER HTTP per ricevere il CODE OAuth ---
 class OAuthCallbackHandler(BaseHTTPRequestHandler):
     authorization_code = None
 
@@ -36,7 +37,7 @@ class OAuthCallbackHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"<h1>Errore: codice mancante!</h1>")
 
-# --- APRI BROWSER PER AUTORIZZARE ---
+# --- APRI BROWSER PER L'AUTORIZZAZIONE ---
 def open_authorization_url(code_verifier):
     auth_url = (
         f"https://myanimelist.net/v1/oauth2/authorize?"
@@ -47,7 +48,7 @@ def open_authorization_url(code_verifier):
     print("\nAprendo il browser per autorizzare...")
     webbrowser.open(auth_url)
 
-# --- OTTIENI ACCESS TOKEN ---
+# --- OTTIENI ACCESS TOKEN usando il CODE ricevuto ---
 def get_access_token(auth_code, code_verifier):
     token_url = 'https://myanimelist.net/v1/oauth2/token'
     data = {
@@ -68,14 +69,14 @@ def get_access_token(auth_code, code_verifier):
         print(response.status_code, response.text)
         return None
 
-# --- SCARICA LA LISTA MANGA CON DATI ESTESI ---
+# --- SCARICA MANGALIST ESTESA DELL'UTENTE ---
 def get_user_mangalist_extended(username, access_token, max_manga=1000):
     base_url = f'https://api.myanimelist.net/v2/users/{username}/mangalist'
     headers = {
         'Authorization': f'Bearer {access_token}'
     }
     all_manga = []
-    limit = 100
+    limit = 100 # massimo per richiesta API
 
     fields = "id,title,genres,list_status{score,status}"
 
@@ -97,7 +98,7 @@ def get_user_mangalist_extended(username, access_token, max_manga=1000):
                 list_status = entry.get('list_status', {})
 
                 if not list_status:
-                    continue
+                    continue    # Skippa se non ci sono dati utente
 
                 manga_id = node.get('id', '')
                 title = node.get('title', '')
@@ -106,7 +107,7 @@ def get_user_mangalist_extended(username, access_token, max_manga=1000):
                 score = list_status.get('score', '')
                 user_status = list_status.get('status', '')
 
-                # Recupero extra: mean, rank, popularity
+                # Richiesta aggiuntiva per punteggio medio, rank e popolarità
                 manga_extra_url = f'https://api.myanimelist.net/v2/manga/{manga_id}?fields=mean,rank,popularity'
                 extra_response = requests.get(manga_extra_url, headers=headers)
 
@@ -137,12 +138,12 @@ def get_user_mangalist_extended(username, access_token, max_manga=1000):
             print(response.text)
             break
 
-        time.sleep(1)
+        time.sleep(1)   # Rispetta i limiti delle API
 
     print(f"\nTotale manga recuperati per {username}: {len(all_manga)}")
     return all_manga
 
-# --- SALVA TUTTO IN CSV ---
+# --- SALVA I RISULTATI IN UN FILE CSV ---
 def save_to_csv(manga_list, filename='dataset_ml.csv', folder='DATASET'):
     os.makedirs(folder, exist_ok=True)
     filepath = os.path.join(folder, filename)

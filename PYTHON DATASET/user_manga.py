@@ -1,28 +1,29 @@
-import requests
-import base64
-import secrets
-import hashlib
-import csv
-import time
-import string
-import webbrowser
-from http.server import HTTPServer, BaseHTTPRequestHandler
-from urllib.parse import urlparse, parse_qs
-import urllib.parse
-import pandas as pd
-import os
+# --- Librerie necessarie ---
+import requests                # Per effettuare chiamate HTTP alle API
+import base64                  # (Importata ma non usata qui) per codifiche base64
+import secrets                 # Per generare stringhe sicure (PKCE)
+import hashlib                 # (Importata ma non usata qui) per hashing
+import csv                     # Per scrivere i dati in formato CSV
+import time                    # Per rate limiting tra richieste API
+import string                  # Per creare code_verifier
+import webbrowser              # Per aprire automaticamente l'URL nel browser
+from http.server import HTTPServer, BaseHTTPRequestHandler  # Per ricevere il codice OAuth
+from urllib.parse import urlparse, parse_qs                 # Per analizzare URL e parametri
+import urllib.parse            # Per costruire e codificare URL
+import pandas as pd            # Per gestire e filtrare file CSV
+import os                      # Per gestire percorsi file e directory
 
-# Credenziali dell'applicazione
-CLIENT_ID = '823135212a297d25238a81ee65b9e53b'
-CLIENT_SECRET = '5ce0b51e70b4df89c3bc9d9e7102755e46cb679150fc99cb4a0a95a6dd1cdbd1'
-REDIRECT_URI = 'http://localhost:8080'  # IMPORTANTE: deve essere questo anche nel portale MAL!
+# --- Credenziali dell'applicazione ---
+CLIENT_ID = '823135212a297d25238a81ee65b9e53b'  # ID applicazione registrata su MAL
+CLIENT_SECRET = '5ce0b51e70b4df89c3bc9d9e7102755e46cb679150fc99cb4a0a95a6dd1cdbd1'  # Chiave segreta
+REDIRECT_URI = 'http://localhost:8080'  # URI di redirect registrato su MAL
 
-# --- GENERA CODE VERIFIER ---
+# --- Genera code_verifier per PKCE ---
 def generate_code_verifier(length=64):
     chars = string.ascii_letters + string.digits + "-._~"
     return ''.join(secrets.choice(chars) for _ in range(length))
 
-# --- SERVER HTTP PER RICEVERE IL CODE ---
+# --- Server HTTP per intercettare la redirect OAuth ---
 class OAuthCallbackHandler(BaseHTTPRequestHandler):
     authorization_code = None
 
@@ -40,7 +41,7 @@ class OAuthCallbackHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"<h1>Errore: codice mancante!</h1>")
 
-# --- PASSO 1: Richiesta autorizzazione ---
+# --- Passo 1: Apertura URL per autorizzazione via browser ---
 def open_authorization_url(code_verifier):
     auth_url = (
         f"https://myanimelist.net/v1/oauth2/authorize?"
@@ -51,7 +52,7 @@ def open_authorization_url(code_verifier):
     print("\nAprendo il browser per autorizzare...")
     webbrowser.open(auth_url)
 
-# --- PASSO 2: Scambio code -> access token ---
+# --- Passo 2: Scambio del codice per ottenere l'access token ---
 def get_access_token(auth_code, code_verifier):
     token_url = 'https://myanimelist.net/v1/oauth2/token'
     data = {
@@ -72,14 +73,14 @@ def get_access_token(auth_code, code_verifier):
         print(response.status_code, response.text)
         return None
 
-# --- PASSO 3: Recupero lista manga dell'utente ---
+# --- Passo 3: Recupero della lista manga di un utente ---
 def get_user_mangalist(username, access_token, max_manga=2000):
     base_url = f'https://api.myanimelist.net/v2/users/{username}/mangalist'
     headers = {
         'Authorization': f'Bearer {access_token}'
     }
     all_manga = []
-    limit = 100  # massimo consentito dall'API per ogni chiamata
+    limit = 100  # massimo per singola richiesta
 
     fields = "id,title,genres,list_status{score,status}"
 
@@ -125,17 +126,12 @@ def get_user_mangalist(username, access_token, max_manga=2000):
             print(response.text)
             break
 
-        time.sleep(1)  # Rispetta i limiti di rate dell'API
+        time.sleep(1)  # Rispetta i limiti API
 
     print(f"\nTotale manga recuperati per {username}: {len(all_manga)}")
     return all_manga
 
-
-# --- PASSO 4: Salvataggio dei dati in un file CSV ---
-import csv
-import os
-import pandas as pd
-
+# --- Passo 4: Salvataggio dei dati in CSV ---
 def save_to_csv(manga_list, filename='mangalist.csv', folder='DATASET'):
     # Crea la cartella se non esiste
     os.makedirs(folder, exist_ok=True)
@@ -149,6 +145,7 @@ def save_to_csv(manga_list, filename='mangalist.csv', folder='DATASET'):
         writer.writerows(manga_list)
     print(f"\nFile CSV salvato come '{filepath}' con {len(manga_list)} manga.")
 
+# --- Utility: separa il file CSV per stato ---
 def split_manga_by_status(input_csv_path, folder='DATASET'):
     # Crea la cartella se non esiste
     os.makedirs(folder, exist_ok=True)
@@ -176,7 +173,7 @@ def split_manga_by_status(input_csv_path, folder='DATASET'):
             print(f"Nessun manga trovato con stato '{status}', file non creato.")
 
 
-# --- Esecuzione dello script ---
+# --- Main script ---
 if __name__ == '__main__':
     username = input("Inserisci il nome utente di MyAnimeList: ")
     code_verifier = generate_code_verifier()
@@ -191,6 +188,5 @@ if __name__ == '__main__':
             manga_data = get_user_mangalist(username, access_token)
             save_to_csv(manga_data)
             input_csv = 'mangalist.csv'  # Modifica qui se il file ha un altro nome
-            #split_manga_by_status('DATASET/mangalist.csv')
     else:
         print("Autorizzazione non completata.")
