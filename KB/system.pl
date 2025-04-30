@@ -4,19 +4,19 @@
 
 % === GESTIONE GENERI ===
 
-% Estrai i generi dei manga letti (non plan_to_read)
+% Estrai i generi dei manga letti (escludendo quelli ancora da leggere)
 genere_letto(GenerePulito) :-
     lettura_utente(_, _, Stato, _, Generi),
     Stato \= plan_to_read,
     member(Genere, Generi),
     normalizza_genere(Genere, GenerePulito).
 
-% Rimuove underscore iniziale se presente
+% Rimuove underscore iniziale, se presente
 normalizza_genere(Genere, GenerePulito) :-
     atom_chars(Genere, ['_'|Rest]) -> atom_chars(GenerePulito, Rest) ;
     GenerePulito = Genere.
 
-% Conta quante volte ogni genere compare
+% Calcola la frequenza di ciascun genere
 frequenza_generi(Frequenze) :-
     findall(Genere, genere_letto(Genere), ListaGeneri),
     sort(ListaGeneri, GeneriUnici),
@@ -25,14 +25,14 @@ frequenza_generi(Frequenze) :-
          aggregate_all(count, genere_letto(Genere), Conta)),
         Frequenze).
 
-% Ordina i generi per frequenza decrescente
+% Ordina i generi per frequenza (decrescente)
 generi_ordinati(GeneriOrdinati) :-
     frequenza_generi(Frequenze),
     sort(2, @>=, Frequenze, GeneriOrdinati).
 
 % === RACCOMANDAZIONE MANGA ===
 
-% Raccomanda manga in base ai generi preferiti
+% Raccomanda manga che appartengono ai generi preferiti e non sono già letti
 raccomanda(TitoloLeggibile) :-
     generi_ordinati(Generi),
     member(Genere-_, Generi),
@@ -41,7 +41,7 @@ raccomanda(TitoloLeggibile) :-
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Manga di alta qualità poco popolari
+% Manga con alto punteggio ma bassa popolarità (non letti)
 manga_qualita_nascosto(TitoloLeggibile) :-
     manga(ID, Titolo, _, Mean, _, Pop, _, _),
     number(Mean), Mean >= 8,
@@ -49,7 +49,7 @@ manga_qualita_nascosto(TitoloLeggibile) :-
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Consiglia manga dal plan_to_read con generi simili
+% Suggerisce manga nel plan_to_read con generi simili a quelli già letti
 consiglia_plan_to_read(TitoloLeggibile) :-
     lettura_utente(_, Titolo, plan_to_read, _, GeneriPlan),
     findall(G,
@@ -61,7 +61,7 @@ consiglia_plan_to_read(TitoloLeggibile) :-
     Comune \= [],
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Manga premiati nei generi preferiti
+% Manga premiati con generi preferiti
 manga_premiato(TitoloLeggibile) :-
     generi_ordinati(Generi),
     member(Genere-_, Generi),
@@ -71,7 +71,7 @@ manga_premiato(TitoloLeggibile) :-
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Consiglia manga di generi mai letti
+% Manga con generi completamente mai letti
 manga_genere_nuovo(TitoloLeggibile) :-
     % Trova tutti i generi presenti nella top 1000
     findall(Genere, 
@@ -96,6 +96,7 @@ manga_genere_nuovo(TitoloLeggibile) :-
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
+% Manga che uniscono generi già letti e generi nuovi
 manga_misto_generi_nuovi(TitoloLeggibile) :-
     % Trova generi mai letti
     findall(Genere, 
@@ -119,6 +120,7 @@ manga_misto_generi_nuovi(TitoloLeggibile) :-
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
+% Valuta la compatibilità tra i generi forniti e le preferenze dell'utente
 valuta_compatibilita(GeneriForniti) :-
     generi_ordinati(GeneriOrdinati),  % Prende i generi ordinati per frequenza
     length(GeneriOrdinati, TotGeneri),
@@ -148,11 +150,9 @@ valuta_compatibilita(GeneriForniti) :-
         writeln('Questo manga è POCO compatibile con i tuoi gusti.')
     ).
 
-
-
 % === UTILITIES ===
 
-% Rende il titolo più leggibile (toglie underscore)
+% Rimuove gli underscore dal titolo per leggibilità
 formatta_titolo(TitoloRaw, TitoloFormattato) :-
     atom_chars(TitoloRaw, Chars),
     maplist(sostituisci_underscore_spazio, Chars, CharsFormattati),
@@ -161,18 +161,18 @@ formatta_titolo(TitoloRaw, TitoloFormattato) :-
 sostituisci_underscore_spazio('_', ' ') :- !.
 sostituisci_underscore_spazio(Char, Char).
 
-% Stampa liste
+% Stampa una lista di elementi
 stampa_lista([]).
 stampa_lista([X|Xs]) :- writeln(X), stampa_lista(Xs).
 
-% Prende i primi N elementi
+% Estrae i primi N elementi da una lista
 primi_n(0, _, []) :- !.
 primi_n(_, [], []) :- !.
 primi_n(N, [X|Xs], [X|Ys]) :-
     N1 is N - 1,
     primi_n(N1, Xs, Ys).
 
-% Stampa i migliori manga per ogni genere preferito
+% Stampa il miglior manga per ciascun genere
 stampa_migliori_per_generi([]).
 stampa_migliori_per_generi([Genere-_|T]) :-
     (miglior_manga_per_genere(Genere, Titolo) ->
@@ -182,6 +182,7 @@ stampa_migliori_per_generi([Genere-_|T]) :-
     ),
     stampa_migliori_per_generi(T).
 
+% Normalizza input dell'utente (spazi -> underscore)
 normalize_input(Originale, Normalizzato) :-
     atom_chars(Originale, Chars),
     maplist(sostituisci_spazio_underscore, Chars, NewChars),
@@ -190,8 +191,7 @@ normalize_input(Originale, Normalizzato) :-
 sostituisci_spazio_underscore(' ', '_') :- !.
 sostituisci_spazio_underscore(C, C).
 
-
-% === MENU PRINCIPALE ===
+% === MENU INTERATTIVO ===
 
 menu :-
     writeln(''),
@@ -208,6 +208,8 @@ menu :-
     write('Scelta (1-8): '),
     read(Scelta),
     esegui_scelta(Scelta).
+
+% --- Gestione delle scelte ---
 
 esegui_scelta(1) :-
     writeln('--- Generi preferiti (ordinati) ---'),
