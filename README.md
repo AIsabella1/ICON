@@ -76,8 +76,10 @@ Script estrazione dati da MyAnimeList:
 1. Autenticarsi su MyAnimeList (browser automatico)
 2. Generare CSV e KB con gli script Python (ATTUALMENTE INCLUSI QUELLI GENERATI DA ME MEDESIMO)
 3. Eseguire classificazione e clustering con `main.py`
-  3.1. Eseguita classificazione con `supervised_runner.py`
-  3.2 Eseguita clustering con `clustering_runner.py` o `kmeans_improvement.py`
+
+   3.1. Eseguita classificazione con `supervised_runner.py`
+
+   3.2 Eseguita clustering con `clustering_runner.py` o `kmeans_improvement.py`
 4. Lanciare motore logico in Prolog con `system.pl`
 5. Eseguire ragionamento OWL tramite `ontology_example.py`
 
@@ -87,5 +89,7 @@ Script estrazione dati da MyAnimeList:
 
 Progetto ICON sviluppato da:
 - Antonello Isabella 
+
   Matricola: 737827
+  
   Mail: a.isabella1@studenti.uniba.it
