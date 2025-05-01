@@ -48,7 +48,7 @@ Knowledge base Prolog:
 - [`system.pl`](KB/system.pl): menu interattivo in Prolog
 
 ### 📁 `OWL/`
-Ontologia OWL:
+Esempio Ontologia OWL:
 - [`manga.owl`](OWL/manga.owl): struttura semantica con classi `Manga`, `Seinen`, `AwardWinning`
 - [`ontology_example.py`](OWL/ontology_example.py): script Python per ragionamento OWL (Hermit)
 
