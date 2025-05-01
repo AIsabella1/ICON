@@ -75,7 +75,7 @@ Script estrazione dati da MyAnimeList:
 
 ## Esecuzione
 
-1. Autenticarsi su MyAnimeList (browser automatico)
+1. Autenticarsi su MyAnimeList (browser automatico, attualmente nello script sono presenti i codici generati da me medesimo)
 2. Generare CSV e KB con gli script Python
 3. Eseguire classificazione e clustering con `main.py`
 
@@ -84,6 +84,24 @@ Script estrazione dati da MyAnimeList:
    3.2 Eseguita clustering con `clustering_runner.py` o `kmeans_improvement.py`
 4. Lanciare motore logico in Prolog con `system.pl`
 5. Eseguire ragionamento OWL tramite `ontology_example.py`
+
+---
+
+## ⚠️ Nota tecnica sull'autenticazione MyAnimeList
+
+Il codice implementa correttamente il flusso OAuth2 con PKCE secondo la [guida ufficiale MyAnimeList](https://myanimelist.net/blog.php?eid=835707).  
+Comprende:
+
+- Generazione sicura del `code_verifier`
+- Autenticazione via browser (`code_challenge_method=plain`)
+- Server HTTP locale per ricezione del `code`
+- Scambio `code → access_token` con tutti i parametri richiesti
+
+Tuttavia, a partire dal 1 maggio 2024, MyAnimeList ha introdotto una protezione tramite **AWS WAF** che blocca automaticamente le richieste `POST` al token endpoint, richiedendo una verifica CAPTCHA lato browser. Non so se questa protezione persiste o meno.
+
+👉 I dati necessari (top manga, lista utente) sono stati raccolti **prima dell’introduzione di questo blocco**, e sono presenti nel progetto in formato `.csv`.
+
+Questa protezione server-side **non invalida l'implementazione**, ma impedisce la ri-esecuzione automatica dello script senza intervento umano.
 
 ---
 
