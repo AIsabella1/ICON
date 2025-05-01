@@ -63,7 +63,13 @@ def get_access_token(auth_code, code_verifier):
         'redirect_uri': REDIRECT_URI,
         'code_verifier': code_verifier
     }
-    response = requests.post(token_url, data=data)
+    print("Payload inviato:")
+    print(data)
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'User-Agent': 'Mozilla/5.0'
+    }
+    response = requests.post(token_url, data=data, headers=headers)
 
     if response.status_code == 200:
         print("Access Token ottenuto con successo!")
