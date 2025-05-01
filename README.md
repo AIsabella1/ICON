@@ -76,7 +76,7 @@ Script estrazione dati da MyAnimeList:
 ## Esecuzione
 
 1. Autenticarsi su MyAnimeList (browser automatico)
-2. Generare CSV e KB con gli script Python (ATTUALMENTE INCLUSI QUELLI GENERATI DA ME MEDESIMO)
+2. Generare CSV e KB con gli script Python
 3. Eseguire classificazione e clustering con `main.py`
 
    3.1. Eseguita classificazione con `supervised_runner.py`
