@@ -32,24 +32,17 @@ generi_ordinati(GeneriOrdinati) :-
 
 % === RACCOMANDAZIONE MANGA ===
 
-% Raccomanda manga che appartengono ai generi preferiti e non sono già letti
-raccomanda(TitoloLeggibile) :-
-    generi_ordinati(Generi),
-    member(Genere-_, Generi),
-    manga(ID, Titolo, GeneriManga, _, _, _, _, _),
-    member(Genere, GeneriManga),
-    \+ lettura_utente(ID, _, _, _, _),
-    formatta_titolo(Titolo, TitoloLeggibile).
-
-% Manga con alto punteggio ma bassa popolarità (non letti)
+% manga_qualita_nascosto/1
+% Trova manga non letti con voto medio >= 8 e popolarità (valore numerico alto = poco noti) superiore a 1500.
 manga_qualita_nascosto(TitoloLeggibile) :-
     manga(ID, Titolo, _, Mean, _, Pop, _, _),
     number(Mean), Mean >= 8,
-    number(Pop), Pop > 300,
+    number(Pop), Pop > 1500,
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Suggerisce manga nel plan_to_read con generi simili a quelli già letti
+% consiglia_plan_to_read/1
+% Suggerisce manga presenti nella lista "plan_to_read" dell'utente che condividono almeno un genere con i manga già letti.
 consiglia_plan_to_read(TitoloLeggibile) :-
     lettura_utente(_, Titolo, plan_to_read, _, GeneriPlan),
     findall(G,
@@ -61,7 +54,8 @@ consiglia_plan_to_read(TitoloLeggibile) :-
     Comune \= [],
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Manga premiati con generi preferiti
+% manga_premiato/1
+% Raccomanda manga non letti che sono "award_winning" e che contengono almeno un genere tra quelli preferiti.
 manga_premiato(TitoloLeggibile) :-
     generi_ordinati(Generi),
     member(Genere-_, Generi),
@@ -71,47 +65,48 @@ manga_premiato(TitoloLeggibile) :-
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Manga con generi completamente mai letti
+% manga_genere_nuovo/1
+% Suggerisce manga non letti con almeno 2 generi mai letti e massimo 1 genere già letto. Serve per esplorare novità.
 manga_genere_nuovo(TitoloLeggibile) :-
-    % Trova tutti i generi presenti nella top 1000
     findall(Genere, 
         (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)),
         TuttiGeneri),
     sort(TuttiGeneri, GeneriTotali),
 
-    % Trova i generi già letti dall'utente
     findall(GenereLetto,
         (lettura_utente(_, _, Stato, _, GeneriLetti),
          Stato \= plan_to_read,
          member(GenereLetto, GeneriLetti)),
         GeneriLetti),
     sort(GeneriLetti, GeneriUtente),
-
-    % Trova i generi mai letti
     subtract(GeneriTotali, GeneriUtente, GeneriMaiLetti),
 
-    % Cerca manga che abbiano SOLO generi mai letti
     manga(ID, Titolo, GeneriManga, _, _, _, _, _),
-    forall(member(GenereManga, GeneriManga), member(GenereManga, GeneriMaiLetti)),
+    intersection(GeneriManga, GeneriMaiLetti, Nuovi),
+    intersection(GeneriManga, GeneriUtente, Noti),
+    length(Nuovi, LN), LN >= 2,
+    length(Noti, LO), LO =< 1,
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Manga che uniscono generi già letti e generi nuovi
+% manga_misto_generi_nuovi/1
+% Trova manga che combinano almeno un genere mai letto con almeno un genere già letto (anche se visto una sola volta).
+% Serve per espandere i gusti restando in parte nel comfort zone.
 manga_misto_generi_nuovi(TitoloLeggibile) :-
-    % Trova generi mai letti
     findall(Genere, 
         (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)),
         TuttiGeneri),
     sort(TuttiGeneri, GeneriTotali),
+
     findall(GenereLetto,
         (lettura_utente(_, _, Stato, _, GeneriLetti),
          Stato \= plan_to_read,
          member(GenereLetto, GeneriLetti)),
-        GeneriLetti),
-    sort(GeneriLetti, GeneriUtente),
+        GeneriLettiRaw),
+    sort(GeneriLettiRaw, GeneriUtente),
+
     subtract(GeneriTotali, GeneriUtente, GeneriMaiLetti),
 
-    % Trova manga con almeno un genere letto e almeno uno nuovo
     manga(ID, Titolo, GeneriManga, _, _, _, _, _),
     intersection(GeneriManga, GeneriUtente, ComuneLetti),
     intersection(GeneriManga, GeneriMaiLetti, ComuneNuovi),
@@ -120,7 +115,8 @@ manga_misto_generi_nuovi(TitoloLeggibile) :-
     \+ lettura_utente(ID, _, _, _, _),
     formatta_titolo(Titolo, TitoloLeggibile).
 
-% Valuta la compatibilità tra i generi forniti e le preferenze dell'utente
+% valuta_compatibilita/1
+% Dato un elenco di generi, li confronta con quelli ordinati per frequenza e valuta quanto sono compatibili con i gusti dell'utente.
 valuta_compatibilita(GeneriForniti) :-
     generi_ordinati(GeneriOrdinati),  % Prende i generi ordinati per frequenza
     length(GeneriOrdinati, TotGeneri),
@@ -149,6 +145,25 @@ valuta_compatibilita(GeneriForniti) :-
     ;
         writeln('Questo manga è POCO compatibile con i tuoi gusti.')
     ).
+
+
+% raccomanda_random/1
+% Versione randomizzata di raccomanda/1: suggerisce manga non letti che condividono un genere con quelli preferiti.
+% Utilizza solo generi con almeno 10 letture e randomizza i risultati.
+raccomanda_random(TitoloLeggibile) :-
+    generi_ordinati(Generi),
+    member(Genere-Count, Generi),
+    Count >= 10,
+    findall(ID-Titolo, (
+        manga(ID, Titolo, GeneriManga, _, _, _, _, _),
+        member(Genere, GeneriManga),
+        \+ lettura_utente(ID, _, _, _, _)
+    ), Candidati),
+    list_to_set(Candidati, Unici),
+    random_permutation(Unici, Mischiati),
+    member(_-TitoloGrezzo, Mischiati),
+    formatta_titolo(TitoloGrezzo, TitoloLeggibile).
+
 
 % === UTILITIES ===
 
@@ -195,17 +210,17 @@ sostituisci_spazio_underscore(C, C).
 
 menu :-
     writeln(''),
-    writeln('=== SISTEMA RACCOMANDAZIONE MANGA ==='),
-    writeln('1. Mostra generi in ordine di preferenza'),
-    writeln('2. Raccomanda 5 manga in base ai tuoi gusti'),
-    writeln('3. Raccomanda 5 manga di qualità poco popolari'),
-    writeln('4. Consiglia 5 manga dal plan_to_read'),
-    writeln('5. Consiglia 5 manga premiati'),
-    writeln('6. Consiglia 5 manga con un genere mai letto'),
-    writeln('7. Consiglia 5 manga che mischiano generi preferiti e generi mai letti'),
-    writeln('8. Compatibilità manga'),
-    writeln('9. Esci'),
-    write('Scelta (1-8): '),
+    writeln('=== SISTEMA DI RACCOMANDAZIONE MANGA ==='),
+    writeln('1. Visualizza i generi preferiti (ordinati per frequenza)'),
+    writeln('2. Consiglia 5 manga basati sui tuoi gusti più frequenti (random)'),
+    writeln('3. Consiglia 5 manga di qualità ma poco popolari'),
+    writeln('4. Consiglia 5 manga dalla tua lista "plan_to_read" con generi familiari'),
+    writeln('5. Consiglia 5 manga premiati compatibili con i tuoi generi preferiti'),
+    writeln('6. Consiglia 5 manga con almeno 2 generi completamente nuovi per te'),
+    writeln('7. Consiglia 5 manga che combinano generi noti e generi mai letti'),
+    writeln('8. Valuta la compatibilità di una lista di generi rispetto alle tue preferenze'),
+    writeln('9. Esci dal programma'),
+    write('Scelta (1-9): '),
     read(Scelta),
     esegui_scelta(Scelta).
 
@@ -217,47 +232,73 @@ esegui_scelta(1) :-
     stampa_lista(Generi), nl,
     menu.
 
+
+
 esegui_scelta(2) :-
-    writeln('--- Manga consigliati in base ai tuoi gusti ---'),
-    findall(Titolo, raccomanda(Titolo), Lista),
-    primi_n(5, Lista, Top5),
+    writeln('--- Manga consigliati in base ai tuoi gusti (randomizzati) ---'),
+    findall(Titolo, raccomanda_random(Titolo), Tutti),
+    list_to_set(Tutti, Unici),
+    random_permutation(Unici, Mischiati),
+    primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
+
+
+
 
 esegui_scelta(3) :-
-    writeln('--- Manga di qualità poco popolari ---'),
-    findall(Titolo, manga_qualita_nascosto(Titolo), Lista),
-    primi_n(5, Lista, Top5),
+    writeln('--- Manga di qualità poco popolari (randomizzati) ---'),
+    findall(Titolo, manga_qualita_nascosto(Titolo), Tutti),
+    list_to_set(Tutti, Unici),
+    random_permutation(Unici, Mischiati),
+    primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
+
+
 
 esegui_scelta(4) :-
-    writeln('--- Consigliati tra i PLAN_TO_READ ---'),
-    findall(Titolo, consiglia_plan_to_read(Titolo), Lista),
-    primi_n(5, Lista, Top5),
+    writeln('--- Consigliati tra i PLAN_TO_READ (randomizzati) ---'),
+    findall(Titolo, consiglia_plan_to_read(Titolo), Tutti),
+    list_to_set(Tutti, Unici),
+    random_permutation(Unici, Mischiati),
+    primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
+
+
 
 esegui_scelta(5) :-
-    writeln('--- Manga premiati nei tuoi generi preferiti ---'),
-    findall(Titolo, manga_premiato(Titolo), Lista),
-    primi_n(5, Lista, Top5),
+    writeln('--- Manga premiati nei tuoi generi preferiti (randomizzati) ---'),
+    findall(Titolo, manga_premiato(Titolo), Tutti),
+    list_to_set(Tutti, Unici),
+    random_permutation(Unici, Mischiati),
+    primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
+
+
 
 esegui_scelta(6) :-
-    writeln('--- Manga di un genere mai letto ---'),
-    findall(Titolo, manga_genere_nuovo(Titolo), Lista),
-    primi_n(5, Lista, Top5),
+    writeln('--- Manga di un genere mai letto (randomizzati) ---'),
+    findall(Titolo, manga_genere_nuovo(Titolo), Tutti),
+    list_to_set(Tutti, Unici),
+    random_permutation(Unici, Mischiati),
+    primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
 
+
+
 esegui_scelta(7) :-
-    writeln('--- Manga che mischiano generi già letti e generi mai letti ---'),
-    findall(Titolo, manga_misto_generi_nuovi(Titolo), Lista),
-    primi_n(5, Lista, Top5),
+    writeln('--- Manga che mischiano generi già letti e generi mai letti (randomizzati) ---'),
+    findall(Titolo, manga_misto_generi_nuovi(Titolo), Tutti),
+    list_to_set(Tutti, Unici),
+    random_permutation(Unici, Mischiati),
+    primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
+
 
 esegui_scelta(8) :-
     read_line_to_string(user_input, _), % Mangia invio residuo
