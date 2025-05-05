@@ -1,6 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 
-# ICON: Manga Intelligence Framework
+# ICON: Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga
 
 **ICON** è un progetto finalizzato alla costruzione di un sistema ibrido di raccomandazione e analisi nel dominio dei *manga*, che integra:
 
