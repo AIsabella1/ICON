@@ -68,7 +68,7 @@ def get_access_token(auth_code, code_verifier):
     response = requests.post(token_url, data=data, headers=headers)
 
     if response.status_code == 200:
-        print("✅ Access Token ottenuto con successo!")
+        print("Access Token ottenuto con successo!")
         return response.json()['access_token']
     else:
         print("Errore durante il recupero dell'access token:")
@@ -138,7 +138,7 @@ def get_user_mangalist_extended(username, access_token, max_manga=1000):
                     'Popolarita': popularity
                 })
 
-            print(f"✅ Recuperati {len(data)} manga da offset {offset}")
+            print(f"Recuperati {len(data)} manga da offset {offset}")
         else:
             print(f"Errore API: {response.status_code}")
             print(response.text)
@@ -161,7 +161,7 @@ def save_to_csv(manga_list, filename='dataset_ml.csv', folder='DATASET'):
         ])
         writer.writeheader()
         writer.writerows(manga_list)
-    print(f"\n✅ File salvato: '{filepath}' con {len(manga_list)} manga.")
+    print(f"\nFile salvato: '{filepath}' con {len(manga_list)} manga.")
 
 # --- MAIN ---
 if __name__ == '__main__':
@@ -178,4 +178,4 @@ if __name__ == '__main__':
             manga_data = get_user_mangalist_extended(username, access_token)
             save_to_csv(manga_data)
     else:
-        print("❌ Autorizzazione non completata.")
+        print("Autorizzazione non completata.")

@@ -46,7 +46,7 @@ def genera_kb_prolog(mangalist_path, top_manga_path, output_pl_path):
                 # Scrive: lettura_utente(ID, 'titolo', stato, punteggio, [generi]).
                 f_out.write(f"lettura_utente({id_manga}, '{titolo}', {stato_lettura}, {punteggio_utente}, {generi}).\n")
 
-    print(f"\n✅ Knowledge Base Prolog salvata come '{output_pl_path}'!")
+    print(f"\nKnowledge Base Prolog salvata come '{output_pl_path}'!")
 
 # === MAIN: definisce i percorsi dei file e avvia la generazione della KB ===
 if __name__ == '__main__':
