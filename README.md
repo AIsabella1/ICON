@@ -41,6 +41,11 @@ Contiene i CSV generati:
 - [`mangalist.csv`](DATASET/mangalist.csv): lista letta dall'utente
 - [`top_manga.csv`](DATASET/top_manga.csv): 1000 manga più popolari da MyAnimeList
 
+### 📁 `DOCUMENTAZIONE/`
+Contiene la documentazione nel formato docx e pdf:
+- [`Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.docx`](DOCUMENTAZIONE/Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.docx): documentazione nel formato docx
+- [`Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.pdf`](DOCUMENTAZIONE/Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.pdf): documentazione nel formato pdf
+
 ### 📁 `KB/`
 Knowledge base Prolog:
 - [`kb_creator.py`](KB/kb_creator.py): genera la KB Prolog
