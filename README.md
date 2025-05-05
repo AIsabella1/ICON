@@ -105,11 +105,11 @@ Questa protezione server-side **non invalida l'implementazione**, ma impedisce l
 
 ---
 
-## Autori
+## Autore
 
 Progetto ICON sviluppato da:
 - Antonello Isabella 
   
-- Matricola: 737827
+  Matricola: 737827
   
-- E-Mail: a.isabella1@studenti.uniba.it
+  E-Mail: a.isabella1@studenti.uniba.it
