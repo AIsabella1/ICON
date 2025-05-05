@@ -7,7 +7,7 @@
 - **Recupero dati reali** da [MyAnimeList](https://myanimelist.net/) tramite API
 - **Apprendimento supervisionato e non supervisionato** con modelli ML
 - **Motore logico basato su Prolog** per raccomandazioni simboliche
-- **Ontologia OWL** per supporto al ragionamento semantico
+- **Esempio Ontologia OWL** per supporto al ragionamento semantico
 
 ---
 
@@ -105,11 +105,11 @@ Questa protezione server-side **non invalida l'implementazione**, ma impedisce l
 
 ---
 
-## Autori
+## Autore
 
 Progetto ICON sviluppato da:
 - Antonello Isabella 
   
   Matricola: 737827
   
-  Mail: a.isabella1@studenti.uniba.it
+  E-Mail: a.isabella1@studenti.uniba.it
