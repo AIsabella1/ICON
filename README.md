@@ -43,8 +43,8 @@ Contiene i CSV generati:
 
 ### 📁 `DOCUMENTAZIONE/`
 Contiene la documentazione nel formato docx e pdf:
-- [`Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.docx`](DOCUMENTAZIONE/Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.docx): documentazione nel formato docx
-- [`Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.pdf`](DOCUMENTAZIONE/Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.pdf): documentazione nel formato pdf
+- [`Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.docx`](DOCUMENTAZIONE/Sistema%20Intelligente%20di%20Raccomandazione%20e%20Analisi%20del%20Dominio%20Manga.docx): documentazione nel formato docx
+- [`Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga.pdf`](DOCUMENTAZIONE/Sistema%20Intelligente%20di%20Raccomandazione%20e%20Analisi%20del%20Dominio%20Manga.pdf): documentazione nel formato pdf
 
 ### 📁 `KB/`
 Knowledge base Prolog:
