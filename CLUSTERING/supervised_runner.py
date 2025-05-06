@@ -59,13 +59,17 @@ def run_supervised():
                 labels.append(depth)
 
         elif model_name == 'Random Forest':
-            for n in params['n_estimators']:
-                for d in params['max_depth']:
-                    model = get_model(model_name, {'n_estimators': n, 'max_depth': d})
-                    model.fit(X_train, y_train)
-                    train_acc.append(model.score(X_train, y_train))
-                    test_acc.append(model.score(X_test, y_test))
-                    labels.append(f"{n}|{d}")
+            from itertools import product
+            for n, d, leaf in product(params['n_estimators'], params['max_depth'], params['min_samples_leaf']):
+                model = get_model(model_name, {
+                    'n_estimators': n,
+                    'max_depth': d,
+                    'min_samples_leaf': leaf
+                })
+                model.fit(X_train, y_train)
+                train_acc.append(model.score(X_train, y_train))
+                test_acc.append(model.score(X_test, y_test))
+                labels.append(f"{n}|{d}|{leaf}")
 
         elif model_name == 'AdaBoost':
             for n in params['n_estimators']:
