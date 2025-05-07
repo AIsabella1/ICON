@@ -71,9 +71,10 @@ Script estrazione dati da MyAnimeList:
 
 ## Requisiti
 
-- Python 3.x
-- Librerie: `scikit-learn`, `xgboost`, `seaborn`, `matplotlib`, `owlready2`, `requests`, `pandas`
-- Prolog: SWI-Prolog
+- Python 3.10+
+- SWI-Prolog (per esecuzione KB simbolica)
+- Librerie Python:
+  - `pandas`, `numpy`, `scikit-learn`, `xgboost`, `matplotlib`, `seaborn`, `owlready2`, `requests`
 - Java per reasoner OWL (Hermit)
 
 ---
@@ -118,3 +119,19 @@ Progetto ICON sviluppato da:
   Matricola: 737827
   
   E-Mail: a.isabella1@studenti.uniba.it
+
+---
+
+## Riferimenti utili
+
+Libro: Poole & Mackworth – Artificial Intelligence
+
+MyAnimeList API: https://myanimelist.net/apiconfig
+
+SWI-Prolog: https://www.swi-prolog.org
+
+Owlready2: https://owlready2.readthedocs.io
+
+scikit-learn: https://scikit-learn.org
+
+HermiT: https://www.hermit-reasoner.com
