@@ -80,7 +80,7 @@ def get_access_token(auth_code, code_verifier):
         return None
 
 # --- Passo 3: Recupero della lista manga di un utente ---
-def get_user_mangalist(username, access_token, max_manga=2000):
+def get_user_mangalist(username, access_token, max_manga=25000):
     base_url = f'https://api.myanimelist.net/v2/users/{username}/mangalist'
     headers = {
         'Authorization': f'Bearer {access_token}'
