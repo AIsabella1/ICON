@@ -1,30 +1,30 @@
-# --- Librerie necessarie ---
-import requests             # Per effettuare chiamate HTTP alle API
-import webbrowser           # Per aprire l'URL di autorizzazione nel browser
-import secrets              # Per generare stringhe sicure (PKCE)
-import string               # Per costruire caratteri validi per il code_verifier
-from http.server import HTTPServer, BaseHTTPRequestHandler  # Server HTTP locale per ricevere l'autorizzazione
-import urllib.parse         # Per analizzare e costruire URL
-import csv                  # Per salvare i dati in formato CSV
-import time                 # Per aggiungere pause tra le richieste API
-import os                   # Per operazioni su file e cartelle
+# Librerie necessarie
+import requests             # Chiamate HTTP verso API
+import webbrowser           # Apertura automatica del browser per login
+import secrets              # Generazione sicura di stringhe casuali
+import string               # Supporto per costruire il code_verifier
+from http.server import HTTPServer, BaseHTTPRequestHandler  # Server locale per ricevere codice OAuth
+import urllib.parse         # Costruzione e parsing di URL
+import csv                  # Scrittura file CSV
+import time                 # Attese tra chiamate API per evitare rate-limit
+import os                   # Operazioni su file e directory
 
-# --- CONFIGURAZIONE ---
-CLIENT_ID = '823135212a297d25238a81ee65b9e53b'  # ID applicazione registrata su MAL
-CLIENT_SECRET = '5ce0b51e70b4df89c3bc9d9e7102755e46cb679150fc99cb4a0a95a6dd1cdbd1'  # Chiave segreta
-REDIRECT_URI = 'http://localhost:8080'  # URI di redirect registrato su MAL
+# Credenziali dell'applicazione
+CLIENT_ID = '823135212a297d25238a81ee65b9e53b'  # ID dell'applicazione registrata su MAL
+CLIENT_SECRET = '5ce0b51e70b4df89c3bc9d9e7102755e46cb679150fc99cb4a0a95a6dd1cdbd1'  # Secret key privata (tecnicamente da non condividere pubblicamente)
+REDIRECT_URI = 'http://localhost:8080'  # URL dove ricevere la risposta OAuth
 
-# --- GENERA CODE VERIFIER per PKCE ---
+# Crea un codice sicuro alfanumerico usato nel flusso PKCE per proteggere lo scambio del token
 def generate_code_verifier(length=64):
     chars = string.ascii_letters + string.digits + "-._~"
     return ''.join(secrets.choice(chars) for _ in range(length))
 
-# --- SERVER HTTP per ricevere il CODE di autorizzazione ---
+# Server locale per catturare il codice di autorizzazione, quando MyAnimeList reindirizza al browser, questo handler intercetta la richiesta e salva il codice
 class OAuthCallbackHandler(BaseHTTPRequestHandler):
-    authorization_code = None # Variabile di classe per salvare il codice
+    authorization_code = None # Valore condiviso per salvare il codice
 
     def do_GET(self):
-        # Parse dell'URL ricevuto dal redirect
+        # Analizza l'URL della richiesta ricevuta dopo il login su MAL
         parsed_path = urllib.parse.urlparse(self.path)
         params = urllib.parse.parse_qs(parsed_path.query)
 
@@ -39,7 +39,7 @@ class OAuthCallbackHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"<h1>Errore: codice mancante!</h1>")
 
-# --- PASSO 1: Apertura URL per autorizzazione via browser ---
+# Costruisce l’URL di autorizzazione e lo apre nel browser dell’utente
 def open_authorization_url(code_verifier):
     auth_url = (
         f"https://myanimelist.net/v1/oauth2/authorize?"
@@ -50,7 +50,7 @@ def open_authorization_url(code_verifier):
     print("\nAprendo il browser per autorizzare...")
     webbrowser.open(auth_url)
 
-# --- PASSO 2: Ottenimento access token dal codice ---
+# Scambio del codice per ottenere un token di accesso, fa una richiesta POST per ottenere l'access token da MyAnimeList dopo l'autenticazione dell'utente
 def get_access_token(auth_code, code_verifier):
     token_url = 'https://myanimelist.net/v1/oauth2/token'
     data = {
@@ -77,9 +77,9 @@ def get_access_token(auth_code, code_verifier):
         print(response.status_code, response.text)
         return None
 
-# --- Richiesta manga dalla classifica ---
+# Estrazione della classifica dei manga (Top 1000 dei manga, modificare max_manga permette di cambiare la Top estratta)
 def get_top_manga(access_token, max_manga=1000):
-    api_url = "https://api.myanimelist.net/v2/manga/ranking"
+    api_url = "https://api.myanimelist.net/v2/manga/ranking" # Richiama l’endpoint manga/ranking
     headers = {
         "Authorization": f"Bearer {access_token}"
     }
@@ -90,13 +90,13 @@ def get_top_manga(access_token, max_manga=1000):
         "id,title,mean,rank,popularity,status,genres,authors{first_name,last_name}"
     )
 
-    # Pagina i risultati ogni 500 voci
+    # Paginazione tramite offset (ogni 500 risultati)
     for offset in range(0, max_manga, limit):
         params = {
             "ranking_type": "manga",
             "limit": limit,
             "offset": offset,
-            "fields": fields
+            "fields": fields # Campi richiesti: id, titolo, mean, rank, popolarità, status, generi, autori
         }
         response = requests.get(api_url, headers=headers, params=params)
         if response.status_code == 200:
@@ -107,11 +107,11 @@ def get_top_manga(access_token, max_manga=1000):
             print(f"Errore: {response.status_code}")
             print(response.text)
             break
-        time.sleep(1)  # Rispetta il rate limit dell’API
+        time.sleep(1)  # Aspetta 1 secondo tra le richieste per evitare rate-limit.
     print(f"\nTotale manga recuperati: {len(all_manga)}")
-    return all_manga
+    return all_manga    # Ritorna una lista di dizionari con i dati
 
-# --- Salva i dati manga in un file CSV ---
+# Salvataggio in CSV
 def save_manga_to_csv(manga_list, filename="top_manga.csv", folder="DATASET"):
     # Crea la cartella se non esiste
     os.makedirs(folder, exist_ok=True)
@@ -128,6 +128,7 @@ def save_manga_to_csv(manga_list, filename="top_manga.csv", folder="DATASET"):
             "Rank", "Popolarità", "Stato", "Autori"
         ])
         
+        # Salva: ID, Titolo, Generi, Punteggio Medio, Rank, Popolarità, Stato, Autori
         for manga in manga_list:
             node = manga['node']
             manga_id = node.get('id', '')
@@ -139,6 +140,7 @@ def save_manga_to_csv(manga_list, filename="top_manga.csv", folder="DATASET"):
             popularity = node.get('popularity', '')
             status = node.get('status', '')
 
+            # Supporta autori multipli, concatenati con virgole
             authors_list = node.get('authors', [])
             authors = ", ".join([f"{author['node']['first_name']} {author['node']['last_name']}" for author in authors_list])
 
@@ -149,30 +151,31 @@ def save_manga_to_csv(manga_list, filename="top_manga.csv", folder="DATASET"):
     
     print(f"\nFile CSV salvato come '{filepath}'")
 
-# --- MAIN: esecuzione del processo completo ---
+# Main Script
 def main():
-    code_verifier = generate_code_verifier()
+    code_verifier = generate_code_verifier()    # Genera code_verifier
 
     # Avvia il server HTTP locale su porta 8080
     server_address = ('', 8080)
-    httpd = HTTPServer(server_address, OAuthCallbackHandler)
+    httpd = HTTPServer(server_address, OAuthCallbackHandler)    # Avvia il server locale
 
     open_authorization_url(code_verifier)
 
     print("In attesa dell'autorizzazione dal browser...")
+    # Avvia il server HTTP per ricevere il codice OAuth
     while OAuthCallbackHandler.authorization_code is None:
         httpd.handle_request()  # Attende finché non riceve il codice
 
     httpd.server_close()
 
-    auth_code = OAuthCallbackHandler.authorization_code
+    auth_code = OAuthCallbackHandler.authorization_code 
     print(f"\nCodice autorizzazione ricevuto: {auth_code}\n")
 
-    access_token = get_access_token(auth_code, code_verifier)
+    access_token = get_access_token(auth_code, code_verifier)   # Ottiene l'access token
 
     if access_token:
-        manga_data = get_top_manga(access_token)
-        save_manga_to_csv(manga_data)
+        manga_data = get_top_manga(access_token)    # Scarica i manga top
+        save_manga_to_csv(manga_data)   # Salva il dataset
 
 # --- Entry point ---
 if __name__ == "__main__":

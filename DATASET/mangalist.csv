@@ -9,7 +9,8 @@ ID,Titolo,Generi,Punteggio,Stato
 158496,A Modern Man Who Got Transmigrated Into the Murim World,"Action, Fantasy, Isekai, Martial Arts, Reincarnation",0,plan_to_read
 132247,A Returner's Magic Should Be Special,"Action, Fantasy, School, Time Travel",6,completed
 50027,About Death,"Psychological, Slice of Life, Supernatural",8,completed
-172750,Absolute Regression,"Action, Fantasy, Martial Arts, Time Travel",4,reading
+172750,Absolute Regression,"Action, Fantasy, Martial Arts, Time Travel",7,reading
+174691,Absolute Reign,"Action, Fantasy, Martial Arts",7,reading
 149880,Absolute Sword Sense,"Action, Fantasy, Martial Arts, Time Travel",4,dropped
 143991,After God,"Action, Fantasy",0,plan_to_read
 147448,After School Lessons for Unripe Apples,"Romance, School",6,dropped
@@ -25,6 +26,7 @@ ID,Titolo,Generi,Punteggio,Stato
 125325,Akuyaku Reijou Tensei Ojisan,"Comedy, Fantasy, School, Seinen, Villainess",3,dropped
 62887,All You Need Is Kill,"Action, Military, Sci-Fi, Seinen, Time Travel",7,completed
 63535,Amaama to Inazuma,"Childcare, Comedy, Gourmet, Iyashikei, Seinen, Slice of Life",5,completed
+129418,Ame to Kimi to,"Comedy, Seinen, Slice of Life",0,plan_to_read
 143336,Among Us,"Comedy, Kids, Sci-Fi, Space",6,completed
 128953,Ankoku Kishi no Ore desu ga Saikyou no Paladin wo Mezashimasu,"Action, Fantasy, School",2,dropped
 30079,Annarasumanara,"Drama, Mystery, Psychological, Romance, School, Seinen",9,completed
@@ -82,6 +84,7 @@ ID,Titolo,Generi,Punteggio,Stato
 76813,Chichi to Ko,"Childcare, Comedy, Shounen, Slice of Life",0,plan_to_read
 148428,Child of the Sheath,"Action, Adventure, Fantasy",5,dropped
 131403,Choujin X,"Action, Seinen, Supernatural",0,plan_to_read
+174692,Chronicles of a Doomed Prodigy,"Action, Adventure, Fantasy, Martial Arts",5,reading
 157591,Chronicles of the Demon Faction,"Action, Fantasy, Martial Arts, Reincarnation",4,dropped
 177080,Chronicles of the Reincarnated Demon God,"Action, Fantasy, Martial Arts, Reincarnation",5,dropped
 583,Claymore,"Action, Adventure, Fantasy, Gore, Horror, Shounen",0,plan_to_read
@@ -340,7 +343,7 @@ ID,Titolo,Generi,Punteggio,Stato
 3299,Ookami to Koushinryou,"Adult Cast, Adventure, Drama, Fantasy, Historical, Romance, Seinen, Supernatural",7,completed
 121083,Ookami wa Nemuranai,"Action, Adventure, Fantasy, Isekai",0,plan_to_read
 35573,Orange,"Drama, Love Polygon, Romance, School, Sci-Fi, Shoujo, Time Travel",0,plan_to_read
-1211,Ore to Akuma no Blues,"Drama, Historical, Horror, Psychological, Seinen",0,plan_to_read
+1211,Ore to Akuma no Blues,"Drama, Historical, Horror, Psychological, Seinen",8,on_hold
 11514,Otoyomegatari,"Award Winning, Historical, Romance, Seinen",0,plan_to_read
 123397,Ou no Kemono: Enpei no Arcana,"Crossdressing, Drama, Fantasy, Romance, Shoujo",0,plan_to_read
 147727,Overgeared,"Action, Fantasy, Video Game",4,dropped
@@ -364,11 +367,12 @@ ID,Titolo,Generi,Punteggio,Stato
 657,Real,"Award Winning, Drama, Psychological, Seinen, Sports, Team Sports",0,plan_to_read
 151157,Reality Quest,"Action, School, Supernatural",5,dropped
 147924,Reborn as a Scholar,"Action, Martial Arts, Reincarnation",6,completed
+181605,Red Shirt,"Action, Drama",2,dropped
 148512,Reincarnated as an Unruly Heir,"Action, Martial Arts, Reincarnation",5,dropped
-168981,Reincarnated Murim Lord,"Action, Fantasy, Martial Arts, Reincarnation",7,reading
+168981,Reincarnated Murim Lord,"Action, Fantasy, Martial Arts, Reincarnation",6,reading
 161442,Reincarnation of the Veteran Soldier,"Action, Adult Cast, Fantasy, Isekai",6,on_hold
 78523,ReLIFE,"Comedy, Drama, Romance, School, Slice of Life",4,dropped
-158010,Return of the Bloodthirsty Police,"Action, Organized Crime, Reincarnation",5,reading
+158010,Return of the Bloodthirsty Police,"Action, Organized Crime, Reincarnation",5,dropped
 146878,Return of the Blossoming Blade,"Action, Adventure, Fantasy, Martial Arts, Reincarnation",7,reading
 147577,Return of the Mad Demon,"Action, Martial Arts, Time Travel",6,reading
 149349,Return of the Scholar,"Action, Fantasy, Martial Arts",3,dropped
@@ -468,6 +472,7 @@ ID,Titolo,Generi,Punteggio,Stato
 134744,The Legend of the Northern Blade,"Action, Adventure, Fantasy, Martial Arts",8,completed
 147536,The Legendary Moonlight Sculptor,"Action, Adventure, Fantasy, Video Game",3,dropped
 148679,The Lord of Coins,"Action, Adventure, Fantasy, Time Travel",0,plan_to_read
+147322,The Max Level Hero Strikes Back,"Action, Adventure, Fantasy",2,dropped
 153509,The Nine Heavens Swordmaster,"Action, Fantasy, Martial Arts",4,reading
 148985,The Novel's Extra,"Action, Fantasy, Isekai, Reincarnation, School",3,dropped
 165038,The Outcast Is a Fighter,"Combat Sports, Reincarnation, Sports",3,dropped
@@ -508,6 +513,7 @@ ID,Titolo,Generi,Punteggio,Stato
 703,Trigun,"Action, Adult Cast, Adventure, Comedy, Sci-Fi, Shounen",0,plan_to_read
 704,Trigun Maximum,"Action, Adult Cast, Adventure, Award Winning, Comedy, Drama, Sci-Fi, Seinen",0,plan_to_read
 131924,Tsue to Tsurugi no Wistoria,"Action, Fantasy, School, Shounen",4,dropped
+181465,"Tsuihou sareta Kajishi wa Cheat Skill de Densetsu wo Tsukurimakuru: Konyakusha ni Mise wo Oidasareta kedo, Kimama ni Mono Tsukutteirareru Ima no Hou ga Shiawase desu","Action, Fantasy",2,dropped
 90117,Tsuki ga Michibiku Isekai Douchuu,"Adventure, Fantasy, Isekai",3,dropped
 116367,Tuixiu de Yongzhemen,"Action, Fantasy",5,completed
 14483,Uchuu Kyoudai,"Adult Cast, Award Winning, Drama, Sci-Fi, Seinen, Space, Workplace",0,plan_to_read
@@ -526,7 +532,7 @@ ID,Titolo,Generi,Punteggio,Stato
 656,Vagabond,"Action, Adventure, Award Winning, Historical, Samurai, Seinen",10,completed
 121151,Vampire Dormitory,"Crossdressing, Romance, Shoujo, Supernatural, Vampire",3,dropped
 147191,Villain to Kill,"Action, Super Power",6,dropped
-151550,Villain with a Crush,"Romance, Super Power",5,dropped
+151550,Villain with a Crush,"Comedy, Romance, Super Power",5,dropped
 642,Vinland Saga,"Action, Adventure, Award Winning, Drama, Historical, Seinen",9,reading
 139164,Viral Hit,"Action, Martial Arts, School",6,completed
 147724,Volcanic Age,"Action, Adventure, Fantasy, Martial Arts, Time Travel",5,dropped
