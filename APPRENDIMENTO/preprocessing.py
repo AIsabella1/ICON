@@ -1,27 +1,35 @@
-# --- Import delle librerie ---
-import pandas as pd  # Per manipolazione dei dati
-from sklearn.preprocessing import MultiLabelBinarizer  # Per codifica one-hot multilabel
+# Import delle librerie
+import pandas as pd  # Libreria per manipolazione dati in formato tabellare (DataFrame)
+from sklearn.preprocessing import MultiLabelBinarizer  # Converte etichette multiple (liste) in codifica one-hot
 
-# --- Carica e pre-processa i dati per clustering con KMeans ---
+# Carica e pre-processa i dati per clustering con KMeans
 def load_and_preprocess_kmeans(filepath='DATASET/dataset_ml.csv'):
-    # Carica il dataset da CSV
+    # 1. Caricamento del dataset da file CSV
     df = pd.read_csv(filepath)
 
-    # Filtra righe con punteggio utente valido (>0 e non NaN)
+    # 2. Filtra righe con punteggio utente valido (scarta NaN e <= 0)
     df = df[df['Punteggio_Utente'].notna() & (df['Punteggio_Utente'] > 0)]
 
-    # Trasforma la colonna 'Generi' in liste pulite di stringhe (lowercase + underscore)
+    # 3. Pulisce e standardizza la colonna 'Generi':
+    #    - divide per virgola
+    #    - rimuove spazi e trasforma in lowercase con underscore
     df['Generi'] = df['Generi'].fillna('').apply(
         lambda x: [g.strip().lower().replace(' ', '_') for g in x.split(',') if g]
     )
 
-    # Codifica multilabel in binario (una colonna per ogni genere)
+    # 4. Codifica multilabel dei generi in one-hot encoding
     mlb = MultiLabelBinarizer()
-    generi_encoded = pd.DataFrame(mlb.fit_transform(df['Generi']),
-                                  columns=mlb.classes_,
-                                  index=df.index)
+    generi_encoded = pd.DataFrame(mlb.fit_transform(df['Generi']),columns=mlb.classes_,index=df.index)
+ 
+    # 5. Calcola delta tra punteggio utente e punteggio medio
+    df['Delta_Score'] = df['Punteggio_Utente'] - df['Punteggio_Medio']
 
-    # Combina codifica dei generi con colonne numeriche per clustering
-    X = pd.concat([generi_encoded, df[['Punteggio_Medio', 'Rank', 'Popolarita']]], axis=1).fillna(0)
+    # 6. Costruisce la matrice X unendo:
+    #    - codifica binaria dei generi
+    #    - alcune colonne numeriche: Punteggio_Medio, Rank, Popolarità, Delta_Score
+    X = pd.concat([generi_encoded,df[['Punteggio_Medio', 'Rank', 'Popolarita', 'Delta_Score']]], axis=1).fillna(0)
 
-    return X, df    # Ritorna i dati pronti per il clustering e il DataFrame originale
+    # 7. Ritorna:
+    #    - X: feature matrix per clustering
+    #    - df: dataframe originale (serve per etichette, visualizzazione, ecc.)
+    return X, df

@@ -1,21 +1,21 @@
-# --- Import dei classificatori disponibili ---
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
-from xgboost import XGBClassifier   # Richiede il pacchetto xgboost
+# Import dei classificatori disponibili
+from sklearn.tree import DecisionTreeClassifier # Algoritmo ad albero decisionale. Utile per modelli semplici.
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier # RandomForest: ensemble di alberi decisionali (bagging). AdaBoost: algoritmo di boosting adattivo per migliorare classificatori deboli.
+from sklearn.neighbors import KNeighborsClassifier # KNN: classifica in base alla vicinanza con i k esempi più simili nel dataset.
+from sklearn.naive_bayes import GaussianNB # Classificatore probabilistico basato su teorema di Bayes, adatto per dati continui e indipendenti.
+from xgboost import XGBClassifier   # XGBoost: potente algoritmo di boosting basato su gradienti. Richiede il pacchetto `xgboost` installato separatamente.
 
-# --- Restituisce un modello ML in base al nome e ai parametri specificati ---
+# Ritorna un modello ML configurato in base al nome e ai parametri
 def get_model(name, params):
     if name == 'Decision Tree':
-        # Classificatore ad albero di decisione con profondità e foglie minime
+        # Albero decisionale con controllo su profondità massima e numero minimo di campioni per foglia
         return DecisionTreeClassifier(
             max_depth=params['max_depth'],
             min_samples_leaf=params.get('min_samples_leaf', 5),
             random_state=42
         )
     if name == 'Random Forest':
-        # Foresta casuale con parametri di regolarizzazione
+        # Random Forest con numero di alberi, profondità e foglie minime specificabili
         return RandomForestClassifier(
             n_estimators=params['n_estimators'],
             max_depth=params['max_depth'],
@@ -23,23 +23,23 @@ def get_model(name, params):
             random_state=42
         )
     if name == 'AdaBoost':
-        # Boosting con learning rate regolabile
+        # AdaBoost con numero di stime e learning rate (default: 1.0)
         return AdaBoostClassifier(
             n_estimators=params['n_estimators'],
             learning_rate=params.get('learning_rate', 1.0),
             random_state=42
         )
     if name == 'KNN':
-        # Classificatore basato su k-vicini
+        # K-Nearest Neighbors con numero di vicini specificato
         return KNeighborsClassifier(n_neighbors=params['n_neighbors'])
     if name == 'Naive Bayes':
-        # Classificatore di Bayes Gaussiano, non ha iperparametri da passare
+        # Gaussian Naive Bayes non ha parametri iperconfigurabili
         return GaussianNB()
     if name == 'XGBoost':
-        # XGBoost con iperparametri di regolarizzazione
+        # Classificatore XGBoost con supporto per tuning: numero stimatori, profondità, learning rate
         return XGBClassifier(
             n_estimators=params['n_estimators'],
             max_depth=params.get('max_depth', 3),
             learning_rate=params.get('learning_rate', 0.1),
-            eval_metric='logloss'
+            eval_metric='logloss' # evita warning: XGBoost richiede esplicitare la metrica
         )
