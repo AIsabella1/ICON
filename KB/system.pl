@@ -1,8 +1,8 @@
-% --- Carica la Knowledge Base ---
+% Carica la Knowledge Base
 :- set_prolog_flag(encoding, utf8).
 :- consult('knowledge_base.pl').
 
-% === GESTIONE GENERI ===
+% GESTIONE GENERI
 
 % Estrai i generi dei manga letti (escludendo quelli ancora da leggere)
 genere_letto(GenerePulito) :-
@@ -30,20 +30,20 @@ generi_ordinati(GeneriOrdinati) :-
     frequenza_generi(Frequenze),
     sort(2, @>=, Frequenze, GeneriOrdinati).
 
-% === RACCOMANDAZIONE MANGA ===
+% RACCOMANDAZIONE MANGA
 
 % manga_qualita_nascosto/1
 % Trova manga non letti con voto medio >= 8 e popolarità (valore numerico alto = poco noti) superiore a 1500.
-manga_qualita_nascosto(TitoloLeggibile) :-
-    manga(ID, Titolo, _, Mean, _, Pop, _, _),
+manga_qualita_nascosto(Output) :-
+    manga(ID, Titolo, _, Mean, _, Pop, Stato, Autori),
     number(Mean), Mean >= 8,
     number(Pop), Pop > 1500,
     \+ lettura_utente(ID, _, _, _, _),
-    formatta_titolo(Titolo, TitoloLeggibile).
+    formatta_output_nome(Titolo, Autori, Stato, Output).
 
 % consiglia_plan_to_read/1
 % Suggerisce manga presenti nella lista "plan_to_read" dell'utente che condividono almeno un genere con i manga già letti.
-consiglia_plan_to_read(TitoloLeggibile) :-
+consiglia_plan_to_read(Output) :-
     lettura_utente(_, Titolo, plan_to_read, _, GeneriPlan),
     findall(G,
         (lettura_utente(_, _, Stato, _, GeneriLetti),
@@ -52,22 +52,22 @@ consiglia_plan_to_read(TitoloLeggibile) :-
         ListaGeneriLetti),
     intersection(GeneriPlan, ListaGeneriLetti, Comune),
     Comune \= [],
-    formatta_titolo(Titolo, TitoloLeggibile).
+    formatta_nome_manga(Titolo, Output).
 
 % manga_premiato/1
 % Raccomanda manga non letti che sono "award_winning" e che contengono almeno un genere tra quelli preferiti.
-manga_premiato(TitoloLeggibile) :-
+manga_premiato(Output) :-
     generi_ordinati(Generi),
     member(Genere-_, Generi),
-    manga(ID, Titolo, GeneriManga, _, _, _, _, _),
+    manga(ID, Titolo, GeneriManga, _, _, _, Stato, Autori),
     member(Genere, GeneriManga),
     member(award_winning, GeneriManga),
     \+ lettura_utente(ID, _, _, _, _),
-    formatta_titolo(Titolo, TitoloLeggibile).
+    formatta_output_nome(Titolo, Autori, Stato, Output).
 
 % manga_genere_nuovo/1
 % Suggerisce manga non letti con almeno 2 generi mai letti e massimo 1 genere già letto. Serve per esplorare novità.
-manga_genere_nuovo(TitoloLeggibile) :-
+manga_genere_nuovo(Output) :-
     findall(Genere, 
         (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)),
         TuttiGeneri),
@@ -81,18 +81,18 @@ manga_genere_nuovo(TitoloLeggibile) :-
     sort(GeneriLetti, GeneriUtente),
     subtract(GeneriTotali, GeneriUtente, GeneriMaiLetti),
 
-    manga(ID, Titolo, GeneriManga, _, _, _, _, _),
+    manga(ID, Titolo, GeneriManga, _, _, _, Stato, Autori),
     intersection(GeneriManga, GeneriMaiLetti, Nuovi),
     intersection(GeneriManga, GeneriUtente, Noti),
     length(Nuovi, LN), LN >= 2,
     length(Noti, LO), LO =< 1,
     \+ lettura_utente(ID, _, _, _, _),
-    formatta_titolo(Titolo, TitoloLeggibile).
+    formatta_output_nome(Titolo, Autori, Stato, Output).
 
 % manga_misto_generi_nuovi/1
 % Trova manga che combinano almeno un genere mai letto con almeno un genere già letto (anche se visto una sola volta).
 % Serve per espandere i gusti restando in parte nel comfort zone.
-manga_misto_generi_nuovi(TitoloLeggibile) :-
+manga_misto_generi_nuovi(Output) :-
     findall(Genere, 
         (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)),
         TuttiGeneri),
@@ -107,13 +107,13 @@ manga_misto_generi_nuovi(TitoloLeggibile) :-
 
     subtract(GeneriTotali, GeneriUtente, GeneriMaiLetti),
 
-    manga(ID, Titolo, GeneriManga, _, _, _, _, _),
+    manga(ID, Titolo, GeneriManga, _, _, _, Stato, Autori),
     intersection(GeneriManga, GeneriUtente, ComuneLetti),
     intersection(GeneriManga, GeneriMaiLetti, ComuneNuovi),
     ComuneLetti \= [],
     ComuneNuovi \= [],
     \+ lettura_utente(ID, _, _, _, _),
-    formatta_titolo(Titolo, TitoloLeggibile).
+    formatta_output_nome(Titolo, Autori, Stato, Output).
 
 % valuta_compatibilita/1
 % Dato un elenco di generi, li confronta con quelli ordinati per frequenza e valuta quanto sono compatibili con i gusti dell'utente.
@@ -150,7 +150,7 @@ valuta_compatibilita(GeneriForniti) :-
 % raccomanda_random/1
 % Versione randomizzata di raccomanda/1: suggerisce manga non letti che condividono un genere con quelli preferiti.
 % Utilizza solo generi con almeno 10 letture e randomizza i risultati.
-raccomanda_random(TitoloLeggibile) :-
+raccomanda_random(Output) :-
     generi_ordinati(Generi),
     member(Genere-Count, Generi),
     Count >= 10,
@@ -161,11 +161,12 @@ raccomanda_random(TitoloLeggibile) :-
     ), Candidati),
     list_to_set(Candidati, Unici),
     random_permutation(Unici, Mischiati),
-    member(_-TitoloGrezzo, Mischiati),
-    formatta_titolo(TitoloGrezzo, TitoloLeggibile).
+    member(ID-Titolo, Mischiati),
+    manga(ID, _, _, _, _, _, Stato, Autori),
+    formatta_output_nome(Titolo, Autori, Stato, Output).
 
 
-% === UTILITIES ===
+% UTILITIES
 
 % Rimuove gli underscore dal titolo per leggibilità
 formatta_titolo(TitoloRaw, TitoloFormattato) :-
@@ -206,7 +207,25 @@ normalize_input(Originale, Normalizzato) :-
 sostituisci_spazio_underscore(' ', '_') :- !.
 sostituisci_spazio_underscore(C, C).
 
-% === MENU INTERATTIVO ===
+% Format output: NOME MANGA: Titolo - AUTORE/I: Autori - STATO: Stato
+formatta_output(Titolo, Autori, Stato, Output) :-
+    atomic_list_concat(Autori, ', ', AutoriConcat),
+    format(atom(Output), 'NOME MANGA: ~w - AUTORE/I: ~w - STATO: ~w', [Titolo, AutoriConcat, Stato]).
+
+% Format output semplice: solo NOME MANGA: Titolo
+formatta_nome_manga(TitoloRaw, Output) :-
+    formatta_titolo(TitoloRaw, TitoloFormattato),
+    format(atom(Output), 'NOME MANGA: ~w', [TitoloFormattato]).
+
+% Format output nome, autori, stato (con titolo e autori leggibili)
+formatta_output_nome(TitoloRaw, Autori, Stato, Output) :-
+    formatta_titolo(TitoloRaw, TitoloFormattato),
+    maplist(formatta_titolo, Autori, AutoriFormattati),  % <-- nuova riga: formatta ogni autore
+    atomic_list_concat(AutoriFormattati, ', ', AutoriConcat),
+    format(atom(Output), 'NOME MANGA: ~w - AUTORE/I: ~w - STATO: ~w', [TitoloFormattato, AutoriConcat, Stato]).
+
+
+% MENU INTERATTIVO
 
 menu :-
     writeln(''),
@@ -224,7 +243,7 @@ menu :-
     read(Scelta),
     esegui_scelta(Scelta).
 
-% --- Gestione delle scelte ---
+% Gestione delle scelte
 
 esegui_scelta(1) :-
     writeln('--- Generi preferiti (ordinati) ---'),
