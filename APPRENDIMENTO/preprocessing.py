@@ -13,9 +13,7 @@ def load_and_preprocess_kmeans(filepath='DATASET/dataset_ml.csv'):
     # 3. Pulisce e standardizza la colonna 'Generi':
     #    - divide per virgola
     #    - rimuove spazi e trasforma in lowercase con underscore
-    df['Generi'] = df['Generi'].fillna('').apply(
-        lambda x: [g.strip().lower().replace(' ', '_') for g in x.split(',') if g]
-    )
+    df['Generi'] = df['Generi'].fillna('').apply(lambda x: [g.strip().lower().replace(' ', '_') for g in x.split(',') if g])
 
     # 4. Codifica multilabel dei generi in one-hot encoding
     mlb = MultiLabelBinarizer()
