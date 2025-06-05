@@ -6,8 +6,8 @@ Progetto finalizzato alla costruzione di un sistema ibrido di raccomandazione e 
 
 - **Recupero dati reali** da [MyAnimeList](https://myanimelist.net/) tramite API
 - **Apprendimento supervisionato e non supervisionato** con modelli ML
-- **Motore logico basato su Prolog** per raccomandazioni simboliche
-- **Esempio Ontologia OWL** per supporto al ragionamento semantico
+- **Motore logico basato su Prolog** per raccomandazioni basate su regole
+- **Esempio Ontologia OWL e motore di ragionamento HermiT** per supporto al ragionamento semantico
 
 ---
 
@@ -17,7 +17,7 @@ Progetto finalizzato alla costruzione di un sistema ibrido di raccomandazione e 
 2. **Generare una knowledge base** strutturata in linguaggio Prolog
 3. **Realizzare un sistema di raccomandazione** basato su logica e apprendimento automatico
 4. **Eseguire analisi visive** sui modelli e sui cluster rilevati
-5. **Dimostrare l'uso di tecnologie AI simboliche e subsimboliche**
+5. **Dimostrare l'uso di tecnologie AI**
 
 ---
 
@@ -25,21 +25,21 @@ Progetto finalizzato alla costruzione di un sistema ibrido di raccomandazione e 
 
 ### 📁 `APPRENDIMENTO/`
 Script Apprendimento Supervisionato e Non:
-- [`clustering_runner.py`](APPRENDIMENTO/clustering_runner.py): clustering base con PCA (k=3)
-- [`kmeans_improvement.py`](APPRENDIMENTO/kmeans_improvement.py): ottimizzazione KMeans con silhouette/elbow
-- [`main.py`](APPRENDIMENTO/main.py): esecuzione unificata delle analisi
+- [`clustering_runner.py`](APPRENDIMENTO/clustering_runner.py): KMeans base con PCA
+- [`kmeans_improvement.py`](APPRENDIMENTO/kmeans_improvement.py): clustering migliorato (K ottimale, GMM, Agglomerative)
+- [`main.py`](APPRENDIMENTO/main.py): esegue tutto il flusso ML (classificazione + clustering)
 - [`model_builder.py`](APPRENDIMENTO/model_builder.py): factory dei modelli ML
-- [`param_config.py`](APPRENDIMENTO/param_config.py): griglia parametri per tuning
-- [`plot_tools.py`](APPRENDIMENTO/plot_tools.py): funzioni di visualizzazione dei modelli
-- [`preprocessing.py`](APPRENDIMENTO/preprocessing.py): pulizia e codifica del dataset per il clustering (KMeans)
-- [`report_utils.py`](APPRENDIMENTO/report_utils.py): valutazione finale modelli (AdaBoost)
-- [`supervised_runner.py`](APPRENDIMENTO/supervised_runner.py): pipeline apprendimento supervisionato (classificazione)
+- [`param_config.py`](APPRENDIMENTO/param_config.py): iperparametri per ogni modello
+- [`plot_tools.py`](APPRENDIMENTO/plot_tools.py): radar, heatmap, bar chart, ecc.
+- [`preprocessing.py`](APPRENDIMENTO/preprocessing.py): feature engineering, encoding, delta score
+- [`report_utils.py`](APPRENDIMENTO/report_utils.py): AdaBoost finale e confusion matrix
+- [`supervised_runner.py`](APPRENDIMENTO/supervised_runner.py): classificazione con cross-validation
 
 ### 📁 `DATASET/`
 Contiene i CSV generati:
-- [`dataset_ml.csv`](DATASET/dataset_ml.csv): dataset unificato con campi numerici e binarizzati
-- [`mangalist.csv`](DATASET/mangalist.csv): lista letta dall'utente
-- [`top_manga.csv`](DATASET/top_manga.csv): 1000 manga più popolari da MyAnimeList
+- [`dataset_ml.csv`](DATASET/dataset_ml.csv): dataset finale per ML
+- [`mangalist.csv`](DATASET/mangalist.csv): dataset finale per KB
+- [`top_manga.csv`](DATASET/top_manga.csv):  top manga da MAL
 
 ### 📁 `DOCUMENTAZIONE/`
 Contiene la documentazione nel formato docx e pdf:
@@ -48,14 +48,14 @@ Contiene la documentazione nel formato docx e pdf:
 
 ### 📁 `KB/`
 Knowledge base Prolog:
-- [`kb_creator.py`](KB/kb_creator.py): genera la KB Prolog
-- [`knowledge_base.pl`](KB/knowledge_base.pl): contiene fatti `manga/8` e `lettura_utente/5`
-- [`system.pl`](KB/system.pl): menu interattivo in Prolog
+- [`kb_creator.py`](KB/kb_creator.py): genera knowledge_base.pl
+- [`knowledge_base.pl`](KB/knowledge_base.pl): fatti `manga/8` e `lettura_utente/5`
+- [`system.pl`](KB/system.pl): regole di raccomandazione Prolog + menu
 
 ### 📁 `OWL/`
 Esempio Ontologia OWL:
-- [`manga.owl`](OWL/manga.owl): struttura semantica con classi `Manga`, `Seinen`, `AwardWinning`
-- [`ontology_example.py`](OWL/ontology_example.py): script Python per ragionamento OWL (Hermit)
+- [`manga.owl`](OWL/manga.owl): classi Manga, AwardWinning, ecc.
+- [`ontology_example.py`](OWL/ontology_example.py): inferenza OWL via owlready2 + HermiT
 
 ### 📁 `PNG/`
 Grafici generati:
@@ -63,9 +63,9 @@ Grafici generati:
 
 ### 📁 `PYTHON_DATASET/`
 Script estrazione dati da MyAnimeList:
-- [`mangalist_extended.py`](PYTHON_DATASET/mangalist_extended.py): versione estesa che arricchisce il dataset con mean, rank, popolarità per ogni manga
-- [`top_manga.py`](PYTHON_DATASET/top_manga.py): scarica i manga top da MAL
-- [`user_manga.py`](PYTHON_DATASET/user_manga.py): scarica la lista dell'utente da MAL
+- [`mangalist_extended.py`](PYTHON_DATASET/mangalist_extended.py): versione arricchita (mean, rank, popolarità)
+- [`top_manga.py`](PYTHON_DATASET/top_manga.py): classifica top 1000 da MAL
+- [`user_manga.py`](PYTHON_DATASET/user_manga.py): lista manga utente semplice
 
 ---
 
@@ -87,7 +87,7 @@ Script estrazione dati da MyAnimeList:
 
    3.1. Eseguito automaticamente classificazione con `supervised_runner.py`
 
-   3.2 Eseguito automaticamente clustering con `clustering_runner.py` o `kmeans_improvement.py`
+   3.2 Eseguito automaticamente clustering con `clustering_runner.py` e `kmeans_improvement.py`
 4. Lanciare motore logico in Prolog con `system.pl`
 5. Eseguire ragionamento OWL tramite `ontology_example.py`
 
@@ -103,28 +103,20 @@ Comprende:
 - Server HTTP locale per ricezione del `code`
 - Scambio `code → access_token` con tutti i parametri richiesti
 
-Tuttavia, a partire dal 1 maggio 2024, MyAnimeList ha introdotto una protezione tramite **AWS WAF** che blocca automaticamente le richieste `POST` al token endpoint, richiedendo una verifica CAPTCHA lato browser. Non so se questa protezione persiste o meno.
+Il sistema implementa correttamente il flusso OAuth2 + PKCE.
 
-I dati necessari (top manga, lista utente) sono stati raccolti **prima dell’introduzione di questo blocco**, e sono presenti nel progetto in formato `.csv`.
-
-Questa protezione server-side **non invalida l'implementazione**, ma impedisce la ri-esecuzione automatica dello script senza intervento umano.
-
-    *AGGIORNAMENTO DEL 29/05/2025*
-
-    Gli script sono nuovamente funzionanti.
-    Sono stati estratti i nuovi dataset aggiornati e inseriti nella cartella DATASET/DATASET ESTRATTI 29.05.2025.
-    La documentazione fa riferimento ai dataset presenti nella cartella DATASET.
+Aggiornamento 29/05/2025: Gli script sono nuovamente funzionanti. Dataset aggiornati e salvati in DATASET/.
 
 ---
 
 ## Autore
 
-Progetto ICON sviluppato da:
-- Antonello Isabella 
+
+Antonello Isabella 
   
-  Matricola: 737827
+Matricola: 737827
   
-  E-Mail: a.isabella1@studenti.uniba.it
+E-Mail: a.isabella1@studenti.uniba.it
 
 ---
 
