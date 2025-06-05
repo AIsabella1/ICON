@@ -143,6 +143,7 @@ def get_user_mangalist_extended(username, access_token, max_manga=25000):
         for entry in data:
             node = entry.get('node', {})
             list_status = entry.get('list_status', {})
+            
             if not list_status:
                 continue    # Ignora se non ci sono dati utente
 

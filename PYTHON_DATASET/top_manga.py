@@ -177,6 +177,6 @@ def main():
         manga_data = get_top_manga(access_token)    # Scarica i manga top
         save_manga_to_csv(manga_data)   # Salva il dataset
 
-# --- Entry point ---
+# Main Script
 if __name__ == "__main__":
     main()

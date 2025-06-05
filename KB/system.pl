@@ -20,10 +20,7 @@ normalizza_genere(Genere, GenerePulito) :-
 frequenza_generi(Frequenze) :-
     findall(Genere, genere_letto(Genere), ListaGeneri),
     sort(ListaGeneri, GeneriUnici),
-    findall(Genere-Conta,
-        (member(Genere, GeneriUnici),
-         aggregate_all(count, genere_letto(Genere), Conta)),
-        Frequenze).
+    findall(Genere-Conta,(member(Genere, GeneriUnici),aggregate_all(count, genere_letto(Genere), Conta)),Frequenze).
 
 % Ordina i generi per frequenza (decrescente)
 generi_ordinati(GeneriOrdinati) :-
@@ -45,11 +42,7 @@ manga_qualita_nascosto(Output) :-
 % Suggerisce manga presenti nella lista "plan_to_read" dell'utente che condividono almeno un genere con i manga già letti.
 consiglia_plan_to_read(Output) :-
     lettura_utente(_, Titolo, plan_to_read, _, GeneriPlan),
-    findall(G,
-        (lettura_utente(_, _, Stato, _, GeneriLetti),
-         Stato \= plan_to_read,
-         member(G, GeneriLetti)),
-        ListaGeneriLetti),
+    findall(G,(lettura_utente(_, _, Stato, _, GeneriLetti),Stato \= plan_to_read,member(G, GeneriLetti)),ListaGeneriLetti),
     intersection(GeneriPlan, ListaGeneriLetti, Comune),
     Comune \= [],
     formatta_nome_manga(Titolo, Output).
@@ -68,19 +61,11 @@ manga_premiato(Output) :-
 % manga_genere_nuovo/1
 % Suggerisce manga non letti con almeno 2 generi mai letti e massimo 1 genere già letto. Serve per esplorare novità.
 manga_genere_nuovo(Output) :-
-    findall(Genere, 
-        (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)),
-        TuttiGeneri),
+    findall(Genere, (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)),TuttiGeneri),
     sort(TuttiGeneri, GeneriTotali),
-
-    findall(GenereLetto,
-        (lettura_utente(_, _, Stato, _, GeneriLetti),
-         Stato \= plan_to_read,
-         member(GenereLetto, GeneriLetti)),
-        GeneriLetti),
+    findall(GenereLetto,(lettura_utente(_, _, Stato, _, GeneriLetti),Stato \= plan_to_read,member(GenereLetto, GeneriLetti)),GeneriLetti),
     sort(GeneriLetti, GeneriUtente),
     subtract(GeneriTotali, GeneriUtente, GeneriMaiLetti),
-
     manga(ID, Titolo, GeneriManga, _, _, _, Stato, Autori),
     intersection(GeneriManga, GeneriMaiLetti, Nuovi),
     intersection(GeneriManga, GeneriUtente, Noti),
@@ -91,22 +76,12 @@ manga_genere_nuovo(Output) :-
 
 % manga_misto_generi_nuovi/1
 % Trova manga che combinano almeno un genere mai letto con almeno un genere già letto (anche se visto una sola volta).
-% Serve per espandere i gusti restando in parte nel comfort zone.
 manga_misto_generi_nuovi(Output) :-
-    findall(Genere, 
-        (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)),
-        TuttiGeneri),
+    findall(Genere, (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)),TuttiGeneri),
     sort(TuttiGeneri, GeneriTotali),
-
-    findall(GenereLetto,
-        (lettura_utente(_, _, Stato, _, GeneriLetti),
-         Stato \= plan_to_read,
-         member(GenereLetto, GeneriLetti)),
-        GeneriLettiRaw),
+    findall(GenereLetto,(lettura_utente(_, _, Stato, _, GeneriLetti),Stato \= plan_to_read,member(GenereLetto, GeneriLetti)),GeneriLettiRaw),
     sort(GeneriLettiRaw, GeneriUtente),
-
     subtract(GeneriTotali, GeneriUtente, GeneriMaiLetti),
-
     manga(ID, Titolo, GeneriManga, _, _, _, Stato, Autori),
     intersection(GeneriManga, GeneriUtente, ComuneLetti),
     intersection(GeneriManga, GeneriMaiLetti, ComuneNuovi),
@@ -122,7 +97,6 @@ valuta_compatibilita(GeneriForniti) :-
     length(GeneriOrdinati, TotGeneri),
     Half is TotGeneri // 2,
     Quarter is TotGeneri // 4,
-
     findall(Punteggio,
         (member(Genere, GeneriForniti),
          nth1(Posizione, GeneriOrdinati, Genere-_),
@@ -132,7 +106,6 @@ valuta_compatibilita(GeneriForniti) :-
          )
         ),
         ListaPunteggi),
-
     sum_list(ListaPunteggi, Somma),
     length(GeneriForniti, NGen),
     (NGen =:= 0 -> Media = 0 ; Media is Somma / NGen),
@@ -143,9 +116,7 @@ valuta_compatibilita(GeneriForniti) :-
     ; Media >= 0.75 ->
         writeln('Questo manga è ABBASTANZA compatibile con i tuoi gusti.')
     ;
-        writeln('Questo manga è POCO compatibile con i tuoi gusti.')
-    ).
-
+        writeln('Questo manga è POCO compatibile con i tuoi gusti.')).
 
 % raccomanda_random/1
 % Versione randomizzata di raccomanda/1: suggerisce manga non letti che condividono un genere con quelli preferiti.
@@ -154,17 +125,12 @@ raccomanda_random(Output) :-
     generi_ordinati(Generi),
     member(Genere-Count, Generi),
     Count >= 10,
-    findall(ID-Titolo, (
-        manga(ID, Titolo, GeneriManga, _, _, _, _, _),
-        member(Genere, GeneriManga),
-        \+ lettura_utente(ID, _, _, _, _)
-    ), Candidati),
+    findall(ID-Titolo,(manga(ID, Titolo, GeneriManga, _, _, _, _, _),member(Genere, GeneriManga),\+ lettura_utente(ID, _, _, _, _)), Candidati),
     list_to_set(Candidati, Unici),
     random_permutation(Unici, Mischiati),
     member(ID-Titolo, Mischiati),
     manga(ID, _, _, _, _, _, Stato, Autori),
     formatta_output_nome(Titolo, Autori, Stato, Output).
-
 
 % UTILITIES
 
@@ -192,10 +158,8 @@ primi_n(N, [X|Xs], [X|Ys]) :-
 stampa_migliori_per_generi([]).
 stampa_migliori_per_generi([Genere-_|T]) :-
     (miglior_manga_per_genere(Genere, Titolo) ->
-        format('~w: ~w~n', [Genere, Titolo])
-    ;
-        format('~w: Nessun manga consigliabile~n', [Genere])
-    ),
+        format('~w: ~w~n', [Genere, Titolo]);
+        format('~w: Nessun manga consigliabile~n', [Genere])),
     stampa_migliori_per_generi(T).
 
 % Normalizza input dell'utente (spazi -> underscore)
@@ -206,11 +170,6 @@ normalize_input(Originale, Normalizzato) :-
 
 sostituisci_spazio_underscore(' ', '_') :- !.
 sostituisci_spazio_underscore(C, C).
-
-% Format output: NOME MANGA: Titolo - AUTORE/I: Autori - STATO: Stato
-formatta_output(Titolo, Autori, Stato, Output) :-
-    atomic_list_concat(Autori, ', ', AutoriConcat),
-    format(atom(Output), 'NOME MANGA: ~w - AUTORE/I: ~w - STATO: ~w', [Titolo, AutoriConcat, Stato]).
 
 % Format output semplice: solo NOME MANGA: Titolo
 formatta_nome_manga(TitoloRaw, Output) :-
@@ -223,7 +182,6 @@ formatta_output_nome(TitoloRaw, Autori, Stato, Output) :-
     maplist(formatta_titolo, Autori, AutoriFormattati),  % <-- nuova riga: formatta ogni autore
     atomic_list_concat(AutoriFormattati, ', ', AutoriConcat),
     format(atom(Output), 'NOME MANGA: ~w - AUTORE/I: ~w - STATO: ~w', [TitoloFormattato, AutoriConcat, Stato]).
-
 
 % MENU INTERATTIVO
 
@@ -251,8 +209,6 @@ esegui_scelta(1) :-
     stampa_lista(Generi), nl,
     menu.
 
-
-
 esegui_scelta(2) :-
     writeln('--- Manga consigliati in base ai tuoi gusti (randomizzati) ---'),
     findall(Titolo, raccomanda_random(Titolo), Tutti),
@@ -261,9 +217,6 @@ esegui_scelta(2) :-
     primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
-
-
-
 
 esegui_scelta(3) :-
     writeln('--- Manga di qualità poco popolari (randomizzati) ---'),
@@ -274,8 +227,6 @@ esegui_scelta(3) :-
     stampa_lista(Top5), nl,
     menu.
 
-
-
 esegui_scelta(4) :-
     writeln('--- Consigliati tra i PLAN_TO_READ (randomizzati) ---'),
     findall(Titolo, consiglia_plan_to_read(Titolo), Tutti),
@@ -284,8 +235,6 @@ esegui_scelta(4) :-
     primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
-
-
 
 esegui_scelta(5) :-
     writeln('--- Manga premiati nei tuoi generi preferiti (randomizzati) ---'),
@@ -296,8 +245,6 @@ esegui_scelta(5) :-
     stampa_lista(Top5), nl,
     menu.
 
-
-
 esegui_scelta(6) :-
     writeln('--- Manga di un genere mai letto (randomizzati) ---'),
     findall(Titolo, manga_genere_nuovo(Titolo), Tutti),
@@ -306,8 +253,6 @@ esegui_scelta(6) :-
     primi_n(5, Mischiati, Top5),
     stampa_lista(Top5), nl,
     menu.
-
-
 
 esegui_scelta(7) :-
     writeln('--- Manga che mischiano generi già letti e generi mai letti (randomizzati) ---'),
@@ -318,7 +263,6 @@ esegui_scelta(7) :-
     stampa_lista(Top5), nl,
     menu.
 
-
 esegui_scelta(8) :-
     read_line_to_string(user_input, _), % Mangia invio residuo
     writeln('Inserisci i generi separati da virgola (es: action, fantasy, drama):'),
@@ -328,16 +272,12 @@ esegui_scelta(8) :-
     maplist(atom_string, GeneriAtoms, GeneriLower),
     maplist(normalize_input, GeneriAtoms, GeneriNormalizzati),
     ( GeneriNormalizzati == [] ->
-        writeln('Non hai inserito nessun genere! Per favore riprova.')
-    ;
-        valuta_compatibilita(GeneriNormalizzati)
-    ),
-    nl,
-    menu.
+        writeln('Non hai inserito nessun genere! Per favore riprova.');
+        valuta_compatibilita(GeneriNormalizzati)),
+        nl,menu.
 
 esegui_scelta(9) :-
     writeln('Uscita. Grazie!').
-
 
 esegui_scelta(_) :-
     writeln('Scelta non valida. Riprova.'), nl,
