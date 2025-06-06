@@ -27,7 +27,7 @@ class OAuthCallbackHandler(BaseHTTPRequestHandler):
         # Analizza l'URL della richiesta ricevuta dopo il login su MAL
         parsed_path = urllib.parse.urlparse(self.path)
         params = urllib.parse.parse_qs(parsed_path.query)
-
+    
         # Estrazione del parametro 'code'
         if 'code' in params:
             OAuthCallbackHandler.authorization_code = params['code'][0]

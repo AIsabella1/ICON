@@ -39,7 +39,7 @@ manga_qualita_nascosto(Output) :-
     formatta_output_nome(Titolo, Autori, Stato, Output).
 
 % consiglia_plan_to_read/1
-% Suggerisce manga presenti nella lista "plan_to_read" dell'utente che condividono almeno un genere con i manga già letti.
+% Suggerisce manga presenti nella lista "plan_to_read" utente che condividono almeno un genere con i manga già letti.
 consiglia_plan_to_read(Output) :-
     lettura_utente(_, Titolo, plan_to_read, _, GeneriPlan),
     findall(G,(lettura_utente(_, _, Stato, _, GeneriLetti),Stato \= plan_to_read,member(G, GeneriLetti)),ListaGeneriLetti),
@@ -91,7 +91,7 @@ manga_misto_generi_nuovi(Output) :-
     formatta_output_nome(Titolo, Autori, Stato, Output).
 
 % valuta_compatibilita/1
-% Dato un elenco di generi, li confronta con quelli ordinati per frequenza e valuta quanto sono compatibili con i gusti dell'utente.
+% Dato un elenco di generi, li confronta con quelli ordinati per frequenza e valuta quanto sono compatibili con i gusti utente.
 valuta_compatibilita(GeneriForniti) :-
     generi_ordinati(GeneriOrdinati),  % Prende i generi ordinati per frequenza
     length(GeneriOrdinati, TotGeneri),
@@ -154,15 +154,7 @@ primi_n(N, [X|Xs], [X|Ys]) :-
     N1 is N - 1,
     primi_n(N1, Xs, Ys).
 
-% Stampa il miglior manga per ciascun genere
-stampa_migliori_per_generi([]).
-stampa_migliori_per_generi([Genere-_|T]) :-
-    (miglior_manga_per_genere(Genere, Titolo) ->
-        format('~w: ~w~n', [Genere, Titolo]);
-        format('~w: Nessun manga consigliabile~n', [Genere])),
-    stampa_migliori_per_generi(T).
-
-% Normalizza input dell'utente (spazi -> underscore)
+% Normalizza input utente (spazi -> underscore)
 normalize_input(Originale, Normalizzato) :-
     atom_chars(Originale, Chars),
     maplist(sostituisci_spazio_underscore, Chars, NewChars),
