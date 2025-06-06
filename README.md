@@ -1,4 +1,4 @@
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 
 # Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga
 
