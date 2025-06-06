@@ -124,12 +124,23 @@ E-Mail: a.isabella1@studenti.uniba.it
 
 Libro: Poole & Mackworth – Artificial Intelligence
 
-MyAnimeList API: https://myanimelist.net/apiconfig
+MyAnimeList API – https://myanimelist.net/apiconfig 
 
-SWI-Prolog: https://www.swi-prolog.org
+SWI-Prolog – https://www.swi-prolog.org/ 
 
-Owlready2: https://owlready2.readthedocs.io
+Owlready2 – https://owlready2.readthedocs.io/ 
 
-scikit-learn: https://scikit-learn.org
+HermiT Reasoner – https://www.hermit-reasoner.com/ 
 
-HermiT: https://www.hermit-reasoner.com
+Scikit-learn – https://scikit-learn.org/ 
+
+XGBoost – https://xgboost.ai/ 
+
+Pandas – https://pandas.pydata.org/ 
+
+NumPy – https://numpy.org/ 
+
+Matplotlib – https://matplotlib.org/ 
+
+Seaborn – https://seaborn.pydata.org/ 
+
