@@ -111,7 +111,6 @@ Aggiornamento 29/05/2025: Gli script sono nuovamente funzionanti. Dataset aggior
 
 ## Autore
 
-
 Antonello Isabella 
   
 Matricola: 737827
@@ -143,4 +142,3 @@ NumPy – https://numpy.org/
 Matplotlib – https://matplotlib.org/ 
 
 Seaborn – https://seaborn.pydata.org/ 
-
