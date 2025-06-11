@@ -1,4 +1,4 @@
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 
 # Sistema Intelligente di Raccomandazione e Analisi del Dominio Manga
 
@@ -111,7 +111,6 @@ Aggiornamento 29/05/2025: Gli script sono nuovamente funzionanti. Dataset aggior
 
 ## Autore
 
-
 Antonello Isabella 
   
 Matricola: 737827
@@ -124,12 +123,22 @@ E-Mail: a.isabella1@studenti.uniba.it
 
 Libro: Poole & Mackworth – Artificial Intelligence
 
-MyAnimeList API: https://myanimelist.net/apiconfig
+MyAnimeList API – https://myanimelist.net/apiconfig 
 
-SWI-Prolog: https://www.swi-prolog.org
+SWI-Prolog – https://www.swi-prolog.org/ 
 
-Owlready2: https://owlready2.readthedocs.io
+Owlready2 – https://owlready2.readthedocs.io/ 
 
-scikit-learn: https://scikit-learn.org
+HermiT Reasoner – https://www.hermit-reasoner.com/ 
 
-HermiT: https://www.hermit-reasoner.com
+Scikit-learn – https://scikit-learn.org/ 
+
+XGBoost – https://xgboost.ai/ 
+
+Pandas – https://pandas.pydata.org/ 
+
+NumPy – https://numpy.org/ 
+
+Matplotlib – https://matplotlib.org/ 
+
+Seaborn – https://seaborn.pydata.org/ 
