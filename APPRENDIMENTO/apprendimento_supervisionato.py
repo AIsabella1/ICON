@@ -1,4 +1,4 @@
-def run_supervised():
+def appr_sup():
     import pandas as pd #oer caricare e manipolare dataset in formato tabellare
     import os   #per gestire directory, creare cartelle, salvare file
     import matplotlib.pyplot as plt #libreria base per visualizzazione di grafici
@@ -9,12 +9,12 @@ def run_supervised():
     from sklearn.utils import resample  #per effettuare oversampling dei dati (duplicare la classe minoritaria)
 
     #moduli interni del progetto
-    from param_config import get_param_grid #restituisce un dizionario con i parametri da testare per ciascun modello
-    from model_builder import get_model #costruisce e restituisce un classificatore ML in base al nome e ai parametri specificati
-    from report_utils import evaluate_final_model   #funzione per valutazione finale su test set con AdaBoost (utile per vedere tp,tn,fp,fn)
+    from config_parametri import get_parametri #restituisce un dizionario con i parametri da testare per ciascun modello
+    from crea_modello import get_modelli #costruisce e restituisce un classificatore ML in base al nome e ai parametri specificati
+    from valutazione_finale import valuta_modello_finale   #funzione per valutazione finale su test set con AdaBoost (utile per vedere tp,tn,fp,fn)
     
     #funzioni di plotting
-    from plot_tools import plot_accuracy, plot_confusion_matrix, plot_bar_chart_naive_bayes, plot_radar_all_models  
+    from grafici_modelli import plot_accuracy, plot_confusion_matrix, plot_bar_chart_naive_bayes, plot_radar_all_models  
 
     os.makedirs("PNG", exist_ok=True)
 
@@ -55,7 +55,7 @@ def run_supervised():
     y_train = train_balanced['Piace']
 
     #configurazione dei modelli e parametri
-    param_grid = get_param_grid()
+    param_grid = get_parametri()
     default_params = {
         'Decision Tree': {'max_depth': 5},
         'Random Forest': {'n_estimators': 300, 'max_depth': 5},
@@ -79,7 +79,7 @@ def run_supervised():
 
         for combo in combinations:
             try:
-                model = get_model(model_name, combo)
+                model = get_modelli(model_name, combo)
                 model.fit(X_train, y_train)
                 train_acc.append(model.score(X_train, y_train))
                 test_acc.append(model.score(X_test, y_test))
@@ -93,7 +93,7 @@ def run_supervised():
 
         #valutazione con Cross-Validation
         print(f"\n[Cross Validation]: {model_name}")
-        model = get_model(model_name, default_params[model_name])
+        model = get_modelli(model_name, default_params[model_name])
         acc_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
         prec_scores = cross_val_score(model, X, y, cv=5, scoring=make_scorer(precision_score, zero_division=0))
         rec_scores  = cross_val_score(model, X, y, cv=5, scoring=make_scorer(recall_score, zero_division=0))
@@ -127,6 +127,6 @@ def run_supervised():
             plot_bar_chart_naive_bayes(['Accuracy', 'Precision', 'Recall', 'F1-score'],[acc_scores.mean(), prec_scores.mean(), rec_scores.mean(), f1_scores.mean()])
 
     #valutazione finale su test set con AdaBoost
-    evaluate_final_model(X_train, X_test, y_train, y_test)
+    valuta_modello_finale(X_train, X_test, y_train, y_test)
     #radar plot finale per confronto modelli
     plot_radar_all_models(model_names, ['Accuracy', 'Precision', 'Recall', 'F1-score'], radar_data)

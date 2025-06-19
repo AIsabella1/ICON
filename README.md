@@ -24,11 +24,11 @@ Finalizzato alla costruzione di un sistema di raccomandazione e analisi nel domi
 ### `APPRENDIMENTO/`
 Script Apprendimento Supervisionato:
 - [`main.py`](APPRENDIMENTO/main.py): esegue il flusso ML
-- [`model_builder.py`](APPRENDIMENTO/model_builder.py): factory dei modelli ML
-- [`param_config.py`](APPRENDIMENTO/param_config.py): iperparametri per ogni modello
-- [`plot_tools.py`](APPRENDIMENTO/plot_tools.py): radar, heatmap, bar chart, ecc.
-- [`report_utils.py`](APPRENDIMENTO/report_utils.py): AdaBoost finale e confusion matrix
-- [`supervised_runner.py`](APPRENDIMENTO/supervised_runner.py): classificazione con cross-validation
+- [`crea_modello.py`](APPRENDIMENTO/crea_modello.py): factory dei modelli ML
+- [`config_parametri.py`](APPRENDIMENTO/config_parametri.py): iperparametri per ogni modello
+- [`grafici_modelli.py`](APPRENDIMENTO/grafici_modelli.py): radar, heatmap, bar chart, ecc.
+- [`valutazione_finale.py`](APPRENDIMENTO/valutazione_finale.py): AdaBoost finale e confusion matrix
+- [`apprendimento_supervisionato.py`](APPRENDIMENTO/apprendimento_supervisionato.py): classificazione con cross-validation
 
 ### `DATASET/`
 Contiene i CSV generati:
@@ -43,7 +43,7 @@ Contiene la documentazione nel formato docx e pdf:
 
 ### `KB/`
 Knowledge base Prolog:
-- [`kb_creator.py`](KB/kb_creator.py): genera knowledge_base.pl
+- [`crea_kb.py`](KB/crea_kb.py): genera knowledge_base.pl
 - [`knowledge_base.pl`](KB/knowledge_base.pl): fatti `manga/8` e `lettura_utente/5`
 - [`system.pl`](KB/system.pl): regole di raccomandazione Prolog + menu
 
@@ -53,7 +53,7 @@ Grafici generati:
 
 ### `PYTHON_DATASET/`
 Script estrazione dati da MyAnimeList:
-- [`mangalist_extended.py`](PYTHON_DATASET/mangalist_extended.py): versione arricchita (mean, rank, popolarità)
+- [`user_estesa.py`](PYTHON_DATASET/user_estesa.py): versione arricchita (mean, rank, popolarità)
 - [`top_manga.py`](PYTHON_DATASET/top_manga.py): classifica top 1000 da MAL
 - [`user_manga.py`](PYTHON_DATASET/user_manga.py): lista manga utente semplice
 

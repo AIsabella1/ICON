@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt  #matplotlib è usata per creare grafici statici
 import seaborn as sns            #seaborn migliora lo stile grafico
 import os                        #gestione delle cartelle e percorsi
 from sklearn.metrics import confusion_matrix  #calcolo della matrice di confusione per classificazione
+import numpy as np #per supporto matematico
 
 #crea la cartella dove verranno salvati i grafici se non esiste
 OUTPUT_DIR = "PNG"
@@ -44,9 +45,6 @@ def plot_bar_chart_naive_bayes(metrics, values):
 
 #radar plot per confrontare più modelli supervisionati
 def plot_radar_all_models(model_names, metric_labels, data, output_dir="PNG"):
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import os
 
     os.makedirs(output_dir, exist_ok=True)
     angles = np.linspace(0, 2 * np.pi, len(metric_labels), endpoint=False).tolist()

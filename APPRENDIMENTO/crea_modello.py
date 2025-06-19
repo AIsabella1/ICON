@@ -1,11 +1,12 @@
+#ho sfruttato le seguenti librerie per implementare i vari classificatori
 from sklearn.tree import DecisionTreeClassifier #algoritmo ad albero decisionale
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier #RandomForest: ensemble di alberi decisionali, AdaBoost: algoritmo di boosting
-from sklearn.neighbors import KNeighborsClassifier #KNN classifica in base alla vicinanza con i k esempi più simili nel dataset
-from sklearn.naive_bayes import GaussianNB #classificatore probabilistico basato su teorema di Bayes
-from xgboost import XGBClassifier   #XGBoost potente algoritmo di boosting basato su gradienti
+from sklearn.neighbors import KNeighborsClassifier #KNN classifica in base ai k esempi più simili nel dataset
+from sklearn.naive_bayes import GaussianNB #classificatore probabilistico (basato sul teorema di Bayes)
+from xgboost import XGBClassifier   #XGBoost algoritmo di boosting basato su gradienti
 
 #ritorna un modello ML configurato in base al nome e ai parametri
-def get_model(name, params):
+def get_modelli(name, params):
     if name == 'Decision Tree':
         #albero decisionale con controllo su profondità massima e numero minimo di campioni per foglia
         return DecisionTreeClassifier(max_depth=params['max_depth'],min_samples_leaf=params.get('min_samples_leaf', 5),random_state=42)

@@ -1,5 +1,8 @@
+#tutte le configurazioni sono state ottenute dopo molti test in cui era presente l'overfitting, sono stati testate molte versioni, reputo che questa versione sia efficace.
+#altre configurazioni sono state ottenute da vari tutorial trovati su internet.
+
 #funzione che restituisce i parametri da testare per ogni modello
-def get_param_grid():
+def get_parametri():
     return {
         'Decision Tree': {
             #limita la profondità per ridurre la complessità del modello
@@ -38,6 +41,7 @@ def get_param_grid():
             'n_neighbors': [3, 5, 7, 9, 11, 15, 21]
         },
 
+        #non ha iperparamentri configurabili essendo probabilistico
         'Naive Bayes': {},
 
         #incline all’overfitting se non regolato

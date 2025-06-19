@@ -4,7 +4,7 @@ from sklearn.metrics import classification_report, confusion_matrix  #classifica
 from sklearn.ensemble import AdaBoostClassifier  #algoritmo di boosting che combina classificatori deboli per creare un classificatore forte
 
 #funzione per addestrare e valutare AdaBoost su un dataset
-def evaluate_final_model(X_train, X_test, y_train, y_test):
+def valuta_modello_finale(X_train, X_test, y_train, y_test):
     #inizializza AdaBoost con 100 stimatori deboli
     model = AdaBoostClassifier(n_estimators=100, random_state=42)
     
