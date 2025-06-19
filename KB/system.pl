@@ -1,51 +1,37 @@
-% Imposta la codifica dei caratteri a UTF-8 per garantire una corretta gestione di caratteri speciali,
-% come accenti, simboli o alfabeti non latini, durante il caricamento della Knowledge Base o interazione utente.
+% imposta la codifica dei caratteri a UTF-8 per gestire i caratteri speciali (altrimenti gli accenti non escono correttamente nel menu)
 :- set_prolog_flag(encoding, utf8).
 
-% Carica la Knowledge Base
+% carica la KB
 :- consult('knowledge_base.pl').
 
-% GESTIONE GENERI
-
-% Verifica se un genere è stato letto almeno 10 volte.
-% Utile per filtrare i generi dominanti nelle raccomandazioni.
+% verifica se un genere è stato letto almeno 10 volte.
 over_10(_-N) :- N >= 10.
 
-% Estrae i generi associati ai manga già letti (escludendo quelli in plan_to_read).
-% Applica una normalizzazione per rimuovere eventuali underscore iniziali dai nomi dei generi.
+% estrae i generi associati ai manga già letti (escludendo quelli in plan_to_read), normalizza per rimuovere eventuali underscore iniziali dai nomi dei generi
 genere_letto(GenerePulito) :-
     lettura_utente(_, _, Stato, _, Generi),
     Stato \= plan_to_read,
     member(Genere, Generi),
     normalizza_genere(Genere, GenerePulito).
 
-% Rimuove un eventuale underscore iniziale dal nome del genere.
-% Serve a uniformare la rappresentazione dei generi nella knowledge base.
+% rimuove underscore iniziale dal nome dei generi
 normalizza_genere(Genere, GenerePulito) :-
     atom_chars(Genere, ['_'|Rest]) -> atom_chars(GenerePulito, Rest) ;
     GenerePulito = Genere.
 
-% Calcola la frequenza con cui ciascun genere è stato letto,
-% considerando solo i manga effettivamente letti (escludendo plan_to_read).
-% Ritorna una lista del tipo [genere-frequenza], ordinata alfabeticamente per genere.
+% calcola la frequenza con cui ciascun genere è stato letto (escludendo plan_to_read), ritornando una lista ordinata alfabeticamwente
 frequenza_generi(Frequenze) :-
     findall(Genere, genere_letto(Genere), ListaGeneri),
     sort(ListaGeneri, GeneriUnici),
     findall(Genere-Conta,(member(Genere, GeneriUnici),aggregate_all(count, genere_letto(Genere), Conta)),Frequenze).
 
-% Ordina i generi letti in base alla loro frequenza, in ordine decrescente.
-% Usa la lista generata da `frequenza_generi/1` e restituisce un elenco del tipo [genere-frequenza].
+% ordina i generi letti in base alla loro frequenza, in ordine decrescente
 generi_ordinati(GeneriOrdinati) :-
     frequenza_generi(Frequenze),
     sort(2, @>=, Frequenze, GeneriOrdinati).
 
-% RACCOMANDAZIONE MANGA
 
-% Raccomanda manga non ancora letti che:
-% - Hanno un voto medio elevato (>= 8)
-% - Sono poco popolari (valore di popolarità > 1500)
-% - Condividono almeno un genere con quelli letti almeno 10 volte
-% Restituisce un output formattato (titolo, autore, stato) scelto casualmente tra i candidati.
+% raccomanda manga non ancora letti che hanno voto maggiore o uguale a 8, poco popolari (un valore alto=poco popolare, mentre uno basso=molto popolare), che condividono almeno un genere letto 10 volte
 manga_qualita_nascosto(Output) :-
     generi_ordinati(Generi),
     member(Genere-Count, Generi), % basta un genere in comune
@@ -57,10 +43,7 @@ manga_qualita_nascosto(Output) :-
     manga(ID, _, _, _, _, _, Stato, Autori),
     formatta_output_nome(Titolo, Autori, Stato, Output).
 
-% Suggerisce manga presenti nella lista plan_to_read che:
-% - Condividono almeno il 50% dei generi con quelli più frequentemente letti (>= 10 volte)
-% - Sono filtrati tra i manga pianificati ma non ancora letti
-% In output una stringa con il titolo del manga formattato per la visualizzazione.
+% suggerisce manga presenti nella lista plan_to_read che condividono almeno il 50% dei generi letti almeno 10 volte
 consiglia_plan_to_read(Output) :-
     generi_ordinati(Generi),
     include(over_10, Generi, Dominanti),
@@ -74,11 +57,7 @@ consiglia_plan_to_read(Output) :-
     Ratio >= 0.5,
     formatta_nome_manga(Titolo, Output).
 
-% Suggerisce manga non ancora lettio che:
-% - Hanno ricevuto un premio (contengono il tag award_winning)
-% - Condividono almeno 2 generi con quelli preferiti (letti almeno 10 volte)
-% - I generi vengono normalizzati per evitare incongruenze nei confronti
-% In output una stringa contenente titolo, autori e stato del manga, formattata per la visualizzazione.
+% suggerisce manga non ancora lettio che hanno un premio e con almeno 2 generi preferiti
 manga_premiato(Output) :-
     generi_ordinati(Generi),
     include(over_10, Generi, Dominanti),
@@ -92,15 +71,7 @@ manga_premiato(Output) :-
     NComune >= 2,
     formatta_output_nome(Titolo, Autori, Stato, Output).
 
-% Suggerisce manga non ancora letti che combinano:
-% - Almeno un genere già letto frequentemente (>=10 volte)
-% - Almeno un genere mai letto
-% Fasi:
-% 1. Estrae tutti i generi presenti nel database.
-% 2. Filtra quelli letti frequentemente (>=10).
-% 3. Costruisce due insiemi: generi dominanti e generi mai letti.
-% 4. Cerca manga che abbiano almeno un genere in ciascuno dei due insiemi.
-% 5. Esclude manga già letti e restituisce un output formattato.
+% suggerisce manga non ancora letti che combinano generi letti almeno 10 volte con quelli mai letti
 manga_misto_generi_nuovi(Output) :-
     findall(Genere, (manga(_, _, Generi, _, _, _, _, _), member(Genere, Generi)), TuttiGeneri),
     sort(TuttiGeneri, GeneriTotali),
@@ -119,8 +90,7 @@ manga_misto_generi_nuovi(Output) :-
     \+ lettura_utente(ID, _, _, _, _),
     formatta_output_nome(Titolo, Autori, Stato, Output).
 
-% Valuta il grado di compatibilità tra un elenco di generi dati (di un manga, ad esempio)
-% e le preferenze, basandosi sulla frequenza con cui ha letto ciascun genere.
+% valuta il grado di compatibilità tra un elenco di generi dati in base a quante volte ha letto quei generi
 valuta_compatibilita(GeneriForniti) :-
     frequenza_generi(Frequenze),
     maplist(valuta_genere(Frequenze), GeneriForniti, Punteggi),
@@ -133,9 +103,7 @@ valuta_compatibilita(GeneriForniti) :-
     ;   writeln('Questo manga è POCO compatibile con i tuoi gusti.')
     ).
 
-% Normalizza il nome del genere in input e assegna un punteggio in base alla frequenza di lettura.
-% Frequenze è una lista di coppie Genere-Conta ottenuta da frequenza_generi/1.
-% Genere è quello da valutare.
+% normalizza il nome del genere in input e assegna un punteggio in base alla frequenza di lettura
 valuta_genere(Frequenze, Genere, Punteggio) :-
     normalizza_genere(Genere, G),
     ( member(G-Conta, Frequenze) ->
@@ -145,13 +113,7 @@ valuta_genere(Frequenze, Genere, Punteggio) :-
         ; Punteggio = 0 )
     ;   Punteggio = 0 ).
 
-% Suggerisce un manga non letto che condivide almeno un genere con i generi letti frequentemente (almeno 10 volte).
-% La selezione avviene in modo casuale tra i manga validi.
-% Fasi:
-% 1. Estrae i generi ordinati per frequenza e considera solo quelli con almeno 10 letture.
-% 2. Cerca tutti i manga che contengono uno di questi generi e che non sono stati ancora letti.
-% 3. Elimina duplicati e randomizza la lista risultante.
-% 4. Seleziona un manga a caso e ne restituisce titolo, autore/i e stato in Output (formattato).
+% suggerisce un manga non letto che condivide almeno un genere con i generi letti frequentemente (almeno 10 volte).
 raccomanda_random(Output) :-
     generi_ordinati(Generi),
     member(Genere-Count, Generi),
@@ -163,7 +125,7 @@ raccomanda_random(Output) :-
     manga(ID, _, _, _, _, _, Stato, Autori),
     formatta_output_nome(Titolo, Autori, Stato, Output).
 
-% Interazione con l’utente: chiede il titolo di un manga e verifica se è stato letto.
+% interazione con l’utente: chiede il titolo di un manga e verifica se è stato letto.
 ha_letto_manga :-
     write('Inserisci il nome del manga: '),
     read_line_to_string(user_input, Input),
@@ -177,65 +139,56 @@ ha_letto_manga :-
     ;   format('Non hai letto ~w.~n', [TitoloNorm])
     ).
 
-% UTILITIES
-
-% Converte un titolo di manga in un formato leggibile sostituendo gli underscore con spazi.
+% converte un titolo di manga in un formato leggibile sostituendo gli underscore con spazi
 formatta_titolo(TitoloRaw, TitoloFormattato) :-
     atom_chars(TitoloRaw, Chars),
     maplist(sostituisci_underscore_spazio, Chars, CharsFormattati),
     atom_chars(TitoloFormattato, CharsFormattati).
 
-% Sostituisce il carattere underscore '_' con uno spazio, altrimenti lascia invariato il carattere.
-% Utilizzato da formatta_titolo/2 per rendere leggibili i titoli sostituendo gli underscore con spazi.
+% sostituisce il carattere underscore '_' con uno spazio, altrimenti lascia invariato il carattere
 sostituisci_underscore_spazio('_', ' ') :- !.
 sostituisci_underscore_spazio(Char, Char).
 
-% Stampa ogni elemento di una lista su una nuova riga.
+% stampa ogni elemento di una lista su una nuova riga
 stampa_lista([]).
 stampa_lista([X|Xs]) :- writeln(X), stampa_lista(Xs).
 
-% Estrae i primi N elementi da una lista, nell’ordine originale.
+% estrae i primi N elementi da una lista, nell’ordine originale
 primi_n(0, _, []) :- !.
 primi_n(_, [], []) :- !.
 primi_n(N, [X|Xs], [X|Ys]) :-
     N1 is N - 1,
     primi_n(N1, Xs, Ys).
 
-% Converte una stringa sostituendo tutti gli spazi con underscore.
+% converte una stringa sostituendo tutti gli spazi con underscore
 normalize_input(Originale, Normalizzato) :-
     atom_chars(Originale, Chars),
     maplist(sostituisci_spazio_underscore, Chars, NewChars),
     atom_chars(Normalizzato, NewChars).
 
-% Sostituisce uno spazio (' ') con un underscore ('_'); altrimenti restituisce il carattere invariato.
+% sostituisce uno spazio (' ') con un underscore ('_'); altrimenti restituisce il carattere invariato
 sostituisci_spazio_underscore(' ', '_') :- !.
 sostituisci_spazio_underscore(C, C).
 
-% Converte un titolo grezzo con underscore in una stringa leggibile e lo formatta come "NOME MANGA: Titolo".
+% converte un titolo con underscore in una stringa leggibile e lo formatta come "NOME MANGA: Titolo".
 formatta_nome_manga(TitoloRaw, Output) :-
     formatta_titolo(TitoloRaw, TitoloFormattato),
     format(atom(Output), 'NOME MANGA: ~w', [TitoloFormattato]).
 
-% Converte il titolo e la lista degli autori in formato leggibile (underscore => spazio),
-% li concatena in una stringa descrittiva del manga con stato incluso.
+% converte il titolo e la lista degli autori in formato leggibile (gli underscore diventano spazi)
 formatta_output_nome(TitoloRaw, Autori, Stato, Output) :-
     formatta_titolo(TitoloRaw, TitoloFormattato),
     maplist(formatta_titolo, Autori, AutoriFormattati),  % nuova riga: formatta ogni autore
     atomic_list_concat(AutoriFormattati, ', ', AutoriConcat),
     format(atom(Output), 'NOME MANGA: ~w - AUTORE/I: ~w - STATO: ~w', [TitoloFormattato, AutoriConcat, Stato]).
 
-% Applica normalizzazione (rimozione underscore iniziale) a ciascun genere nella lista di input.
-% Utile per confrontare coerentemente generi utente e generi dei manga.
+% applica normalizzazione (rimozione underscore iniziale) a ciascun genere nella lista di input
 normalizza_lista([], []).
 normalizza_lista([G|Gs], [GN|GNs]) :-
     normalizza_genere(G, GN),
     normalizza_lista(Gs, GNs).
 
-% MENU INTERATTIVO
-% Mostra il menu principale del sistema di raccomandazione e gestisce gli input.
-% Ogni voce del menu attiva una diversa funzionalità (es. raccomandazioni, valutazioni, verifica lettura).
-% Dopo ogni opzione, il menu viene mostrato nuovamente a meno che non scelga di uscire.
-
+% mostra il menu principale del sistema di raccomandazione e gestisce gli input.
 menu :-
     writeln(''),
     writeln('       SISTEMA DI RACCOMANDAZIONE MANGA        '),
@@ -251,8 +204,6 @@ menu :-
     write('Scelta (1-9): '),
     read(Scelta),
     esegui_scelta(Scelta).
-
-% Gestione delle scelte
 
 esegui_scelta(1) :-
     writeln('       Generi preferiti (ordinati)     '),
