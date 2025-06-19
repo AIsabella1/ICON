@@ -64,7 +64,7 @@ Script estrazione dati da MyAnimeList:
 - Python 3.10+
 - SWI-Prolog (per esecuzione KB)
 - Librerie Python:
-  - `pandas`, `scikit-learn`, `xgboost`,`matplotlib`, `seaborn`,`requests`
+  - `pandas`, `scikit-learn`, `xgboost`, `matplotlib`, `seaborn`, `requests`, `numpy`
 
 ---
 
@@ -120,3 +120,5 @@ Pandas – https://pandas.pydata.org/
 Matplotlib – https://matplotlib.org/ 
 
 Seaborn – https://seaborn.pydata.org/ 
+
+NumPy – https://numpy.org/ 
