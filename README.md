@@ -49,7 +49,7 @@ Knowledge base Prolog:
 
 ### `PNG/`
 Grafici generati:
-- Accuratezze, metriche per modello, radar chart, clustering PCA, ecc.
+- Accuratezze, metriche per modello, ecc.
 
 ### `PYTHON_DATASET/`
 Script estrazione dati da MyAnimeList:
