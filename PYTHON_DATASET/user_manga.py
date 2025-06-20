@@ -117,7 +117,7 @@ def get_user_mangalist(username, access_token, max_manga=25000):
             print(response.text)
             break
 
-        #aspetta 1 secondo tra le richieste per evitare rate-limit. Anche per evitare che il dispositivo venga contrassegnato come possibile Bot, bloccando le possibili richieste per non si sa quante ore.
+        #aspetta 1 secondo tra le richieste per evitare rate-limit. Anche per evitare che il dispositivo venga contrassegnato come possibile Bot
         time.sleep(1)
 
     print(f"\nTotale manga recuperati per {username}: {len(all_manga)}")

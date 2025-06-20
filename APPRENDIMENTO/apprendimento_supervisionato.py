@@ -113,10 +113,10 @@ def appr_sup():
             plt.close()
 
         #stampa media CV
-        print(f"    Media Accuracy:  {acc_scores.mean():.3f}")
-        print(f"    Media Precision: {prec_scores.mean():.3f}")
-        print(f"    Media Recall:    {rec_scores.mean():.3f}")
-        print(f"    Media F1-score:  {f1_scores.mean():.3f}")
+        print(f"    Media Accuracy:  {acc_scores.mean():.3f} ± {acc_scores.std():.3f}")
+        print(f"    Media Precision: {prec_scores.mean():.3f} ± {prec_scores.std():.3f}")
+        print(f"    Media Recall:    {rec_scores.mean():.3f} ± {rec_scores.std():.3f}")
+        print(f"    Media F1-score:  {f1_scores.mean():.3f} ± {f1_scores.std():.3f}")
 
         #salva dati per radar plot
         model_names.append(model_name)
