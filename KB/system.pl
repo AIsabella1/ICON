@@ -30,7 +30,6 @@ generi_ordinati(GeneriOrdinati) :-
     frequenza_generi(Frequenze),
     sort(2, @>=, Frequenze, GeneriOrdinati).
 
-
 % raccomanda manga non ancora letti che hanno voto maggiore o uguale a 8, poco popolari (un valore alto=poco popolare, mentre uno basso=molto popolare), che condividono almeno un genere letto 10 volte
 manga_qualita_nascosto(Output) :-
     generi_ordinati(Generi),
